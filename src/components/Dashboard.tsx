@@ -41,7 +41,7 @@ interface ClientData {
   campaigns: Array<{
     id: string;
     name: string;
-    platform: 'google' | 'meta';
+    platform: string;
     months: Array<{
       month: string;
       investment: number;

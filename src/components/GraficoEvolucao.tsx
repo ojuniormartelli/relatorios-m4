@@ -49,9 +49,9 @@ export default function GraficoEvolucao({ data, title }: GraficoProps) {
             />
             <YAxis tickFormatter={formatCurrency} tick={{ fontSize: 12 }} />
             <Tooltip 
-              formatter={(value: number) => `R$ ${value.toLocaleString('pt-BR')}`}
+              formatter={(value) => `R$ ${Number(value).toLocaleString('pt-BR')}`}
               labelFormatter={(label) => {
-                const [year, month] = label.split('-');
+                const [year, month] = String(label).split('-');
                 const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
                 return `${months[parseInt(month) - 1]} ${year}`;
               }}
@@ -80,9 +80,9 @@ export default function GraficoEvolucao({ data, title }: GraficoProps) {
             />
             <YAxis tick={{ fontSize: 12 }} />
             <Tooltip 
-              formatter={(value: number) => [`${value} conversões`, 'Conversões']}
+              formatter={(value) => [`${value} conversões`, 'Conversões']}
               labelFormatter={(label) => {
-                const [year, month] = label.split('-');
+                const [year, month] = String(label).split('-');
                 const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'];
                 return `${months[parseInt(month) - 1]} ${year}`;
               }}

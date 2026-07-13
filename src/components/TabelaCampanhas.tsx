@@ -13,7 +13,7 @@ interface CampaignMonth {
 interface Campaign {
   id: string;
   name: string;
-  platform: 'google' | 'meta';
+  platform: string;
   months: CampaignMonth[];
 }
 
