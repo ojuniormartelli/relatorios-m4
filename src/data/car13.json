@@ -1,0 +1,192 @@
+{
+  "client": {
+    "slug": "car13",
+    "name": "Car 13",
+    "company": "Car 13 - Auto Center",
+    "logo": "/logos/car13.png",
+    "primaryColor": "#1E40AF",
+    "secondaryColor": "#3B82F6"
+  },
+  "monthlyData": [
+    {
+      "month": "2024-01",
+      "googleAds": {
+        "investment": 2500,
+        "conversions": 45,
+        "revenue": 11250,
+        "costPerConversion": 55.56
+      },
+      "metaAds": {
+        "investment": 1800,
+        "conversions": 32,
+        "revenue": 8000,
+        "costPerConversion": 56.25
+      },
+      "total": {
+        "investment": 4300,
+        "conversions": 77,
+        "revenue": 19250,
+        "roi": 347.67
+      }
+    },
+    {
+      "month": "2024-02",
+      "googleAds": {
+        "investment": 2800,
+        "conversions": 52,
+        "revenue": 13000,
+        "costPerConversion": 53.85
+      },
+      "metaAds": {
+        "investment": 2000,
+        "conversions": 38,
+        "revenue": 9500,
+        "costPerConversion": 52.63
+      },
+      "total": {
+        "investment": 4800,
+        "conversions": 90,
+        "revenue": 22500,
+        "roi": 368.75
+      }
+    },
+    {
+      "month": "2024-03",
+      "googleAds": {
+        "investment": 3000,
+        "conversions": 58,
+        "revenue": 14500,
+        "costPerConversion": 51.72
+      },
+      "metaAds": {
+        "investment": 2200,
+        "conversions": 42,
+        "revenue": 10500,
+        "costPerConversion": 52.38
+      },
+      "total": {
+        "investment": 5200,
+        "conversions": 100,
+        "revenue": 25000,
+        "roi": 380.77
+      }
+    },
+    {
+      "month": "2024-04",
+      "googleAds": {
+        "investment": 3200,
+        "conversions": 62,
+        "revenue": 15500,
+        "costPerConversion": 51.61
+      },
+      "metaAds": {
+        "investment": 2400,
+        "conversions": 48,
+        "revenue": 12000,
+        "costPerConversion": 50.00
+      },
+      "total": {
+        "investment": 5600,
+        "conversions": 110,
+        "revenue": 27500,
+        "roi": 391.07
+      }
+    },
+    {
+      "month": "2024-05",
+      "googleAds": {
+        "investment": 3500,
+        "conversions": 68,
+        "revenue": 17000,
+        "costPerConversion": 51.47
+      },
+      "metaAds": {
+        "investment": 2600,
+        "conversions": 52,
+        "revenue": 13000,
+        "costPerConversion": 50.00
+      },
+      "total": {
+        "investment": 6100,
+        "conversions": 120,
+        "revenue": 30000,
+        "roi": 391.80
+      }
+    },
+    {
+      "month": "2024-06",
+      "googleAds": {
+        "investment": 3800,
+        "conversions": 75,
+        "revenue": 18750,
+        "costPerConversion": 50.67
+      },
+      "metaAds": {
+        "investment": 2800,
+        "conversions": 58,
+        "revenue": 14500,
+        "costPerConversion": 48.28
+      },
+      "total": {
+        "investment": 6600,
+        "conversions": 133,
+        "revenue": 33250,
+        "roi": 403.79
+      }
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "g1",
+      "name": "Google - Serviços Automotivos",
+      "platform": "google",
+      "months": [
+        {"month": "2024-01", "investment": 1200, "conversions": 22, "revenue": 5500},
+        {"month": "2024-02", "investment": 1400, "conversions": 28, "revenue": 7000},
+        {"month": "2024-03", "investment": 1500, "conversions": 32, "revenue": 8000},
+        {"month": "2024-04", "investment": 1600, "conversions": 35, "revenue": 8750},
+        {"month": "2024-05", "investment": 1800, "conversions": 40, "revenue": 10000},
+        {"month": "2024-06", "investment": 2000, "conversions": 45, "revenue": 11250}
+      ]
+    },
+    {
+      "id": "g2",
+      "name": "Google - Pneus e Rodas",
+      "platform": "google",
+      "months": [
+        {"month": "2024-01", "investment": 1300, "conversions": 23, "revenue": 5750},
+        {"month": "2024-02", "investment": 1400, "conversions": 24, "revenue": 6000},
+        {"month": "2024-03", "investment": 1500, "conversions": 26, "revenue": 6500},
+        {"month": "2024-04", "investment": 1600, "conversions": 27, "revenue": 6750},
+        {"month": "2024-05", "investment": 1700, "conversions": 28, "revenue": 7000},
+        {"month": "2024-06", "investment": 1800, "conversions": 30, "revenue": 7500}
+      ]
+    },
+    {
+      "id": "m1",
+      "name": "Meta - Promoção de Verão",
+      "platform": "meta",
+      "months": [
+        {"month": "2024-01", "investment": 900, "conversions": 16, "revenue": 4000},
+        {"month": "2024-02", "investment": 1000, "conversions": 19, "revenue": 4750},
+        {"month": "2024-03", "investment": 1100, "conversions": 21, "revenue": 5250},
+        {"month": "2024-04", "investment": 1200, "conversions": 24, "revenue": 6000},
+        {"month": "2024-05", "investment": 1300, "conversions": 26, "revenue": 6500},
+        {"month": "2024-06", "investment": 1400, "conversions": 29, "revenue": 7250}
+      ]
+    },
+    {
+      "id": "m2",
+      "name": "Meta - Retargeting",
+      "platform": "meta",
+      "months": [
+        {"month": "2024-01", "investment": 900, "conversions": 16, "revenue": 4000},
+        {"month": "2024-02", "investment": 1000, "conversions": 19, "revenue": 4750},
+        {"month": "2024-03", "investment": 1100, "conversions": 21, "revenue": 5250},
+        {"month": "2024-04", "investment": 1200, "conversions": 24, "revenue": 6000},
+        {"month": "2024-05", "investment": 1300, "conversions": 26, "revenue": 6500},
+        {"month": "2024-06", "investment": 1400, "conversions": 29, "revenue": 7250}
+      ]
+    }
+  ]
+}
