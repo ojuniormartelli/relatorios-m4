@@ -61,16 +61,14 @@ function processarResultadosMeta(resultados) {
     if (!mes) continue;
 
     const gasto = parseFloat(row.spend || 0);
-    const receita = parseFloat(row.conversion_values || 0);
     const conversoes = parseInt(row.conversions || 0);
     const nomeCampanha = row.campaign_name || 'Sem nome';
 
     if (!porMes[mes]) {
-      porMes[mes] = { investment: 0, conversions: 0, revenue: 0 };
+      porMes[mes] = { investment: 0, conversions: 0 };
     }
     porMes[mes].investment += gasto;
     porMes[mes].conversions += conversoes;
-    porMes[mes].revenue += receita;
 
     const campanhaId = row.campaign_id || nomeCampanha.toLowerCase().replace(/\s+/g, '-');
     if (!campanhas[campanhaId]) {
@@ -82,11 +80,10 @@ function processarResultadosMeta(resultados) {
       };
     }
     if (!campanhas[campanhaId].months[mes]) {
-      campanhas[campanhaId].months[mes] = { month: mes, investment: 0, conversions: 0, revenue: 0 };
+      campanhas[campanhaId].months[mes] = { month: mes, investment: 0, conversions: 0 };
     }
     campanhas[campanhaId].months[mes].investment += gasto;
     campanhas[campanhaId].months[mes].conversions += conversoes;
-    campanhas[campanhaId].months[mes].revenue += receita;
   }
 
   const monthlyData = Object.entries(porMes)

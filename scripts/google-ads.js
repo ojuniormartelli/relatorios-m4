@@ -78,15 +78,13 @@ function processarResultadosGoogle(resultados) {
 
     const mes = s.date.substring(0, 7);
     const custo = Number(m.costMicros || 0) / 1000000;
-    const receita = Number(m.conversionsValue || 0);
     const conversoes = Number(m.conversions || 0);
 
     if (!porMes[mes]) {
-      porMes[mes] = { investment: 0, conversions: 0, revenue: 0 };
+      porMes[mes] = { investment: 0, conversions: 0 };
     }
     porMes[mes].investment += custo;
     porMes[mes].conversions += conversoes;
-    porMes[mes].revenue += receita;
   }
 
   return Object.entries(porMes)

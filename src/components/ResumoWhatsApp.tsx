@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react';
 interface ResumoWhatsAppProps {
   companyName: string;
   investimento: number;
-  retorno: number;
-  roi: number;
   totalConversoes: number;
   custoPorConversao: number;
   periodo: string;
@@ -17,8 +15,6 @@ interface ResumoWhatsAppProps {
 export default function ResumoWhatsApp({
   companyName,
   investimento,
-  retorno,
-  roi,
   totalConversoes,
   custoPorConversao,
   periodo,
@@ -31,29 +27,23 @@ export default function ResumoWhatsApp({
     setCurrentUrl(window.location.href);
   }, []);
 
-  const lucro = retorno - investimento;
-  const isPositivo = lucro > 0;
-
   const textoResumo = 
 `📊 *RELATÓRIO DE PERFORMANCE - ${companyName.toUpperCase()}*
 ━━━━━━━━━━━━━━━━━━━━━
 📅 *Período:* ${periodo}
 📱 *Plataforma:* ${plataforma}
 
-💰 *Resumo Financeiro:*
-• Investimento: R$ ${investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-• Retorno: R$ ${retorno.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-• ${isPositivo ? '✅' : '❌'} Lucro: R$ ${lucro.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-• ROI: ${roi.toFixed(0)}%
-• A cada R$ 1,00 investido → retornou R$ ${(roi / 100 + 1).toFixed(2)}
+💰 *Investimento:*
+• Total investido: R$ ${investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
 
 🎯 *Resultados:*
 • Conversões: ${totalConversoes}
-• Custo por conversão: R$ ${custoPorConversao.toFixed(2)}
+• Custo por conversão (CPA): R$ ${custoPorConversao.toFixed(2)}
+• Total investido por lead: R$ ${custoPorConversao.toFixed(2)}
 
 ━━━━━━━━━━━━━━━━━━━━━
 📲 *Relatório completo:* ${currentUrl}
-🔗 Clique no link acima para ver detalhes com gráficos`;
+🔗 Clique no link acima para ver gráficos detalhados`;
 
   const handleCopy = async () => {
     try {
@@ -61,7 +51,6 @@ export default function ResumoWhatsApp({
       setCopiado(true);
       setTimeout(() => setCopiado(false), 2000);
     } catch {
-      // fallback
       const textarea = document.createElement('textarea');
       textarea.value = textoResumo;
       document.body.appendChild(textarea);

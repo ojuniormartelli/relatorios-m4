@@ -1,13 +1,19 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { format } from 'date-fns';
+import { format, startOfMonth, endOfDay } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import ResumoGeral from './ResumoGeral';
 import GraficoEvolucao from './GraficoEvolucao';
 import TabelaCampanhas from './TabelaCampanhas';
 import Filtros from './Filtros';
 import ResumoWhatsApp from './ResumoWhatsApp';
+
+interface PlatformData {
+  investment: number;
+  conversions: number;
+  costPerConversion: number;
+}
 
 interface ClientData {
   client: {
@@ -20,23 +26,11 @@ interface ClientData {
   };
   monthlyData: Array<{
     month: string;
-    googleAds: {
-      investment: number;
-      conversions: number;
-      revenue: number;
-      costPerConversion: number;
-    };
-    metaAds: {
-      investment: number;
-      conversions: number;
-      revenue: number;
-      costPerConversion: number;
-    };
+    googleAds: PlatformData;
+    metaAds: PlatformData;
     total: {
       investment: number;
       conversions: number;
-      revenue: number;
-      roi: number;
     };
   }>;
   campaigns: Array<{
@@ -47,7 +41,6 @@ interface ClientData {
       month: string;
       investment: number;
       conversions: number;
-      revenue: number;
     }>;
   }>;
 }
@@ -62,23 +55,21 @@ function calcTotals(monthlyData: ClientData['monthlyData'], platform: string) {
       if (platform === 'all' || platform === 'google') {
         acc.investment += month.googleAds.investment;
         acc.conversions += month.googleAds.conversions;
-        acc.revenue += month.googleAds.revenue;
       }
       if (platform === 'all' || platform === 'meta') {
         acc.investment += month.metaAds.investment;
         acc.conversions += month.metaAds.conversions;
-        acc.revenue += month.metaAds.revenue;
       }
       return acc;
     },
-    { investment: 0, conversions: 0, revenue: 0 }
+    { investment: 0, conversions: 0 }
   );
 }
 
-function calcDerived(totals: { investment: number; conversions: number; revenue: number }) {
+function calcDerived(totals: { investment: number; conversions: number }) {
   return {
-    ...totals,
-    roi: totals.investment > 0 ? ((totals.revenue - totals.investment) / totals.investment) * 100 : 0,
+    investment: totals.investment,
+    conversions: totals.conversions,
     costPerConversion: totals.conversions > 0 ? totals.investment / totals.conversions : 0,
   };
 }
@@ -89,7 +80,13 @@ function calcVariacao(atual: number, anterior: number): number {
 }
 
 export default function Dashboard({ data }: DashboardProps) {
-  const [mesSelecionado, setMesSelecionado] = useState<string>('all');
+  // Default to current month
+  const mesAtual = useMemo(() => {
+    const hoje = new Date();
+    return format(hoje, 'yyyy-MM');
+  }, []);
+
+  const [mesSelecionado, setMesSelecionado] = useState<string>(mesAtual);
   const [plataformaSelecionada, setPlataformaSelecionada] = useState<'all' | 'google' | 'meta'>('all');
 
   // Get available months (sorted ascending)
@@ -129,8 +126,6 @@ export default function Dashboard({ data }: DashboardProps) {
 
     return {
       investimento: calcVariacao(atual.investment, anterior.investment),
-      retorno: calcVariacao(atual.revenue, anterior.revenue),
-      roi: calcVariacao(atual.roi, anterior.roi),
       conversoes: calcVariacao(atual.conversions, anterior.conversions),
       custoPorConversao: calcVariacao(atual.costPerConversion, anterior.costPerConversion),
     };
@@ -145,21 +140,18 @@ export default function Dashboard({ data }: DashboardProps) {
 
     return monthlyData.map((month) => {
       let investment = 0;
-      let revenue = 0;
       let conversions = 0;
 
       if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
         investment += month.googleAds.investment;
-        revenue += month.googleAds.revenue;
         conversions += month.googleAds.conversions;
       }
       if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
         investment += month.metaAds.investment;
-        revenue += month.metaAds.revenue;
         conversions += month.metaAds.conversions;
       }
 
-      return { month: month.month, investment, revenue, conversions };
+      return { month: month.month, investment, conversions };
     });
   }, [data.monthlyData, mesSelecionado, plataformaSelecionada]);
 
@@ -231,8 +223,6 @@ export default function Dashboard({ data }: DashboardProps) {
         {/* Summary Cards */}
         <ResumoGeral
           investimento={dadosFiltrados.investment}
-          retorno={dadosFiltrados.revenue}
-          roi={dadosFiltrados.roi}
           totalConversoes={dadosFiltrados.conversions}
           custoPorConversao={dadosFiltrados.costPerConversion}
           periodo={periodoLabel}
@@ -243,8 +233,6 @@ export default function Dashboard({ data }: DashboardProps) {
         <ResumoWhatsApp
           companyName={data.client.name}
           investimento={dadosFiltrados.investment}
-          retorno={dadosFiltrados.revenue}
-          roi={dadosFiltrados.roi}
           totalConversoes={dadosFiltrados.conversions}
           custoPorConversao={dadosFiltrados.costPerConversion}
           periodo={periodoLabel}
@@ -254,7 +242,7 @@ export default function Dashboard({ data }: DashboardProps) {
         {/* Evolution Chart */}
         <GraficoEvolucao
           data={chartData}
-          title="Evolução Mensal - Investimento vs Retorno"
+          title="Evolução de Investimento e Conversões"
         />
 
         {/* Campaigns Table */}

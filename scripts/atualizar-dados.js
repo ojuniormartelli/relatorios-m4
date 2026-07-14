@@ -50,18 +50,15 @@ async function buscarDeTodasAPIs(cliente) {
         if (existente) {
           existente.googleAds = { ...d };
           existente.total.investment += d.investment;
-          existente.total.revenue += d.revenue;
           existente.total.conversions += d.conversions;
         } else {
           dadosCombinados.monthlyData.push({
             month: d.month,
             googleAds: { ...d },
-            metaAds: { investment: 0, conversions: 0, revenue: 0, costPerConversion: 0 },
+            metaAds: { investment: 0, conversions: 0, costPerConversion: 0 },
             total: {
               investment: d.investment,
               conversions: d.conversions,
-              revenue: d.revenue,
-              roi: 0,
             },
           });
         }
@@ -88,18 +85,15 @@ async function buscarDeTodasAPIs(cliente) {
         if (existente) {
           existente.metaAds = { ...d };
           existente.total.investment += d.investment;
-          existente.total.revenue += d.revenue;
           existente.total.conversions += d.conversions;
         } else {
           dadosCombinados.monthlyData.push({
             month: d.month,
-            googleAds: { investment: 0, conversions: 0, revenue: 0, costPerConversion: 0 },
+            googleAds: { investment: 0, conversions: 0, costPerConversion: 0 },
             metaAds: { ...d },
             total: {
               investment: d.investment,
               conversions: d.conversions,
-              revenue: d.revenue,
-              roi: 0,
             },
           });
         }
@@ -112,13 +106,6 @@ async function buscarDeTodasAPIs(cliente) {
     }
   } else {
     console.log('  ⏭️ Meta Ads não configurado (pule META_ADS_* envs)');
-  }
-
-  // Calcular ROI para cada mês
-  for (const mes of dadosCombinados.monthlyData) {
-    mes.total.roi = mes.total.investment > 0
-      ? ((mes.total.revenue - mes.total.investment) / mes.total.investment) * 100
-      : 0;
   }
 
   // Ordenar por mês
@@ -162,8 +149,7 @@ function csvParaJson(dadosCsv, nomeCliente) {
         .reduce((acc, x) => ({
           investment: acc.investment + (x.investimento || 0),
           conversions: acc.conversions + (x.conversoes || 0),
-          revenue: acc.revenue + (x.receita || 0),
-        }), { investment: 0, conversions: 0, revenue: 0 });
+        }), { investment: 0, conversions: 0 });
       return {
         ...d,
         costPerConversion: d.conversions > 0 ? d.investment / d.conversions : 0,
@@ -173,7 +159,6 @@ function csvParaJson(dadosCsv, nomeCliente) {
     const google = calcPlataforma('google');
     const meta = calcPlataforma('meta');
     const inv = google.investment + meta.investment;
-    const rev = google.revenue + meta.revenue;
     const conv = google.conversions + meta.conversions;
 
     return {
@@ -183,8 +168,6 @@ function csvParaJson(dadosCsv, nomeCliente) {
       total: {
         investment: inv,
         conversions: conv,
-        revenue: rev,
-        roi: inv > 0 ? ((rev - inv) / inv) * 100 : 0,
       },
     };
   });
@@ -201,8 +184,7 @@ function csvParaJson(dadosCsv, nomeCliente) {
           month: mes,
           investment: d.investimento || 0,
           conversions: d.conversoes || 0,
-          revenue: d.receita || 0,
-        } : { month: mes, investment: 0, conversions: 0, revenue: 0 };
+        } : { month: mes, investment: 0, conversions: 0 };
       }),
     };
   });
@@ -265,16 +247,14 @@ function gerarDadosSimulados() {
       googleAds: {
         investment: 2000 + Math.random() * 1500,
         conversions: 30 + Math.random() * 40,
-        revenue: 8000 + Math.random() * 8000,
         costPerConversion: 0,
       },
       metaAds: {
         investment: 1500 + Math.random() * 1000,
         conversions: 20 + Math.random() * 30,
-        revenue: 5000 + Math.random() * 6000,
         costPerConversion: 0,
       },
-      total: { investment: 0, conversions: 0, revenue: 0, roi: 0 },
+      total: { investment: 0, conversions: 0 },
     })),
     campaigns: [
       {
@@ -285,7 +265,6 @@ function gerarDadosSimulados() {
           month: mes,
           investment: 1000 + Math.random() * 800,
           conversions: 15 + Math.random() * 20,
-          revenue: 4000 + Math.random() * 4000,
         })),
       },
       {
@@ -296,7 +275,6 @@ function gerarDadosSimulados() {
           month: mes,
           investment: 800 + Math.random() * 600,
           conversions: 10 + Math.random() * 15,
-          revenue: 3000 + Math.random() * 3000,
         })),
       },
     ],

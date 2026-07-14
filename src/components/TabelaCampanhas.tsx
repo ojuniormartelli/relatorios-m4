@@ -1,13 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { TrendingUp, TrendingDown, ChevronDown, ChevronUp } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface CampaignMonth {
   month: string;
   investment: number;
   conversions: number;
-  revenue: number;
 }
 
 interface Campaign {
@@ -34,21 +33,24 @@ export default function TabelaCampanhas({ campaigns, selectedMonth }: TabelaProp
       (acc, month) => ({
         investment: acc.investment + month.investment,
         conversions: acc.conversions + month.conversions,
-        revenue: acc.revenue + month.revenue,
       }),
-      { investment: 0, conversions: 0, revenue: 0 }
+      { investment: 0, conversions: 0 }
     );
-  };
-
-  const getROI = (investment: number, revenue: number) => {
-    if (investment === 0) return 0;
-    return ((revenue - investment) / investment) * 100;
   };
 
   const getCostPerConversion = (investment: number, conversions: number) => {
     if (conversions === 0) return 0;
     return investment / conversions;
   };
+
+  if (campaigns.length === 0) {
+    return (
+      <div className="bg-white rounded-xl shadow-md p-6 mb-8">
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">Performance por Campanha</h3>
+        <p className="text-gray-500 text-sm">Nenhuma campanha encontrada para o período selecionado.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6 mb-8">
@@ -61,25 +63,20 @@ export default function TabelaCampanhas({ campaigns, selectedMonth }: TabelaProp
               <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Campanha</th>
               <th className="text-left py-3 px-4 text-sm font-semibold text-gray-600">Plataforma</th>
               <th className="text-right py-3 px-4 text-sm font-semibold text-gray-600">Investimento</th>
-              <th className="text-right py-3 px-4 text-sm font-semibold text-gray-600">Retorno</th>
-              <th className="text-right py-3 px-4 text-sm font-semibold text-gray-600">ROI</th>
               <th className="text-right py-3 px-4 text-sm font-semibold text-gray-600">Conversões</th>
-              <th className="text-right py-3 px-4 text-sm font-semibold text-gray-600">Custo/Conversão</th>
+              <th className="text-right py-3 px-4 text-sm font-semibold text-gray-600">CPA</th>
               <th className="text-center py-3 px-4 text-sm font-semibold text-gray-600"></th>
             </tr>
           </thead>
           <tbody>
             {campaigns.map((campaign) => {
               const totals = getCampaignTotals(campaign);
-              const roi = getROI(totals.investment, totals.revenue);
               const costPerConversion = getCostPerConversion(totals.investment, totals.conversions);
               const isExpanded = expandedCampaign === campaign.id;
-              const isPositive = roi > 0;
 
               return (
-                <>
+                <React.Fragment key={campaign.id}>
                   <tr 
-                    key={campaign.id}
                     className="border-b border-gray-100 hover:bg-gray-50 cursor-pointer"
                     onClick={() => setExpandedCampaign(isExpanded ? null : campaign.id)}
                   >
@@ -96,59 +93,64 @@ export default function TabelaCampanhas({ campaigns, selectedMonth }: TabelaProp
                       </span>
                     </td>
                     <td className="py-4 px-4 text-right text-gray-700">
-                      R$ {totals.investment.toLocaleString('pt-BR')}
-                    </td>
-                    <td className="py-4 px-4 text-right font-medium text-gray-800">
-                      R$ {totals.revenue.toLocaleString('pt-BR')}
+                      R$ {totals.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                     </td>
                     <td className="py-4 px-4 text-right">
-                      <span className={`inline-flex items-center font-semibold ${
-                        isPositive ? 'text-green-600' : 'text-red-600'
-                      }`}>
-                        {isPositive ? (
-                          <TrendingUp className="w-4 h-4 mr-1" />
-                        ) : (
-                          <TrendingDown className="w-4 h-4 mr-1" />
-                        )}
-                        {roi.toFixed(0)}%
+                      <span className="font-semibold text-gray-800">
+                        {totals.conversions}
                       </span>
                     </td>
                     <td className="py-4 px-4 text-right text-gray-700">
-                      {totals.conversions}
-                    </td>
-                    <td className="py-4 px-4 text-right text-gray-700">
-                      R$ {costPerConversion.toFixed(2)}
+                      <span className={costPerConversion > 0 ? 'font-medium' : ''}>
+                        {costPerConversion > 0 
+                          ? `R$ ${costPerConversion.toFixed(2)}`
+                          : totals.investment > 0 && totals.conversions === 0
+                            ? 'Sem conversões'
+                            : '—'}
+                      </span>
                     </td>
                     <td className="py-4 px-4 text-center">
                       {isExpanded ? (
-                        <ChevronUp className="w-5 h-5 text-gray-400" />
+                        <ChevronUp className="w-5 h-5 text-gray-400 inline" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-400" />
+                        <ChevronDown className="w-5 h-5 text-gray-400 inline" />
                       )}
                     </td>
                   </tr>
                   {isExpanded && (
                     <tr key={`${campaign.id}-details`}>
-                      <td colSpan={8} className="py-4 px-4 bg-gray-50">
+                      <td colSpan={6} className="py-4 px-4 bg-gray-50">
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                          {campaign.months.map((monthData) => (
-                            <div key={monthData.month} className="bg-white rounded-lg p-3 shadow-sm">
-                              <p className="text-xs text-gray-500 mb-1">
-                                {new Date(monthData.month + '-01').toLocaleDateString('pt-BR', { month: 'short' })}
-                              </p>
-                              <p className="text-sm font-medium text-gray-800">
-                                R$ {monthData.revenue.toLocaleString('pt-BR')}
-                              </p>
-                              <p className="text-xs text-gray-500">
-                                {monthData.conversions} conversões
-                              </p>
-                            </div>
-                          ))}
+                          {campaign.months
+                            .sort((a, b) => a.month.localeCompare(b.month))
+                            .map((monthData) => {
+                              const cpa = monthData.conversions > 0 
+                                ? monthData.investment / monthData.conversions 
+                                : 0;
+                              return (
+                                <div key={monthData.month} className="bg-white rounded-lg p-3 shadow-sm border border-gray-100">
+                                  <p className="text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                                    {new Date(monthData.month + '-01').toLocaleDateString('pt-BR', { month: 'short', year: '2-digit' })}
+                                  </p>
+                                  <p className="text-sm text-gray-700">
+                                    <span className="text-gray-400">Inv:</span> R$ {monthData.investment.toFixed(2)}
+                                  </p>
+                                  <p className="text-sm text-gray-700">
+                                    <span className="text-gray-400">Conv:</span> {monthData.conversions}
+                                  </p>
+                                  {cpa > 0 && (
+                                    <p className="text-sm text-purple-700 font-medium">
+                                      CPA: R$ {cpa.toFixed(2)}
+                                    </p>
+                                  )}
+                                </div>
+                              );
+                            })}
                         </div>
                       </td>
                     </tr>
                   )}
-                </>
+                </React.Fragment>
               );
             })}
           </tbody>
