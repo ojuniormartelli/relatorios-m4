@@ -54,7 +54,7 @@ export default function GraficoEvolucao({ data, title }: GraficoProps) {
             />
             <YAxis tickFormatter={formatCurrency} tick={{ fontSize: 12 }} />
             <Tooltip 
-              formatter={(value) => `R$ ${Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+              formatter={(value) => `R$ ${Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
               labelFormatter={mesLabelFormatter}
             />
             <Legend />
@@ -107,7 +107,7 @@ export default function GraficoEvolucao({ data, title }: GraficoProps) {
               <p className="font-medium text-gray-700">{mesLabelFormatter(item.month)}</p>
               <div className="flex justify-between mt-1 text-gray-600">
                 <span>Investimento:</span>
-                <span className="font-medium">R$ {item.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                <span className="font-medium">R$ {item.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Conversões:</span>

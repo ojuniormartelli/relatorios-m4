@@ -110,7 +110,7 @@ export default function AdminDashboard() {
                         <div className="text-center">
                           <p className="text-gray-500">Investimento</p>
                           <p className="font-semibold text-gray-800">
-                            R$ {lastMonth.total.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                            R$ {lastMonth.total.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                           </p>
                         </div>
                         <div className="text-center">

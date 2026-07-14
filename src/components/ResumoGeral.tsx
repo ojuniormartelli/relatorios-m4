@@ -53,7 +53,7 @@ export default function ResumoGeral({
           <div>
             <p className="text-sm text-gray-500 font-medium">Investimento Total</p>
             <p className="text-2xl font-bold text-gray-800 mt-1">
-              R$ {investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+              R$ {investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </p>
           </div>
           <div className="bg-blue-100 p-3 rounded-full">

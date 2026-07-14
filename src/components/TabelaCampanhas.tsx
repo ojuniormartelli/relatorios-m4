@@ -93,7 +93,7 @@ export default function TabelaCampanhas({ campaigns, selectedMonth }: TabelaProp
                       </span>
                     </td>
                     <td className="py-4 px-4 text-right text-gray-700">
-                      R$ {totals.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                      R$ {totals.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </td>
                     <td className="py-4 px-4 text-right">
                       <span className="font-semibold text-gray-800">

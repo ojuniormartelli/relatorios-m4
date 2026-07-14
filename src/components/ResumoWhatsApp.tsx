@@ -34,7 +34,7 @@ export default function ResumoWhatsApp({
 📱 *Plataforma:* ${plataforma}
 
 💰 *Investimento:*
-• Total investido: R$ ${investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+• Total investido: R$ ${investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 
 🎯 *Resultados:*
 • Conversões: ${totalConversoes}
