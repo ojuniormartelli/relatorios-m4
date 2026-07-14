@@ -1,0 +1,119 @@
+'use client';
+
+import { Copy, Check } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+interface ResumoWhatsAppProps {
+  companyName: string;
+  investimento: number;
+  retorno: number;
+  roi: number;
+  totalConversoes: number;
+  custoPorConversao: number;
+  periodo: string;
+  plataforma: string;
+}
+
+export default function ResumoWhatsApp({
+  companyName,
+  investimento,
+  retorno,
+  roi,
+  totalConversoes,
+  custoPorConversao,
+  periodo,
+  plataforma,
+}: ResumoWhatsAppProps) {
+  const [copiado, setCopiado] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState('');
+
+  useEffect(() => {
+    setCurrentUrl(window.location.href);
+  }, []);
+
+  const lucro = retorno - investimento;
+  const isPositivo = lucro > 0;
+
+  const textoResumo = 
+`📊 *RELATÓRIO DE PERFORMANCE - ${companyName.toUpperCase()}*
+━━━━━━━━━━━━━━━━━━━━━
+📅 *Período:* ${periodo}
+📱 *Plataforma:* ${plataforma}
+
+💰 *Resumo Financeiro:*
+• Investimento: R$ ${investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+• Retorno: R$ ${retorno.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+• ${isPositivo ? '✅' : '❌'} Lucro: R$ ${lucro.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+• ROI: ${roi.toFixed(0)}%
+• A cada R$ 1,00 investido → retornou R$ ${(roi / 100 + 1).toFixed(2)}
+
+🎯 *Resultados:*
+• Conversões: ${totalConversoes}
+• Custo por conversão: R$ ${custoPorConversao.toFixed(2)}
+
+━━━━━━━━━━━━━━━━━━━━━
+📲 *Relatório completo:* ${currentUrl}
+🔗 Clique no link acima para ver detalhes com gráficos`;
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(textoResumo);
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000);
+    } catch {
+      // fallback
+      const textarea = document.createElement('textarea');
+      textarea.value = textoResumo;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000);
+    }
+  };
+
+  const handleWhatsApp = () => {
+    const texto = encodeURIComponent(textoResumo);
+    window.open(`https://wa.me/?text=${texto}`, '_blank');
+  };
+
+  return (
+    <div className="bg-white rounded-xl shadow-md p-6 mb-8">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-semibold text-gray-800">
+          📱 Compartilhar no WhatsApp
+        </h3>
+        <div className="flex gap-2">
+          <button
+            onClick={handleCopy}
+            className="flex items-center gap-1.5 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
+          >
+            {copiado ? (
+              <Check className="w-4 h-4 text-green-600" />
+            ) : (
+              <Copy className="w-4 h-4" />
+            )}
+            {copiado ? 'Copiado!' : 'Copiar resumo'}
+          </button>
+          <button
+            onClick={handleWhatsApp}
+            className="flex items-center gap-1.5 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium transition-colors"
+          >
+            <span className="text-lg">📲</span>
+            Enviar via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      {/* Preview do texto */}
+      <div className="bg-gray-50 rounded-lg p-4 text-sm text-gray-700 whitespace-pre-line font-mono leading-relaxed border border-gray-200">
+        {textoResumo}
+      </div>
+
+      <p className="text-xs text-gray-400 mt-3">
+        O cliente receberá um resumo direto no WhatsApp + link para o dashboard completo com gráficos interativos.
+      </p>
+    </div>
+  );
+}

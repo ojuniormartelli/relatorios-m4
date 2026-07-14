@@ -1,6 +1,40 @@
 'use client';
 
-import { TrendingUp, TrendingDown, DollarSign, Target, BarChart3, PiggyBank } from 'lucide-react';
+import { TrendingUp, TrendingDown, DollarSign, Target, BarChart3, PiggyBank, Minus } from 'lucide-react';
+
+interface VariacaoProps {
+  valor: number;
+  positivo?: boolean; // se maior é melhor (ex: ROI, receita) ou menor é melhor (ex: custo)
+}
+
+function VariacaoBadge({ valor, positivo = true }: VariacaoProps) {
+  if (valor === 0) return null;
+  
+  const isPositive = positivo ? valor > 0 : valor < 0;
+  const isNeutral = valor === 0;
+
+  if (isNeutral) {
+    return (
+      <span className="inline-flex items-center text-xs text-gray-500 ml-2">
+        <Minus className="w-3 h-3 mr-0.5" />
+        estável
+      </span>
+    );
+  }
+
+  return (
+    <span className={`inline-flex items-center text-xs font-medium ml-2 ${
+      isPositive ? 'text-green-600' : 'text-red-600'
+    }`}>
+      {isPositive ? (
+        <TrendingUp className="w-3 h-3 mr-0.5" />
+      ) : (
+        <TrendingDown className="w-3 h-3 mr-0.5" />
+      )}
+      {Math.abs(valor).toFixed(1)}%
+    </span>
+  );
+}
 
 interface ResumoProps {
   investimento: number;
@@ -9,6 +43,13 @@ interface ResumoProps {
   totalConversoes: number;
   custoPorConversao: number;
   periodo: string;
+  comparativo?: {
+    investimento: number;
+    retorno: number;
+    roi: number;
+    conversoes: number;
+    custoPorConversao: number;
+  };
 }
 
 export default function ResumoGeral({ 
@@ -17,7 +58,8 @@ export default function ResumoGeral({
   roi, 
   totalConversoes, 
   custoPorConversao,
-  periodo 
+  periodo,
+  comparativo
 }: ResumoProps) {
   const lucro = retorno - investimento;
   const isPositivo = lucro > 0;
@@ -37,7 +79,17 @@ export default function ResumoGeral({
             <PiggyBank className="w-6 h-6 text-blue-600" />
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">{periodo}</p>
+        <div className="flex items-center mt-2">
+          <p className="text-xs text-gray-400">{periodo}</p>
+          {comparativo && (
+            <VariacaoBadge valor={comparativo.investimento} />
+          )}
+        </div>
+        {comparativo && (
+          <p className="text-xs text-gray-400 mt-1">
+            Período anterior: R$ {(investimento - comparativo.investimento) > 0 ? '+' : ''}R$ {(investimento - comparativo.investimento).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+          </p>
+        )}
       </div>
 
       {/* Retorno / Receita */}
@@ -53,7 +105,7 @@ export default function ResumoGeral({
             <DollarSign className="w-6 h-6 text-green-600" />
           </div>
         </div>
-        <div className="flex items-center mt-3">
+        <div className="flex items-center mt-2">
           {isPositivo ? (
             <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
           ) : (
@@ -62,6 +114,9 @@ export default function ResumoGeral({
           <span className={`text-sm ${isPositivo ? 'text-green-600' : 'text-red-600'}`}>
             {isPositivo ? '+' : ''}R$ {lucro.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} de lucro
           </span>
+          {comparativo && (
+            <VariacaoBadge valor={comparativo.retorno} />
+          )}
         </div>
       </div>
 
@@ -78,9 +133,14 @@ export default function ResumoGeral({
             <BarChart3 className={`w-6 h-6 ${isPositivo ? 'text-green-600' : 'text-red-600'}`} />
           </div>
         </div>
-        <p className="text-sm text-gray-600 mt-3">
-          Para cada R$ 1,00 investido, retornou R$ {(roi / 100 + 1).toFixed(2)}
-        </p>
+        <div className="flex items-center mt-2">
+          <p className="text-sm text-gray-600">
+            Para cada R$ 1,00 investido → retornou R$ {(roi / 100 + 1).toFixed(2)}
+          </p>
+          {comparativo && (
+            <VariacaoBadge valor={comparativo.roi} />
+          )}
+        </div>
       </div>
 
       {/* Total de Conversões */}
@@ -96,7 +156,12 @@ export default function ResumoGeral({
             <Target className="w-6 h-6 text-purple-600" />
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Leads / Vendas geradas</p>
+        <div className="flex items-center mt-2">
+          <p className="text-xs text-gray-400">Leads / Vendas geradas</p>
+          {comparativo && (
+            <VariacaoBadge valor={comparativo.conversoes} />
+          )}
+        </div>
       </div>
 
       {/* Custo por Conversão */}
@@ -112,7 +177,12 @@ export default function ResumoGeral({
             <Target className="w-6 h-6 text-orange-500" />
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Quanto custou cada resultado</p>
+        <div className="flex items-center mt-2">
+          <p className="text-xs text-gray-400">Quanto custou cada resultado</p>
+          {comparativo && (
+            <VariacaoBadge valor={comparativo.custoPorConversao} positivo={false} />
+          )}
+        </div>
       </div>
 
       {/* Lucro Líquido */}
@@ -132,7 +202,7 @@ export default function ResumoGeral({
             )}
           </div>
         </div>
-        <p className="text-xs text-gray-400 mt-3">Receita - Investimento</p>
+        <p className="text-xs text-gray-400 mt-2">Receita - Investimento</p>
       </div>
     </div>
   );

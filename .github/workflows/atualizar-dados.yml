@@ -1,0 +1,58 @@
+# Nome: Atualização Diária de Dados
+# Descrição: Atualiza automaticamente os dados dos relatórios todos os dias à meia-noite
+# Este workflow pode ser adaptado para buscar dados de APIs (Google Ads, Meta Ads) ou Google Sheets
+
+name: Atualizar Dados Diários
+
+on:
+  schedule:
+    # Executa todos os dias à meia-noite (UTC-3 = Brasil)
+    - cron: '0 3 * * *'   # 03:00 UTC = 00:00 BRT
+  workflow_dispatch:        # Permite executar manualmente pelo GitHub
+
+jobs:
+  atualizar-dados:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Instalar dependências
+        run: npm ci
+
+      - name: 🔄 Atualizar dados dos clientes
+        run: node scripts/atualizar-dados.js
+        env:
+          # Se for usar Google Sheets, adicione as credenciais aqui
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+          # Se for usar APIs de anúncios, adicione os tokens aqui
+          # GOOGLE_ADS_TOKEN: ${{ secrets.GOOGLE_ADS_TOKEN }}
+          # META_ADS_TOKEN: ${{ secrets.META_ADS_TOKEN }}
+
+      - name: ✅ Verificar se houveram mudanças
+        id: check_changes
+        run: |
+          if [[ -z $(git status -s) ]]; then
+            echo "Nenhuma mudança nos dados."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 📝 Commitar e push se houver mudanças
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "bot@m4mkt.com.br"
+          git config --local user.name "M4 Bot"
+          git add src/data/
+          git commit -m "chore: atualização automática de dados - $(date +'%d/%m/%Y')"
+          git push
