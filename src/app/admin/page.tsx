@@ -101,30 +101,33 @@ export default function AdminDashboard() {
                   </div>
 
                   {/* Last Month Stats */}
-                  {lastMonth && (
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                      <div className="text-center">
-                        <p className="text-gray-500">Investimento</p>
-                        <p className="font-semibold text-gray-800">
-                          R$ {lastMonth.total.investment.toLocaleString('pt-BR')}
-                        </p>
+                  {lastMonth && (() => {
+                    const cpa = lastMonth.total.conversions > 0 
+                      ? lastMonth.total.investment / lastMonth.total.conversions 
+                      : 0;
+                    return (
+                      <div className="grid grid-cols-3 gap-4 text-sm">
+                        <div className="text-center">
+                          <p className="text-gray-500">Investimento</p>
+                          <p className="font-semibold text-gray-800">
+                            R$ {lastMonth.total.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                          </p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-gray-500">Conversões</p>
+                          <p className="font-semibold text-purple-600">
+                            {lastMonth.total.conversions}
+                          </p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-gray-500">CPA</p>
+                          <p className={`font-semibold ${cpa > 0 ? 'text-orange-600' : 'text-gray-400'}`}>
+                            {cpa > 0 ? `R$ ${cpa.toFixed(2)}` : '—'}
+                          </p>
+                        </div>
                       </div>
-                      <div className="text-center">
-                        <p className="text-gray-500">Retorno</p>
-                        <p className="font-semibold text-green-600">
-                          R$ {lastMonth.total.revenue.toLocaleString('pt-BR')}
-                        </p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-gray-500">ROI</p>
-                        <p className={`font-semibold ${
-                          lastMonth.total.roi > 0 ? 'text-green-600' : 'text-red-600'
-                        }`}>
-                          {lastMonth.total.roi.toFixed(0)}%
-                        </p>
-                      </div>
-                    </div>
-                  )}
+                    );
+                  })()}
 
                   {/* Actions */}
                   <div className="flex gap-2">
