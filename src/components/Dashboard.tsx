@@ -163,12 +163,16 @@ export default function Dashboard({ data }: DashboardProps) {
 
   // Format period label
   const periodoLabel = useMemo(() => {
+    const mesesNome = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    const mesesAbrev = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+
     if (mesSelecionado === 'all') {
-      const firstMonth = meses[0];
-      const lastMonth = meses[meses.length - 1];
-      return `${format(new Date(firstMonth + '-01'), 'MMM/yyyy', { locale: ptBR })} a ${format(new Date(lastMonth + '-01'), 'MMM/yyyy', { locale: ptBR })}`;
+      const [firstYear, firstMonth] = meses[0].split('-');
+      const [lastYear, lastMonth] = meses[meses.length - 1].split('-');
+      return `${mesesAbrev[parseInt(firstMonth) - 1]}/${firstYear} a ${mesesAbrev[parseInt(lastMonth) - 1]}/${lastYear}`;
     }
-    return format(new Date(mesSelecionado + '-01'), "MMMM 'de' yyyy", { locale: ptBR });
+    const [year, month] = mesSelecionado.split('-');
+    return `${mesesNome[parseInt(month) - 1]} de ${year}`;
   }, [mesSelecionado, meses]);
 
   // Platform label for WhatsApp
