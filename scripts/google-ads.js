@@ -1,0 +1,114 @@
+/**
+ * Integração com Google Ads API (CommonJS)
+ * Usa: GOOGLE_ADS_CLIENT_ID, GOOGLE_ADS_CLIENT_SECRET, 
+ *       GOOGLE_ADS_REFRESH_TOKEN, GOOGLE_ADS_DEVELOPER_TOKEN,
+ *       GOOGLE_ADS_CUSTOMER_ID
+ */
+
+const GOOGLE_ADS_API_VERSION = 'v17';
+
+async function renovarAccessToken({ clientId, clientSecret, refreshToken }) {
+  const response = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      client_id: clientId,
+      client_secret: clientSecret,
+      refresh_token: refreshToken,
+      grant_type: 'refresh_token',
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Erro ao renovar token Google: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.access_token;
+}
+
+async function buscarCampanhasGoogle({ accessToken, developerToken, customerId }) {
+  const query = `
+    SELECT
+      campaign.id,
+      campaign.name,
+      campaign.status,
+      metrics.impressions,
+      metrics.clicks,
+      metrics.ctr,
+      metrics.cost_micros,
+      metrics.conversions,
+      metrics.conversions_value,
+      segments.date
+    FROM campaign
+    WHERE segments.date DURING LAST_30_DAYS
+  `;
+
+  const response = await fetch(
+    `https://googleads.googleapis.com/${GOOGLE_ADS_API_VERSION}/customers/${customerId}/googleAds:search`,
+    {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'developer-token': developerToken,
+        'Content-Type': 'application/json',
+        'login-customer-id': customerId,
+      },
+      body: JSON.stringify({ query }),
+    }
+  );
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Erro Google Ads API: ${response.status} - ${text.substring(0, 200)}`);
+  }
+
+  const data = await response.json();
+  return processarResultadosGoogle(data.results || []);
+}
+
+function processarResultadosGoogle(resultados) {
+  const porMes = {};
+
+  for (const row of resultados) {
+    const c = row.campaign;
+    const m = row.metrics;
+    const s = row.segments;
+    if (!c || !m || !s) continue;
+
+    const mes = s.date.substring(0, 7);
+    const custo = Number(m.costMicros || 0) / 1000000;
+    const receita = Number(m.conversionsValue || 0);
+    const conversoes = Number(m.conversions || 0);
+
+    if (!porMes[mes]) {
+      porMes[mes] = { investment: 0, conversions: 0, revenue: 0 };
+    }
+    porMes[mes].investment += custo;
+    porMes[mes].conversions += conversoes;
+    porMes[mes].revenue += receita;
+  }
+
+  return Object.entries(porMes)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([month, data]) => ({
+      month,
+      ...data,
+      costPerConversion: data.conversions > 0 ? data.investment / data.conversions : 0,
+    }));
+}
+
+async function buscarDadosGoogleAds(config) {
+  console.log('  🔑 Renovando token de acesso...');
+  const accessToken = await renovarAccessToken(config);
+  console.log('  📊 Buscando dados das campanhas...');
+  const dados = await buscarCampanhasGoogle({
+    accessToken,
+    developerToken: config.developerToken,
+    customerId: config.customerId,
+  });
+  console.log(`  ✅ ${dados.length} meses encontrados`);
+  return dados;
+}
+
+module.exports = { buscarDadosGoogleAds };

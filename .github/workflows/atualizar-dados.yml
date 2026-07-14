@@ -1,21 +1,17 @@
-# Nome: Atualização Diária de Dados
-# Descrição: Atualiza automaticamente os dados dos relatórios todos os dias à meia-noite
-# Este workflow pode ser adaptado para buscar dados de APIs (Google Ads, Meta Ads) ou Google Sheets
-
 name: Atualizar Dados Diários
 
 on:
   schedule:
-    # Executa todos os dias à meia-noite (UTC-3 = Brasil)
-    - cron: '0 3 * * *'   # 03:00 UTC = 00:00 BRT
-  workflow_dispatch:        # Permite executar manualmente pelo GitHub
+    # Todos os dias às 00:00 (horário Brasília = 03:00 UTC)
+    - cron: '0 3 * * *'
+  workflow_dispatch:  # Permite executar manualmente
 
 jobs:
   atualizar-dados:
     runs-on: ubuntu-latest
     
     steps:
-      - name: 📥 Checkout do repositório
+      - name: 📥 Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -27,32 +23,36 @@ jobs:
           cache: 'npm'
 
       - name: 📦 Instalar dependências
-        run: npm ci
+        run: npm ci --omit=dev
 
-      - name: 🔄 Atualizar dados dos clientes
+      - name: 🔄 Buscar dados das APIs e atualizar
         run: node scripts/atualizar-dados.js
         env:
-          # Se for usar Google Sheets, adicione as credenciais aqui
-          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
-          # Se for usar APIs de anúncios, adicione os tokens aqui
-          # GOOGLE_ADS_TOKEN: ${{ secrets.GOOGLE_ADS_TOKEN }}
-          # META_ADS_TOKEN: ${{ secrets.META_ADS_TOKEN }}
+          # === Google Ads ===
+          GOOGLE_ADS_CLIENT_ID: ${{ secrets.GOOGLE_ADS_CLIENT_ID }}
+          GOOGLE_ADS_CLIENT_SECRET: ${{ secrets.GOOGLE_ADS_CLIENT_SECRET }}
+          GOOGLE_ADS_REFRESH_TOKEN: ${{ secrets.GOOGLE_ADS_REFRESH_TOKEN }}
+          GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+          GOOGLE_ADS_CUSTOMER_ID: ${{ secrets.GOOGLE_ADS_CUSTOMER_ID }}
+          
+          # === Meta Ads ===
+          META_ADS_TOKEN: ${{ secrets.META_ADS_TOKEN }}
+          META_ADS_ACCOUNT_ID: ${{ secrets.META_ADS_ACCOUNT_ID }}
 
-      - name: ✅ Verificar se houveram mudanças
-        id: check_changes
+      - name: ✅ Verificar mudanças
+        id: changes
         run: |
-          if [[ -z $(git status -s) ]]; then
-            echo "Nenhuma mudança nos dados."
+          if [ -z "$(git status -s)" ]; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: 📝 Commitar e push se houver mudanças
-        if: steps.check_changes.outputs.changed == 'true'
+      - name: 📝 Commitar e push
+        if: steps.changes.outputs.changed == 'true'
         run: |
-          git config --local user.email "bot@m4mkt.com.br"
-          git config --local user.name "M4 Bot"
+          git config user.name "M4 Bot"
+          git config user.email "bot@m4mkt.com.br"
           git add src/data/
-          git commit -m "chore: atualização automática de dados - $(date +'%d/%m/%Y')"
+          git commit -m "📊 dados: atualização automática $(date +'%d/%m/%Y')"
           git push
