@@ -5,7 +5,7 @@
  *       GOOGLE_ADS_CUSTOMER_ID
  */
 
-const GOOGLE_ADS_API_VERSION = 'v17';
+const GOOGLE_ADS_API_VERSION = 'v22';
 
 async function renovarAccessToken({ clientId, clientSecret, refreshToken }) {
   const response = await fetch('https://oauth2.googleapis.com/token', {
@@ -27,7 +27,7 @@ async function renovarAccessToken({ clientId, clientSecret, refreshToken }) {
   return data.access_token;
 }
 
-async function buscarCampanhasGoogle({ accessToken, developerToken, customerId }) {
+async function buscarCampanhasGoogle({ accessToken, developerToken, customerId, loginCustomerId }) {
   const query = `
     SELECT
       campaign.id,
@@ -52,7 +52,7 @@ async function buscarCampanhasGoogle({ accessToken, developerToken, customerId }
         'Authorization': `Bearer ${accessToken}`,
         'developer-token': developerToken,
         'Content-Type': 'application/json',
-        'login-customer-id': customerId,
+        ...(loginCustomerId ? { 'login-customer-id': loginCustomerId } : {}),
       },
       body: JSON.stringify({ query }),
     }
@@ -106,6 +106,7 @@ async function buscarDadosGoogleAds(config) {
     accessToken,
     developerToken: config.developerToken,
     customerId: config.customerId,
+    loginCustomerId: config.loginCustomerId,
   });
   console.log(`  ✅ ${dados.length} meses encontrados`);
   return dados;

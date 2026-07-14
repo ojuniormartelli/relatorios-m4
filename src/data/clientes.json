@@ -9,14 +9,15 @@
     {
       "slug": "car13",
       "name": "Car 13",
-      "company": "Car 13 - Auto Center",
+      "company": "Car13 - Oficina Multimarca",
+      "googleCustomerId": "3655585729",
       "metaAccountId": "1098369820767734",
       "dataFile": "car13.json",
       "active": true,
       "since": "2026-01",
-      "platforms": ["meta"],
-      "monthlyInvestment": 2000,
-      "lastUpdate": "2026-07"
+      "platforms": ["google", "meta"],
+      "monthlyInvestment": 2500,
+      "lastUpdate": "2026-07-14"
     }
   ]
 }

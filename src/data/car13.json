@@ -1,204 +1,431 @@
 {
-  "client": {
-    "slug": "car13",
-    "name": "Car 13",
-    "company": "Car 13 - Auto Center",
-    "logo": "/logos/car13.png",
-    "primaryColor": "#1E40AF",
-    "secondaryColor": "#3B82F6"
-  },
   "monthlyData": [
     {
       "month": "2026-01",
-      "metaAds": {
-        "investment": 1896.21,
-        "conversions": 0,
-        "revenue": 0,
-        "costPerConversion": 0
-      },
       "googleAds": {
         "investment": 0,
         "conversions": 0,
         "revenue": 0,
         "costPerConversion": 0
       },
-      "total": {
-        "investment": 1896.21,
+      "metaAds": {
+        "month": "2026-01",
+        "investment": 1138.74,
         "conversions": 0,
         "revenue": 0,
-        "roi": 0
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 1138.74,
+        "conversions": 0,
+        "revenue": 0,
+        "roi": -100
       }
     },
     {
       "month": "2026-02",
-      "metaAds": {
-        "investment": 1811.67,
-        "conversions": 0,
-        "revenue": 0,
-        "costPerConversion": 0
-      },
       "googleAds": {
         "investment": 0,
         "conversions": 0,
         "revenue": 0,
         "costPerConversion": 0
       },
-      "total": {
-        "investment": 1811.67,
+      "metaAds": {
+        "month": "2026-02",
+        "investment": 1811.6700000000005,
         "conversions": 0,
         "revenue": 0,
-        "roi": 0
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 1811.6700000000005,
+        "conversions": 0,
+        "revenue": 0,
+        "roi": -100
       }
     },
     {
       "month": "2026-03",
-      "metaAds": {
-        "investment": 2030.88,
-        "conversions": 0,
-        "revenue": 0,
-        "costPerConversion": 0
-      },
       "googleAds": {
         "investment": 0,
         "conversions": 0,
         "revenue": 0,
         "costPerConversion": 0
       },
-      "total": {
-        "investment": 2030.88,
+      "metaAds": {
+        "month": "2026-03",
+        "investment": 2030.8799999999999,
         "conversions": 0,
         "revenue": 0,
-        "roi": 0
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 2030.8799999999999,
+        "conversions": 0,
+        "revenue": 0,
+        "roi": -100
       }
     },
     {
       "month": "2026-04",
-      "metaAds": {
-        "investment": 1941.03,
-        "conversions": 0,
-        "revenue": 0,
-        "costPerConversion": 0
-      },
       "googleAds": {
         "investment": 0,
         "conversions": 0,
         "revenue": 0,
         "costPerConversion": 0
       },
-      "total": {
-        "investment": 1941.03,
+      "metaAds": {
+        "month": "2026-04",
+        "investment": 1941.0300000000002,
         "conversions": 0,
         "revenue": 0,
-        "roi": 0
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 1941.0300000000002,
+        "conversions": 0,
+        "revenue": 0,
+        "roi": -100
       }
     },
     {
       "month": "2026-05",
-      "metaAds": {
-        "investment": 1749.92,
-        "conversions": 0,
-        "revenue": 0,
-        "costPerConversion": 0
-      },
       "googleAds": {
         "investment": 0,
         "conversions": 0,
         "revenue": 0,
         "costPerConversion": 0
       },
-      "total": {
-        "investment": 1749.92,
+      "metaAds": {
+        "month": "2026-05",
+        "investment": 1749.9199999999996,
         "conversions": 0,
         "revenue": 0,
-        "roi": 0
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 1749.9199999999996,
+        "conversions": 0,
+        "revenue": 0,
+        "roi": -100
       }
     },
     {
       "month": "2026-06",
-      "metaAds": {
-        "investment": 1997.71,
-        "conversions": 0,
-        "revenue": 0,
-        "costPerConversion": 0
-      },
       "googleAds": {
-        "investment": 0,
+        "month": "2026-06",
+        "investment": 708.775519,
+        "conversions": 23,
+        "revenue": 3,
+        "costPerConversion": 30.81632691304348
+      },
+      "metaAds": {
+        "month": "2026-06",
+        "investment": 1997.7099999999991,
         "conversions": 0,
         "revenue": 0,
         "costPerConversion": 0
       },
       "total": {
-        "investment": 1997.71,
+        "investment": 2706.485518999999,
+        "conversions": 23,
+        "revenue": 3,
+        "roi": -99.8891551431205
+      }
+    },
+    {
+      "month": "2026-07",
+      "googleAds": {
+        "month": "2026-07",
+        "investment": 887.6253160000001,
+        "conversions": 29,
+        "revenue": 29,
+        "costPerConversion": 30.607769517241383
+      },
+      "metaAds": {
+        "month": "2026-07",
+        "investment": 1318.3800000000003,
         "conversions": 0,
         "revenue": 0,
-        "roi": 0
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 2206.0053160000007,
+        "conversions": 29,
+        "revenue": 29,
+        "roi": -98.68540661304553
       }
     }
   ],
   "campaigns": [
     {
-      "id": "meta-troca-oleo",
-      "name": "Troca de Óleo Câmbio Automático",
+      "id": "120210694723790244",
+      "name": "[ENGAJAMENTO] [FEED, STORY E REELS] [Post] - Aberto",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 316.63, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-01",
+          "investment": 359.81000000000006,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-02",
+          "investment": 559.7700000000001,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 243.86999999999998,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-revisao-preco-fixo",
-      "name": "Pacote Revisão Preço Fixo",
+      "id": "120226260828410244",
+      "name": "[MSG WHATSAPP] [TRANSMISSÃO] - Itapira e Região",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 314.00, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-01",
+          "investment": 260.2,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-02",
+          "investment": 418.42999999999995,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 470.61999999999995,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-04",
+          "investment": 447.7700000000001,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-05",
+          "investment": 401.7999999999999,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-06",
+          "investment": 466.7999999999999,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 27.3,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-manutencao-cambio",
-      "name": "Manutenção Câmbio Automático",
+      "id": "120230609945190244",
+      "name": "[MSG WHATSAPP] [PACOTE DE REVISÃO] - Itapira e Região",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 302.56, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-01",
+          "investment": 258.38,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-02",
+          "investment": 415.67999999999995,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 472.6700000000002,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-04",
+          "investment": 446.68999999999994,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-05",
+          "investment": 395.6,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-06",
+          "investment": 465,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 28.85,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-engajamento",
-      "name": "Engajamento Publicação/Video",
+      "id": "120234529658710244",
+      "name": "[MSG WHATSAPP] [MANUTENÇÃO PREVENTIVA] - Itapira e Região",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 253.93, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-01",
+          "investment": 260.34999999999997,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-02",
+          "investment": 417.78999999999996,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 472.71,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-04",
+          "investment": 447.7499999999999,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-05",
+          "investment": 406.14000000000004,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-06",
+          "investment": 460.5600000000001,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 27.840000000000003,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-reconhecimento",
-      "name": "Reconhecimento Video View",
+      "id": "120240684101140244",
+      "name": "[RECONHECIMENTO] [VIDEO VIEW] [Post] - Aberto",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 383.19, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-03",
+          "investment": 371.01,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-04",
+          "investment": 598.82,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-05",
+          "investment": 546.38,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-06",
+          "investment": 605.35,
+          "conversions": 0,
+          "revenue": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 34.57,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-whatsapp-transmissao",
-      "name": "WhatsApp Transmissão",
+      "id": "120247647837070244",
+      "name": "[LP] [LEADS] - Manutenção Câmbio Automático",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 293.75, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-07",
+          "investment": 309.36,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-whatsapp-revisao",
-      "name": "WhatsApp Pacote Revisão",
+      "id": "120247652345950244",
+      "name": "[LP] [LEADS] - Pacote Revisão Preço Fixo.",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 292.58, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-07",
+          "investment": 316.50000000000006,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     },
     {
-      "id": "meta-whatsapp-manutencao",
-      "name": "WhatsApp Manutenção Preventiva",
+      "id": "120247652345960244",
+      "name": "[LP] [LEADS] - Troca de Oleo Cambio Automatico",
       "platform": "meta",
       "months": [
-        {"month": "2026-06", "investment": 291.08, "conversions": 0, "revenue": 0}
+        {
+          "month": "2026-07",
+          "investment": 318.64000000000004,
+          "conversions": 0,
+          "revenue": 0
+        }
+      ]
+    },
+    {
+      "id": "120247660868500244",
+      "name": "[ENGAJAMENTO] [PUBLICAÇÃO/VIDEO-VIEW] - Aberto",
+      "platform": "meta",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 255.32,
+          "conversions": 0,
+          "revenue": 0
+        }
       ]
     }
-  ]
+  ],
+  "client": {
+    "slug": "car13",
+    "name": "Car 13",
+    "company": "Car13 - Oficina Multimarca",
+    "logo": "/logos/car13.png",
+    "primaryColor": "#1E40AF",
+    "secondaryColor": "#3B82F6"
+  }
 }
