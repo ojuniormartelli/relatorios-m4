@@ -10,12 +10,13 @@
       "slug": "car13",
       "name": "Car 13",
       "company": "Car 13 - Auto Center",
+      "metaAccountId": "1098369820767734",
       "dataFile": "car13.json",
       "active": true,
-      "since": "2024-01",
-      "platforms": ["google", "meta"],
-      "monthlyInvestment": 6600,
-      "lastUpdate": "2024-06-30"
+      "since": "2026-01",
+      "platforms": ["meta"],
+      "monthlyInvestment": 2000,
+      "lastUpdate": "2026-07"
     }
   ]
 }
