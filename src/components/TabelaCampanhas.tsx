@@ -18,15 +18,15 @@ interface Campaign {
 
 interface TabelaProps {
   campaigns: Campaign[];
-  selectedMonth?: string;
+  selectedMonths?: string[];
 }
 
-export default function TabelaCampanhas({ campaigns, selectedMonth }: TabelaProps) {
+export default function TabelaCampanhas({ campaigns, selectedMonths }: TabelaProps) {
   const [expandedCampaign, setExpandedCampaign] = useState<string | null>(null);
 
   const getCampaignTotals = (campaign: Campaign) => {
-    const monthsToShow = selectedMonth 
-      ? campaign.months.filter(m => m.month === selectedMonth)
+    const monthsToShow = selectedMonths
+      ? campaign.months.filter(m => selectedMonths.includes(m.month))
       : campaign.months;
 
     return monthsToShow.reduce(
