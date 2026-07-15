@@ -3,6 +3,7 @@
 import { Calendar, Filter } from 'lucide-react';
 
 export type TipoPeriodo =
+  | 'mes_atual'
   | 'mes_passado'
   | '7dias'
   | '15dias'
@@ -21,6 +22,7 @@ interface FiltrosProps {
 }
 
 const OPCOES_PERIODO: { value: TipoPeriodo; label: string }[] = [
+  { value: 'mes_atual', label: 'Mês atual' },
   { value: 'mes_passado', label: 'Mês passado' },
   { value: '7dias', label: 'Últimos 7 dias' },
   { value: '15dias', label: 'Últimos 15 dias' },

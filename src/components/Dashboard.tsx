@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { format, subDays, startOfMonth, endOfMonth, parseISO } from 'date-fns';
+import { format, subDays, startOfMonth, endOfMonth, parseISO, differenceInDays, eachDayOfInterval, eachMonthOfInterval, isSameMonth } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import ResumoGeral from './ResumoGeral';
 import GraficoEvolucao from './GraficoEvolucao';
@@ -37,6 +37,7 @@ interface ClientData {
     id: string;
     name: string;
     platform: string;
+    status?: string;
     months: Array<{
       month: string;
       investment: number;
@@ -54,20 +55,24 @@ interface DashboardProps {
 // ============================================================
 function calcularIntervalo(periodo: TipoPeriodo, dataInicio?: string, dataFim?: string): { inicio: Date; fim: Date } {
   const hoje = new Date();
+  hoje.setHours(23, 59, 59, 0);
 
   switch (periodo) {
+    case 'mes_atual': {
+      return { inicio: startOfMonth(hoje), fim: hoje };
+    }
     case 'mes_passado': {
       const inicioMesAtual = startOfMonth(hoje);
       const fimMesPassado = new Date(inicioMesAtual.getTime() - 1);
       const inicioMesPassado = startOfMonth(fimMesPassado);
-      return { inicio: inicioMesPassado, fim: fimMesPassado };
+      return { inicio: inicioMesPassado, fim: endOfMonth(fimMesPassado) };
     }
     case '7dias':
-      return { inicio: subDays(hoje, 7), fim: hoje };
+      return { inicio: subDays(hoje, 6), fim: hoje };
     case '15dias':
-      return { inicio: subDays(hoje, 15), fim: hoje };
+      return { inicio: subDays(hoje, 14), fim: hoje };
     case '30dias':
-      return { inicio: subDays(hoje, 30), fim: hoje };
+      return { inicio: subDays(hoje, 29), fim: hoje };
     case 'personalizado': {
       if (dataInicio && dataFim) {
         return { inicio: parseISO(dataInicio), fim: parseISO(dataFim) };
@@ -75,18 +80,28 @@ function calcularIntervalo(periodo: TipoPeriodo, dataInicio?: string, dataFim?: 
       if (dataInicio) {
         return { inicio: parseISO(dataInicio), fim: hoje };
       }
-      return { inicio: subDays(hoje, 30), fim: hoje };
+      return { inicio: subDays(hoje, 29), fim: hoje };
     }
     default:
-      return { inicio: subDays(hoje, 30), fim: hoje };
+      return { inicio: subDays(hoje, 29), fim: hoje };
   }
 }
 
 // ============================================================
-// VERIFICAR SE UM MÊSE ESTÁ DENTRO DO INTERVALO
+// CALCULAR INTERVALO ANTERIOR PROPORCIONAL
+// Se o período atual tem N dias, o anterior tem os N dias imediatamente anteriores
+// ============================================================
+function calcularIntervaloAnterior(inicio: Date, fim: Date): { inicio: Date; fim: Date } {
+  const numDias = differenceInDays(fim, inicio) + 1;
+  const fimAnterior = new Date(inicio.getTime() - 1);
+  const inicioAnterior = subDays(fimAnterior, numDias - 1);
+  return { inicio: inicioAnterior, fim: fimAnterior };
+}
+
+// ============================================================
+// VERIFICAR SE UM MÊS ESTÁ DENTRO DO INTERVALO
 // ============================================================
 function mesNoIntervalo(mes: string, inicio: Date, fim: Date): boolean {
-  // mes está no formato "YYYY-MM"
   const [year, month] = mes.split('-').map(Number);
   const inicioMes = new Date(year, month - 1, 1);
   const fimMes = new Date(year, month, 0, 23, 59, 59);
@@ -101,17 +116,13 @@ function proporcaoMesNoIntervalo(mes: string, inicio: Date, fim: Date): number {
   const inicioMes = new Date(year, month - 1, 1);
   const fimMes = new Date(year, month, 0, 23, 59, 59);
 
-  // Se o mês está totalmente dentro do intervalo, proporção = 1
   if (inicioMes >= inicio && fimMes <= fim) return 1;
-
-  // Se o mês está totalmente fora do intervalo, proporção = 0
   if (fimMes < inicio || inicioMes > fim) return 0;
 
-  // Caso contrário, calcular a proporção de dias do mês que estão no intervalo
   const inicioEfetivo = inicioMes > inicio ? inicioMes : inicio;
   const fimEfetivo = fimMes < fim ? fimMes : fim;
-  const diasNoIntervalo = Math.floor((fimEfetivo.getTime() - inicioEfetivo.getTime()) / (1000 * 60 * 60 * 24)) + 1;
-  const diasNoMes = Math.floor((fimMes.getTime() - inicioMes.getTime()) / (1000 * 60 * 60 * 24)) + 1;
+  const diasNoIntervalo = differenceInDays(fimEfetivo, inicioEfetivo) + 1;
+  const diasNoMes = differenceInDays(fimMes, inicioMes) + 1;
 
   return Math.min(1, diasNoIntervalo / diasNoMes);
 }
@@ -158,27 +169,39 @@ function calcVariacao(atual: number, anterior: number): number {
 }
 
 // ============================================================
+// VERIFICAR SE O STATUS É "ATIVO"
+// ============================================================
+function isCampanhaAtiva(status?: string): boolean {
+  if (!status) return false;
+  const ativos = ['ENABLED', 'ACTIVE'];
+  return ativos.includes(status.toUpperCase());
+}
+
+// ============================================================
 // COMPONENTE PRINCIPAL
 // ============================================================
 export default function Dashboard({ data }: DashboardProps) {
   const hoje = new Date();
 
-  const [periodoSelecionado, setPeriodoSelecionado] = useState<TipoPeriodo>('30dias');
+  const [periodoSelecionado, setPeriodoSelecionado] = useState<TipoPeriodo>('mes_atual');
   const [dataInicio, setDataInicio] = useState<string>('');
   const [dataFim, setDataFim] = useState<string>('');
   const [plataformaSelecionada, setPlataformaSelecionada] = useState<'all' | 'google' | 'meta'>('all');
+  const [mostrarApenasComInvestimento, setMostrarApenasComInvestimento] = useState<boolean>(true);
 
   // Calcular intervalo de datas
   const intervalo = useMemo(() => {
     return calcularIntervalo(periodoSelecionado, dataInicio, dataFim);
   }, [periodoSelecionado, dataInicio, dataFim]);
 
-  // Calcular intervalo anterior (para comparação)
+  // Calcular intervalo anterior PROPORCIONAL (mesmo número de dias)
   const intervaloAnterior = useMemo(() => {
-    const duracaoMs = intervalo.fim.getTime() - intervalo.inicio.getTime();
-    const fimAnterior = new Date(intervalo.inicio.getTime() - 1);
-    const inicioAnterior = new Date(fimAnterior.getTime() - duracaoMs);
-    return { inicio: inicioAnterior, fim: fimAnterior };
+    return calcularIntervaloAnterior(intervalo.inicio, intervalo.fim);
+  }, [intervalo]);
+
+  // Número de dias no período
+  const numDiasPeriodo = useMemo(() => {
+    return differenceInDays(intervalo.fim, intervalo.inicio) + 1;
   }, [intervalo]);
 
   // Filtrar e calcular dados do período atual
@@ -187,7 +210,7 @@ export default function Dashboard({ data }: DashboardProps) {
     return calcDerived(totals);
   }, [data.monthlyData, plataformaSelecionada, intervalo]);
 
-  // Calcular comparativo com período anterior
+  // Calcular comparativo com período anterior PROPORCIONAL
   const comparativo = useMemo(() => {
     const totalsAnterior = calcTotals(data.monthlyData, plataformaSelecionada, intervaloAnterior.inicio, intervaloAnterior.fim);
     const anterior = calcDerived(totalsAnterior);
@@ -199,36 +222,107 @@ export default function Dashboard({ data }: DashboardProps) {
     };
   }, [data.monthlyData, plataformaSelecionada, intervaloAnterior, dadosFiltrados]);
 
-  // Preparar dados para o gráfico (agrupar por mês dentro do intervalo)
+  // Preparar dados para o gráfico
+  // Se período ≤ 3 meses (≈90 dias): agrupar por DIA
+  // Se período > 3 meses: agrupar por MÊS
+  const usarGraficoDiario = numDiasPeriodo <= 90;
+
   const chartData = useMemo(() => {
-    return data.monthlyData
-      .filter((m) => mesNoIntervalo(m.month, intervalo.inicio, intervalo.fim))
-      .map((month) => {
+    if (usarGraficoDiario) {
+      // Gráfico diário: distribuir valores mensais proporcionalmente por dia
+      const dias = eachDayOfInterval({ start: intervalo.inicio, end: intervalo.fim });
+      
+      return dias.map((dia) => {
+        const mesKey = format(dia, 'yyyy-MM');
+        const mesData = data.monthlyData.find(m => m.month === mesKey);
+        if (!mesData) return { month: format(dia, 'dd/MM'), investment: 0, conversions: 0 };
+
+        // Proporção do dia dentro do mês (1/número de dias no mês)
+        const [year, month] = mesKey.split('-').map(Number);
+        const diasNoMes = new Date(year, month, 0).getDate();
+        const proporcaoDia = 1 / diasNoMes;
+
         let investment = 0;
         let conversions = 0;
 
-        if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
-          investment += month.googleAds.investment;
-          conversions += month.googleAds.conversions;
-        }
-        if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
-          investment += month.metaAds.investment;
-          conversions += month.metaAds.conversions;
+        // Verificar se o dia está totalmente dentro do intervalo
+        const diaInicio = new Date(dia);
+        diaInicio.setHours(0, 0, 0, 0);
+        const diaFim = new Date(dia);
+        diaFim.setHours(23, 59, 59, 0);
+        
+        const dentroInicio = diaInicio >= intervalo.inicio;
+        const dentroFim = diaFim <= intervalo.fim;
+        
+        if (dentroInicio && dentroFim) {
+          // Dia totalmente dentro do intervalo
+          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
+            investment += mesData.googleAds.investment * proporcaoDia;
+            conversions += mesData.googleAds.conversions * proporcaoDia;
+          }
+          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
+            investment += mesData.metaAds.investment * proporcaoDia;
+            conversions += mesData.metaAds.conversions * proporcaoDia;
+          }
         }
 
-        return { month: month.month, investment, conversions };
+        return {
+          month: format(dia, 'dd/MM'),
+          investment: Math.round(investment * 100) / 100,
+          conversions: Math.round(conversions * 10) / 10,
+        };
       });
-  }, [data.monthlyData, plataformaSelecionada, intervalo]);
+    } else {
+      // Gráfico mensal
+      return data.monthlyData
+        .filter((m) => mesNoIntervalo(m.month, intervalo.inicio, intervalo.fim))
+        .map((month) => {
+          let investment = 0;
+          let conversions = 0;
 
-  // Filtrar campanhas por plataforma
+          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
+            investment += month.googleAds.investment;
+            conversions += month.googleAds.conversions;
+          }
+          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
+            investment += month.metaAds.investment;
+            conversions += month.metaAds.conversions;
+          }
+
+          return { month: month.month, investment, conversions };
+        });
+    }
+  }, [data.monthlyData, plataformaSelecionada, intervalo, usarGraficoDiario]);
+
+  // Filtrar campanhas por plataforma e investimento
   const campanhasFiltradas = useMemo(() => {
-    if (plataformaSelecionada === 'all') return data.campaigns;
-    return data.campaigns.filter((c) => c.platform === plataformaSelecionada);
-  }, [data.campaigns, plataformaSelecionada]);
+    let campanhas = plataformaSelecionada === 'all'
+      ? data.campaigns
+      : data.campaigns.filter((c) => c.platform === plataformaSelecionada);
+
+    // Filtrar meses dentro do intervalo
+    const mesesNoIntervalo = data.monthlyData
+      .filter(m => mesNoIntervalo(m.month, intervalo.inicio, intervalo.fim))
+      .map(m => m.month);
+
+    campanhas = campanhas.map(c => ({
+      ...c,
+      months: c.months.filter(m => mesesNoIntervalo.includes(m.month)),
+    }));
+
+    // Filtrar apenas campanhas com investimento no período
+    if (mostrarApenasComInvestimento) {
+      campanhas = campanhas.filter(c => 
+        c.months.some(m => m.investment > 0)
+      );
+    }
+
+    return campanhas;
+  }, [data.campaigns, plataformaSelecionada, intervalo, mostrarApenasComInvestimento]);
 
   // Formatar label do período
   const periodoLabel = useMemo(() => {
-    const fmt = (d: Date) => format(d, "dd 'de' MMMM 'de' yyyy", { locale: ptBR });
+    const fmt = (d: Date) => format(d, "dd/MM/yyyy", { locale: ptBR });
     return `${fmt(intervalo.inicio)} a ${fmt(intervalo.fim)}`;
   }, [intervalo]);
 
@@ -242,13 +336,20 @@ export default function Dashboard({ data }: DashboardProps) {
     return labels[plataformaSelecionada];
   }, [plataformaSelecionada]);
 
-  // Meses disponíveis para a tabela (filtrar por intervalo)
+  // Meses disponíveis para a tabela
   const mesesNoIntervalo = useMemo(() => {
     return data.monthlyData
       .filter((m) => mesNoIntervalo(m.month, intervalo.inicio, intervalo.fim))
       .map((m) => m.month)
       .sort();
   }, [data.monthlyData, intervalo]);
+
+  // Título do gráfico
+  const tituloGrafico = useMemo(() => {
+    return usarGraficoDiario
+      ? 'Evolução Diária de Investimento e Conversões'
+      : 'Evolução Mensal de Investimento e Conversões';
+  }, [usarGraficoDiario]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -287,7 +388,7 @@ export default function Dashboard({ data }: DashboardProps) {
         {/* Comparison info banner */}
         {comparativo && (
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-6 text-sm text-blue-800">
-            🔍 <strong>Comparando</strong> este período com o período anterior.
+            🔍 <strong>Comparando</strong> {numDiasPeriodo} dias com os {numDiasPeriodo} dias anteriores.
             As setas indicam se cada indicador melhorou ou piorou.
           </div>
         )}
@@ -314,13 +415,15 @@ export default function Dashboard({ data }: DashboardProps) {
         {/* Evolution Chart */}
         <GraficoEvolucao
           data={chartData}
-          title="Evolução de Investimento e Conversões"
+          title={tituloGrafico}
         />
 
         {/* Campaigns Table */}
         <TabelaCampanhas
           campaigns={campanhasFiltradas}
           selectedMonths={mesesNoIntervalo}
+          mostrarApenasComInvestimento={mostrarApenasComInvestimento}
+          onToggleFiltroInvestimento={setMostrarApenasComInvestimento}
         />
 
         {/* Footer */}

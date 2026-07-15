@@ -41,7 +41,7 @@ async function buscarCampanhasGoogle({ accessToken, developerToken, customerId, 
       metrics.conversions_value,
       segments.date
     FROM campaign
-    WHERE segments.date DURING LAST_30_DAYS
+    WHERE segments.date >= '2026-01-01' AND segments.date <= '2026-07-31'
   `;
 
   const response = await fetch(
@@ -69,6 +69,7 @@ async function buscarCampanhasGoogle({ accessToken, developerToken, customerId, 
 
 function processarResultadosGoogle(resultados) {
   const porMes = {};
+  const campanhas = {};
 
   for (const row of resultados) {
     const c = row.campaign;
@@ -79,21 +80,47 @@ function processarResultadosGoogle(resultados) {
     const mes = s.date.substring(0, 7);
     const custo = Number(m.costMicros || 0) / 1000000;
     const conversoes = Number(m.conversions || 0);
+    const campanhaId = String(c.id);
+    const campanhaNome = c.name || 'Sem nome';
 
+    // Agregado por mês
     if (!porMes[mes]) {
       porMes[mes] = { investment: 0, conversions: 0 };
     }
     porMes[mes].investment += custo;
     porMes[mes].conversions += conversoes;
+
+    // Por campanha
+    if (!campanhas[campanhaId]) {
+      campanhas[campanhaId] = {
+        id: `google-${campanhaId}`,
+        name: campanhaNome,
+        platform: 'google',
+        status: c.status || 'UNKNOWN',
+        months: {},
+      };
+    }
+    if (!campanhas[campanhaId].months[mes]) {
+      campanhas[campanhaId].months[mes] = { month: mes, investment: 0, conversions: 0 };
+    }
+    campanhas[campanhaId].months[mes].investment += custo;
+    campanhas[campanhaId].months[mes].conversions += conversoes;
   }
 
-  return Object.entries(porMes)
+  const monthlyData = Object.entries(porMes)
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([month, data]) => ({
       month,
       ...data,
       costPerConversion: data.conversions > 0 ? data.investment / data.conversions : 0,
     }));
+
+  const campaigns = Object.values(campanhas).map((c) => ({
+    ...c,
+    months: Object.values(c.months).sort((a, b) => a.month.localeCompare(b.month)),
+  }));
+
+  return { monthlyData, campaigns };
 }
 
 async function buscarDadosGoogleAds(config) {
@@ -106,7 +133,7 @@ async function buscarDadosGoogleAds(config) {
     customerId: config.customerId,
     loginCustomerId: config.loginCustomerId,
   });
-  console.log(`  ✅ ${dados.length} meses encontrados`);
+  console.log(`  ✅ ${dados.monthlyData.length} meses, ${dados.campaigns.length} campanhas encontrados`);
   return dados;
 }
 

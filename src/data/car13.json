@@ -118,19 +118,19 @@
       "month": "2026-07",
       "googleAds": {
         "month": "2026-07",
-        "investment": 989.389264,
+        "investment": 1007.7692640000001,
         "conversions": 29,
-        "costPerConversion": 34.116871172413795
+        "costPerConversion": 34.75066427586207
       },
       "metaAds": {
         "month": "2026-07",
-        "investment": 1413.3100000000004,
-        "conversions": 334,
-        "costPerConversion": 4.231467065868265
+        "investment": 1426.0300000000004,
+        "conversions": 339,
+        "costPerConversion": 4.206578171091446
       },
       "total": {
-        "investment": 2402.6992640000003,
-        "conversions": 363
+        "investment": 2433.7992640000007,
+        "conversions": 368
       }
     }
   ],
@@ -139,6 +139,7 @@
       "id": "google-22216549353",
       "name": "[PESQUISA] [CPA] - Cambio Automático",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-01",
@@ -176,6 +177,7 @@
       "id": "google-22226964916",
       "name": "[PESQUISA] [CPA] - Car13",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-01",
@@ -213,6 +215,7 @@
       "id": "google-22916149349",
       "name": "[PESQUISA] [LEAD] - Pacote de revisão",
       "platform": "google",
+      "status": "REMOVED",
       "months": [
         {
           "month": "2026-02",
@@ -230,6 +233,7 @@
       "id": "google-23604638128",
       "name": "[YT] - Reconhecimento - Visualização de Video",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-02",
@@ -247,6 +251,7 @@
       "id": "google-23622030903",
       "name": "Pacote de Revisão",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-03",
@@ -269,6 +274,7 @@
       "id": "google-23853985359",
       "name": "[PESQUISA] [CPA] - Serviços Gerais",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-05",
@@ -286,6 +292,7 @@
       "id": "google-23900429666",
       "name": "[PESQUISA] [CPC] - Serviços Gerais",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -298,6 +305,7 @@
       "id": "google-23900429717",
       "name": "[PESQUISA] [CPC] - Cambio Automático",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -310,6 +318,7 @@
       "id": "google-23900429720",
       "name": "[PESQUISA] [CPC] - Car13",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -322,6 +331,7 @@
       "id": "google-23980592766",
       "name": "[PESQUISA] [MAX CPA] - Manutenção de Câmbio Automático",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -339,6 +349,7 @@
       "id": "google-23985555833",
       "name": "[PESQUISA] [MAX CPA] - Branding Car13",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -356,6 +367,7 @@
       "id": "google-23985556460",
       "name": "[PESQUISA] [MAX CPA] - Troca de Óleo de Câmbio Automático",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -373,6 +385,7 @@
       "id": "google-23990125813",
       "name": "[PESQUISA] [MAX CPA] - Pacote de Revisão com Preço Fixo",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-07",
@@ -385,6 +398,7 @@
       "id": "google-23990126524",
       "name": "[PESQUISA] [MAX CPA] - Serviços Gerais Car13",
       "platform": "google",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-06",
@@ -402,10 +416,11 @@
       "id": "google-24011055296",
       "name": "[PESQUISA] [CPC] - Manutenção de Câmbio Automático",
       "platform": "google",
+      "status": "ENABLED",
       "months": [
         {
           "month": "2026-07",
-          "investment": 264.758747,
+          "investment": 274.948747,
           "conversions": 4
         }
       ]
@@ -414,10 +429,11 @@
       "id": "google-24015430780",
       "name": "[PESQUISA] [CPC] - Troca de Óleo de Câmbio Automático",
       "platform": "google",
+      "status": "ENABLED",
       "months": [
         {
           "month": "2026-07",
-          "investment": 21.909999999999997,
+          "investment": 24.279999999999998,
           "conversions": 0
         }
       ]
@@ -426,6 +442,7 @@
       "id": "google-24015431695",
       "name": "[PESQUISA] [CPC] - Pacote de Revisão com Preço Fixo",
       "platform": "google",
+      "status": "ENABLED",
       "months": [
         {
           "month": "2026-07",
@@ -438,10 +455,11 @@
       "id": "google-24015431722",
       "name": "[PESQUISA] [CPC] - Car13 Serviços Gerais Itapira",
       "platform": "google",
+      "status": "ENABLED",
       "months": [
         {
           "month": "2026-07",
-          "investment": 127.27674,
+          "investment": 133.09674,
           "conversions": 0
         }
       ]
@@ -450,6 +468,7 @@
       "id": "120210694723790244",
       "name": "[ENGAJAMENTO] [FEED, STORY E REELS] [Post] - Aberto",
       "platform": "meta",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-01",
@@ -472,6 +491,7 @@
       "id": "120226260828410244",
       "name": "[MSG WHATSAPP] [TRANSMISSÃO] - Itapira e Região",
       "platform": "meta",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-01",
@@ -514,6 +534,7 @@
       "id": "120230609945190244",
       "name": "[MSG WHATSAPP] [PACOTE DE REVISÃO] - Itapira e Região",
       "platform": "meta",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-01",
@@ -556,6 +577,7 @@
       "id": "120234529658710244",
       "name": "[MSG WHATSAPP] [MANUTENÇÃO PREVENTIVA] - Itapira e Região",
       "platform": "meta",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-01",
@@ -598,6 +620,7 @@
       "id": "120240684101140244",
       "name": "[RECONHECIMENTO] [VIDEO VIEW] [Post] - Aberto",
       "platform": "meta",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-03",
@@ -630,11 +653,12 @@
       "id": "120247647837070244",
       "name": "[LP] [LEADS] - Manutenção Câmbio Automático",
       "platform": "meta",
+      "status": "ACTIVE",
       "months": [
         {
           "month": "2026-07",
-          "investment": 336.51000000000005,
-          "conversions": 100
+          "investment": 339.48,
+          "conversions": 103
         }
       ]
     },
@@ -642,10 +666,11 @@
       "id": "120247652345950244",
       "name": "[LP] [LEADS] - Pacote Revisão Preço Fixo.",
       "platform": "meta",
+      "status": "ACTIVE",
       "months": [
         {
           "month": "2026-07",
-          "investment": 346.02000000000004,
+          "investment": 350.03000000000003,
           "conversions": 106
         }
       ]
@@ -654,11 +679,12 @@
       "id": "120247652345960244",
       "name": "[LP] [LEADS] - Troca de Oleo Cambio Automatico",
       "platform": "meta",
+      "status": "ACTIVE",
       "months": [
         {
           "month": "2026-07",
-          "investment": 343.56,
-          "conversions": 128
+          "investment": 348.41,
+          "conversions": 130
         }
       ]
     },
@@ -666,10 +692,11 @@
       "id": "120247660868500244",
       "name": "[ENGAJAMENTO] [PUBLICAÇÃO/VIDEO-VIEW] - Aberto",
       "platform": "meta",
+      "status": "ACTIVE",
       "months": [
         {
           "month": "2026-07",
-          "investment": 268.65999999999997,
+          "investment": 269.54999999999995,
           "conversions": 0
         }
       ]

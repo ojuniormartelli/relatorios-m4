@@ -45,7 +45,7 @@ async function buscarDeTodasAPIs(cliente) {
         loginCustomerId: process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID,
       });
       
-      for (const d of googleData) {
+      for (const d of googleData.monthlyData) {
         const existente = dadosCombinados.monthlyData.find(m => m.month === d.month);
         if (existente) {
           existente.googleAds = { ...d };
@@ -63,6 +63,9 @@ async function buscarDeTodasAPIs(cliente) {
           });
         }
       }
+
+      // Adicionar campanhas do Google
+      dadosCombinados.campaigns = dadosCombinados.campaigns.concat(googleData.campaigns);
     } catch (err) {
       console.error(`  ⚠️ Google Ads: ${err.message}`);
     }

@@ -49,7 +49,42 @@ async function buscarInsightsMeta({ accessToken, adAccountId }) {
   }
 
   console.log(`  ✅ ${todosResultados.length} registros encontrados`);
-  return processarResultadosMeta(todosResultados);
+
+  // Buscar status das campanhas
+  const statusCampanhas = await buscarStatusCampanhas({ accessToken, adAccountId: accountId });
+  
+  return processarResultadosMeta(todosResultados, statusCampanhas);
+}
+
+/**
+ * Busca o status (effective_status) de todas as campanhas da conta.
+ */
+async function buscarStatusCampanhas({ accessToken, adAccountId }) {
+  const url = `${BASE_URL}/${adAccountId}/campaigns`;
+  const params = new URLSearchParams({
+    access_token: accessToken,
+    fields: 'id,name,effective_status',
+    limit: '500',
+  });
+
+  let nextUrl = `${url}?${params.toString()}`;
+  const statusMap = {};
+
+  while (nextUrl) {
+    const response = await fetch(nextUrl);
+    if (!response.ok) {
+      console.log(`  ⚠️ Não foi possível buscar status das campanhas`);
+      return {};
+    }
+    const data = await response.json();
+    for (const c of data.data || []) {
+      statusMap[c.id] = c.effective_status || 'UNKNOWN';
+    }
+    nextUrl = data.paging?.next || null;
+  }
+
+  console.log(`  📋 Status de ${Object.keys(statusMap).length} campanhas obtidos`);
+  return statusMap;
 }
 
 /**
@@ -84,7 +119,7 @@ function extrairConversoesDeActions(actions) {
   return maxLead + maxOutros;
 }
 
-function processarResultadosMeta(resultados) {
+function processarResultadosMeta(resultados, statusCampanhas = {}) {
   const porMes = {};
   const campanhas = {};
 
@@ -108,6 +143,7 @@ function processarResultadosMeta(resultados) {
         id: campanhaId,
         name: nomeCampanha,
         platform: 'meta',
+        status: statusCampanhas[campanhaId] || 'UNKNOWN',
         months: {},
       };
     }
