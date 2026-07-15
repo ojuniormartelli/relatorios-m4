@@ -118,19 +118,19 @@
       "month": "2026-07",
       "googleAds": {
         "month": "2026-07",
-        "investment": 1007.7692640000001,
+        "investment": 1015.5492640000001,
         "conversions": 29,
-        "costPerConversion": 34.75066427586207
+        "costPerConversion": 35.01894013793104
       },
       "metaAds": {
         "month": "2026-07",
-        "investment": 1426.0300000000004,
-        "conversions": 339,
-        "costPerConversion": 4.206578171091446
+        "investment": 1444.4300000000003,
+        "conversions": 340,
+        "costPerConversion": 4.248323529411765
       },
       "total": {
-        "investment": 2433.7992640000007,
-        "conversions": 368
+        "investment": 2459.9792640000005,
+        "conversions": 369
       }
     }
   ],
@@ -433,7 +433,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 24.279999999999998,
+          "investment": 26.689999999999998,
           "conversions": 0
         }
       ]
@@ -446,7 +446,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 101.018537,
+          "investment": 103.488537,
           "conversions": 0
         }
       ]
@@ -459,7 +459,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 133.09674,
+          "investment": 135.99674000000002,
           "conversions": 0
         }
       ]
@@ -657,7 +657,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 339.48,
+          "investment": 344.8,
           "conversions": 103
         }
       ]
@@ -670,8 +670,8 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 350.03000000000003,
-          "conversions": 106
+          "investment": 355.88,
+          "conversions": 107
         }
       ]
     },
@@ -683,7 +683,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 348.41,
+          "investment": 353.93,
           "conversions": 130
         }
       ]
@@ -696,7 +696,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 269.54999999999995,
+          "investment": 271.26,
           "conversions": 0
         }
       ]
