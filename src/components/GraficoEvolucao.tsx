@@ -34,7 +34,11 @@ function isFormatoMes(value: string): boolean {
 }
 
 export default function GraficoEvolucao({ data, title }: GraficoProps) {
-  const formatCurrency = (value: number) => `R$ ${(value / 1000).toFixed(1)}k`;
+  // Formatter do eixo Y — mostra valores em R$ reais (sem dividir por 1000)
+  const formatCurrency = (value: number) => {
+    if (value >= 1000) return `R$ ${(value / 1000).toFixed(1)}k`;
+    return `R$ ${Math.round(value)}`;
+  };
   
   // Formatter do eixo X — funciona para dia (dd/MM) e mês (YYYY-MM)
   const tickFormatter = (value: string) => {

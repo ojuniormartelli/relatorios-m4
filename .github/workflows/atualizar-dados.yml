@@ -9,6 +9,8 @@ on:
 jobs:
   atualizar-dados:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permite que o bot faça commit e push
     
     steps:
       - name: 📥 Checkout
