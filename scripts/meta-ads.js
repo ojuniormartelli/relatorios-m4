@@ -21,7 +21,7 @@ async function buscarInsightsMeta({ accessToken, adAccountId }) {
   const url = `${BASE_URL}/${accountId}/insights`;
   const params = new URLSearchParams({
     access_token: accessToken,
-    fields: 'account_name,campaign_name,campaign_id,spend,impressions,clicks,ctr,cpc,cpm,conversions,conversion_values,date_start',
+    fields: 'account_name,campaign_name,campaign_id,spend,impressions,clicks,ctr,cpc,cpm,actions{action_type,value},date_start',
     time_range: JSON.stringify({ since, until }),
     time_increment: 1,
     level: 'campaign',
@@ -52,6 +52,38 @@ async function buscarInsightsMeta({ accessToken, adAccountId }) {
   return processarResultadosMeta(todosResultados);
 }
 
+/**
+ * Extrai total de leads/conversões do campo 'actions'.
+ * O Meta Ads retorna actions como array de {action_type, value, ...}.
+ * Tipos de conversão: lead, complete_registration, subscribe, purchase, etc.
+ */
+function extrairConversoesDeActions(actions) {
+  if (!actions || !Array.isArray(actions)) return 0;
+
+  // Tipos de ação que representam leads. Como lead, onsite_web_lead e
+  // offsite_conversion.fb_pixel_lead representam o MESMO lead em escopos
+  // diferentes, usamos MAX entre eles para evitar duplicação.
+  const tiposLead = ['lead', 'onsite_web_lead', 'offsite_conversion.fb_pixel_lead'];
+  const tiposOutros = ['complete_registration', 'subscribe', 'purchase'];
+
+  let maxLead = 0;
+  let maxOutros = 0;
+
+  for (const action of actions) {
+    const tipo = action.action_type || '';
+    const valor = parseInt(action.value || 0);
+
+    if (tiposLead.includes(tipo)) {
+      maxLead = Math.max(maxLead, valor);
+    } else if (tiposOutros.includes(tipo)) {
+      maxOutros = Math.max(maxOutros, valor);
+    }
+  }
+
+  // Só soma outros tipos (complete_registration, etc.) se diferente dos leads
+  return maxLead + maxOutros;
+}
+
 function processarResultadosMeta(resultados) {
   const porMes = {};
   const campanhas = {};
@@ -61,7 +93,7 @@ function processarResultadosMeta(resultados) {
     if (!mes) continue;
 
     const gasto = parseFloat(row.spend || 0);
-    const conversoes = parseInt(row.conversions || 0);
+    const conversoes = extrairConversoesDeActions(row.actions);
     const nomeCampanha = row.campaign_name || 'Sem nome';
 
     if (!porMes[mes]) {
