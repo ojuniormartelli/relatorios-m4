@@ -16,7 +16,7 @@
 // ============================================================
 const CLIENT_ID = process.env.GOOGLE_ADS_CLIENT_ID;
 const CLIENT_SECRET = process.env.GOOGLE_ADS_CLIENT_SECRET;
-const REDIRECT_URI = "http://localhost:8080";
+const REDIRECT_URI = "http://localhost:3000";
 const SCOPES = "https://www.googleapis.com/auth/adwords";
 
 if (!CLIENT_ID || !CLIENT_SECRET) {
@@ -49,7 +49,7 @@ async function iniciarServidor() {
 
   return new Promise((resolve, reject) => {
     const server = http.createServer(async (req, res) => {
-      const url = new URL(req.url, `http://localhost:8080`);
+      const url = new URL(req.url, `http://localhost:3000`);
 
       if (url.pathname === "/") {
         const code = url.searchParams.get("code");
@@ -95,8 +95,8 @@ async function iniciarServidor() {
       }
     });
 
-    server.listen(8080, () => {
-      console.log("  ✅ Servidor local rodando em http://localhost:8080");
+    server.listen(3000, () => {
+      console.log("  ✅ Servidor local rodando em http://localhost:3000");
       const authUrl = gerarUrlAutorizacao();
       console.log(`  🔗 Abrindo navegador...`);
       

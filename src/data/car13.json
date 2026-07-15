@@ -3,9 +3,10 @@
     {
       "month": "2026-01",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-01",
+        "investment": 791.363739,
+        "conversions": 81,
+        "costPerConversion": 9.769922703703704
       },
       "metaAds": {
         "month": "2026-01",
@@ -14,16 +15,17 @@
         "costPerConversion": 0
       },
       "total": {
-        "investment": 1083.36,
-        "conversions": 0
+        "investment": 1874.723739,
+        "conversions": 81
       }
     },
     {
       "month": "2026-02",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-02",
+        "investment": 809.579023,
+        "conversions": 65,
+        "costPerConversion": 12.455061892307693
       },
       "metaAds": {
         "month": "2026-02",
@@ -32,16 +34,17 @@
         "costPerConversion": 0
       },
       "total": {
-        "investment": 1811.6700000000005,
-        "conversions": 0
+        "investment": 2621.2490230000003,
+        "conversions": 65
       }
     },
     {
       "month": "2026-03",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-03",
+        "investment": 1447.7211689999992,
+        "conversions": 119,
+        "costPerConversion": 12.16572410924369
       },
       "metaAds": {
         "month": "2026-03",
@@ -50,16 +53,17 @@
         "costPerConversion": 0
       },
       "total": {
-        "investment": 2030.8799999999999,
-        "conversions": 0
+        "investment": 3478.601168999999,
+        "conversions": 119
       }
     },
     {
       "month": "2026-04",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-04",
+        "investment": 1073.3338820000001,
+        "conversions": 94,
+        "costPerConversion": 11.418445553191491
       },
       "metaAds": {
         "month": "2026-04",
@@ -68,16 +72,17 @@
         "costPerConversion": 0
       },
       "total": {
-        "investment": 1941.0300000000002,
-        "conversions": 0
+        "investment": 3014.3638820000006,
+        "conversions": 94
       }
     },
     {
       "month": "2026-05",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-05",
+        "investment": 1212.1890749999998,
+        "conversions": 60,
+        "costPerConversion": 20.203151249999998
       },
       "metaAds": {
         "month": "2026-05",
@@ -86,16 +91,17 @@
         "costPerConversion": 0
       },
       "total": {
-        "investment": 1749.9199999999996,
-        "conversions": 0
+        "investment": 2962.1090749999994,
+        "conversions": 60
       }
     },
     {
       "month": "2026-06",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-06",
+        "investment": 922.1974759999999,
+        "conversions": 34,
+        "costPerConversion": 27.123455176470586
       },
       "metaAds": {
         "month": "2026-06",
@@ -104,30 +110,342 @@
         "costPerConversion": 0
       },
       "total": {
-        "investment": 1997.7099999999991,
-        "conversions": 0
+        "investment": 2919.907475999999,
+        "conversions": 34
       }
     },
     {
       "month": "2026-07",
       "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "costPerConversion": 0
+        "month": "2026-07",
+        "investment": 989.389264,
+        "conversions": 29,
+        "costPerConversion": 34.116871172413795
       },
       "metaAds": {
         "month": "2026-07",
-        "investment": 1405.8400000000004,
-        "conversions": 332,
-        "costPerConversion": 4.234457831325303
+        "investment": 1413.3100000000004,
+        "conversions": 334,
+        "costPerConversion": 4.231467065868265
       },
       "total": {
-        "investment": 1405.8400000000004,
-        "conversions": 332
+        "investment": 2402.6992640000003,
+        "conversions": 363
       }
     }
   ],
   "campaigns": [
+    {
+      "id": "google-22216549353",
+      "name": "[PESQUISA] [CPA] - Cambio Automático",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 608.108261,
+          "conversions": 47
+        },
+        {
+          "month": "2026-02",
+          "investment": 651.8858750000002,
+          "conversions": 43
+        },
+        {
+          "month": "2026-03",
+          "investment": 912.2836309999999,
+          "conversions": 66
+        },
+        {
+          "month": "2026-04",
+          "investment": 706.237769,
+          "conversions": 42
+        },
+        {
+          "month": "2026-05",
+          "investment": 932.772488,
+          "conversions": 39
+        },
+        {
+          "month": "2026-06",
+          "investment": 44.032681,
+          "conversions": 1
+        }
+      ]
+    },
+    {
+      "id": "google-22226964916",
+      "name": "[PESQUISA] [CPA] - Car13",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 183.25547799999993,
+          "conversions": 34
+        },
+        {
+          "month": "2026-02",
+          "investment": 117.67514299999999,
+          "conversions": 22
+        },
+        {
+          "month": "2026-03",
+          "investment": 197.39732,
+          "conversions": 35.5
+        },
+        {
+          "month": "2026-04",
+          "investment": 174.24806700000002,
+          "conversions": 39
+        },
+        {
+          "month": "2026-05",
+          "investment": 131.91809200000003,
+          "conversions": 13
+        },
+        {
+          "month": "2026-06",
+          "investment": 3.254402,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-22916149349",
+      "name": "[PESQUISA] [LEAD] - Pacote de revisão",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-02",
+          "investment": 0,
+          "conversions": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 0,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-23604638128",
+      "name": "[YT] - Reconhecimento - Visualização de Video",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-02",
+          "investment": 40.018005,
+          "conversions": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 49.939148,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-23622030903",
+      "name": "Pacote de Revisão",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-03",
+          "investment": 288.10107,
+          "conversions": 17.5
+        },
+        {
+          "month": "2026-04",
+          "investment": 192.84804599999995,
+          "conversions": 13
+        },
+        {
+          "month": "2026-05",
+          "investment": 33.943,
+          "conversions": 2
+        }
+      ]
+    },
+    {
+      "id": "google-23853985359",
+      "name": "[PESQUISA] [CPA] - Serviços Gerais",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-05",
+          "investment": 113.55549500000001,
+          "conversions": 6
+        },
+        {
+          "month": "2026-06",
+          "investment": 15.614251,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-23900429666",
+      "name": "[PESQUISA] [CPC] - Serviços Gerais",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 432.9411149999999,
+          "conversions": 12
+        }
+      ]
+    },
+    {
+      "id": "google-23900429717",
+      "name": "[PESQUISA] [CPC] - Cambio Automático",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 347.670417,
+          "conversions": 17
+        }
+      ]
+    },
+    {
+      "id": "google-23900429720",
+      "name": "[PESQUISA] [CPC] - Car13",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 23.588045,
+          "conversions": 3
+        }
+      ]
+    },
+    {
+      "id": "google-23980592766",
+      "name": "[PESQUISA] [MAX CPA] - Manutenção de Câmbio Automático",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 0,
+          "conversions": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 142.86,
+          "conversions": 4
+        }
+      ]
+    },
+    {
+      "id": "google-23985555833",
+      "name": "[PESQUISA] [MAX CPA] - Branding Car13",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 5.31,
+          "conversions": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 27.76,
+          "conversions": 5
+        }
+      ]
+    },
+    {
+      "id": "google-23985556460",
+      "name": "[PESQUISA] [MAX CPA] - Troca de Óleo de Câmbio Automático",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 29.83,
+          "conversions": 0
+        },
+        {
+          "month": "2026-07",
+          "investment": 126.114482,
+          "conversions": 2
+        }
+      ]
+    },
+    {
+      "id": "google-23990125813",
+      "name": "[PESQUISA] [MAX CPA] - Pacote de Revisão com Preço Fixo",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 106.85,
+          "conversions": 1
+        }
+      ]
+    },
+    {
+      "id": "google-23990126524",
+      "name": "[PESQUISA] [MAX CPA] - Serviços Gerais Car13",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-06",
+          "investment": 19.956565,
+          "conversions": 1
+        },
+        {
+          "month": "2026-07",
+          "investment": 70.840758,
+          "conversions": 13
+        }
+      ]
+    },
+    {
+      "id": "google-24011055296",
+      "name": "[PESQUISA] [CPC] - Manutenção de Câmbio Automático",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 264.758747,
+          "conversions": 4
+        }
+      ]
+    },
+    {
+      "id": "google-24015430780",
+      "name": "[PESQUISA] [CPC] - Troca de Óleo de Câmbio Automático",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 21.909999999999997,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-24015431695",
+      "name": "[PESQUISA] [CPC] - Pacote de Revisão com Preço Fixo",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 101.018537,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-24015431722",
+      "name": "[PESQUISA] [CPC] - Car13 Serviços Gerais Itapira",
+      "platform": "google",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 127.27674,
+          "conversions": 0
+        }
+      ]
+    },
     {
       "id": "120210694723790244",
       "name": "[ENGAJAMENTO] [FEED, STORY E REELS] [Post] - Aberto",
@@ -315,8 +633,8 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 331.70000000000005,
-          "conversions": 99
+          "investment": 336.51000000000005,
+          "conversions": 100
         }
       ]
     },
@@ -327,7 +645,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 344.54,
+          "investment": 346.02000000000004,
           "conversions": 106
         }
       ]
@@ -339,8 +657,8 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 342.72,
-          "conversions": 127
+          "investment": 343.56,
+          "conversions": 128
         }
       ]
     },
@@ -351,7 +669,7 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 268.32,
+          "investment": 268.65999999999997,
           "conversions": 0
         }
       ]
