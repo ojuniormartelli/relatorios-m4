@@ -95,13 +95,20 @@ async function buscarStatusCampanhas({ accessToken, adAccountId }) {
 function extrairConversoesDeActions(actions) {
   if (!actions || !Array.isArray(actions)) return 0;
 
-  // Tipos de ação que representam leads. Como lead, onsite_web_lead e
-  // offsite_conversion.fb_pixel_lead representam o MESMO lead em escopos
-  // diferentes, usamos MAX entre eles para evitar duplicação.
+  // Tipos de ação que representam leads
   const tiposLead = ['lead', 'onsite_web_lead', 'offsite_conversion.fb_pixel_lead'];
+  
+  // Tipos de ação para conversas no WhatsApp / mensagens
+  const tiposMessaging = [
+    'onsite_conversion.messaging_conversation_started_7d',
+    'onsite_conversion.messaging_first_reply',
+    'onsite_conversion.total_messaging_connection',
+  ];
+  
   const tiposOutros = ['complete_registration', 'subscribe', 'purchase'];
 
   let maxLead = 0;
+  let maxMessaging = 0;
   let maxOutros = 0;
 
   for (const action of actions) {
@@ -110,13 +117,15 @@ function extrairConversoesDeActions(actions) {
 
     if (tiposLead.includes(tipo)) {
       maxLead = Math.max(maxLead, valor);
+    } else if (tiposMessaging.includes(tipo)) {
+      maxMessaging = Math.max(maxMessaging, valor);
     } else if (tiposOutros.includes(tipo)) {
       maxOutros = Math.max(maxOutros, valor);
     }
   }
 
-  // Só soma outros tipos (complete_registration, etc.) se diferente dos leads
-  return maxLead + maxOutros;
+  // Soma: lead + mensagens WhatsApp + outros
+  return maxLead + maxMessaging + maxOutros;
 }
 
 function processarResultadosMeta(resultados, statusCampanhas = {}) {
