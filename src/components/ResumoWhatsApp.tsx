@@ -8,6 +8,8 @@ interface ResumoWhatsAppProps {
   investimento: number;
   totalConversoes: number;
   custoPorConversao: number;
+  totalCliques: number;
+  cpc: number;
   periodo: string;
   plataforma: string;
 }
@@ -17,6 +19,8 @@ export default function ResumoWhatsApp({
   investimento,
   totalConversoes,
   custoPorConversao,
+  totalCliques,
+  cpc,
   periodo,
   plataforma,
 }: ResumoWhatsAppProps) {
@@ -36,10 +40,13 @@ export default function ResumoWhatsApp({
 💰 *Investimento:*
 • Total investido: R$ ${investimento.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 
+👥 *Visitantes:*
+• Cliques: ${totalCliques.toLocaleString('pt-BR')}
+• Custo por clique (CPC): R$ ${cpc.toFixed(2)}
+
 🎯 *Resultados:*
 • Conversões: ${totalConversoes}
 • Custo por conversão (CPA): R$ ${custoPorConversao.toFixed(2)}
-• Total investido por lead: R$ ${custoPorConversao.toFixed(2)}
 
 ━━━━━━━━━━━━━━━━━━━━━
 📲 *Relatório completo:* ${currentUrl}

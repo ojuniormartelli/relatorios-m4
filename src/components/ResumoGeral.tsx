@@ -1,10 +1,10 @@
 'use client';
 
-import { TrendingUp, TrendingDown, PiggyBank, Target, DollarSign, MousePointerClick } from 'lucide-react';
+import { TrendingUp, TrendingDown, PiggyBank, Target, DollarSign, MousePointerClick, Eye } from 'lucide-react';
 
 interface VariacaoProps {
   valor: number;
-  positivo?: boolean; // se maior é melhor (ex: conversões) ou menor é melhor (ex: CPA)
+  positivo?: boolean;
 }
 
 function VariacaoBadge({ valor, positivo = true }: VariacaoProps) {
@@ -30,11 +30,15 @@ interface ResumoProps {
   investimento: number;
   totalConversoes: number;
   custoPorConversao: number;
+  totalCliques: number;
+  cpc: number;
   periodo: string;
   comparativo?: {
     investimento: number;
     conversoes: number;
     custoPorConversao: number;
+    clicks: number;
+    cpc: number;
   };
 }
 
@@ -42,11 +46,13 @@ export default function ResumoGeral({
   investimento, 
   totalConversoes, 
   custoPorConversao,
+  totalCliques,
+  cpc,
   periodo,
   comparativo
 }: ResumoProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
       {/* Investimento Total */}
       <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600">
         <div className="flex items-center justify-between">
@@ -64,6 +70,30 @@ export default function ResumoGeral({
           <p className="text-xs text-gray-400">{periodo}</p>
           {comparativo && (
             <VariacaoBadge valor={comparativo.investimento} />
+          )}
+        </div>
+      </div>
+
+      {/* Total de Cliques (Visitantes) */}
+      <div className="bg-white rounded-xl shadow-md p-6 border-l-4 border-teal-500">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-sm text-gray-500 font-medium">Visitantes (Cliques)</p>
+            <p className="text-2xl font-bold text-gray-800 mt-1">
+              {totalCliques.toLocaleString('pt-BR')}
+            </p>
+            <p className="text-xs text-gray-400 mt-0.5">
+              CPC médio: R$ {cpc.toFixed(2)}
+            </p>
+          </div>
+          <div className="bg-teal-100 p-3 rounded-full">
+            <Eye className="w-6 h-6 text-teal-600" />
+          </div>
+        </div>
+        <div className="flex items-center mt-2">
+          <p className="text-xs text-gray-400">Cliques no período</p>
+          {comparativo && (
+            <VariacaoBadge valor={comparativo.clicks} />
           )}
         </div>
       </div>

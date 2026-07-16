@@ -82,22 +82,25 @@ function processarResultadosGoogle(resultados) {
     const mes = data.substring(0, 7);
     const custo = Number(m.costMicros || 0) / 1000000;
     const conversoes = Number(m.conversions || 0);
+    const cliques = Number(m.clicks || 0);
     const campanhaId = String(c.id);
     const campanhaNome = c.name || 'Sem nome';
 
     // Agregado por mês
     if (!porMes[mes]) {
-      porMes[mes] = { investment: 0, conversions: 0 };
+      porMes[mes] = { investment: 0, conversions: 0, clicks: 0 };
     }
     porMes[mes].investment += custo;
     porMes[mes].conversions += conversoes;
+    porMes[mes].clicks += cliques;
 
     // Agregado por dia
     if (!porDia[data]) {
-      porDia[data] = { investment: 0, conversions: 0 };
+      porDia[data] = { investment: 0, conversions: 0, clicks: 0 };
     }
     porDia[data].investment += custo;
     porDia[data].conversions += conversoes;
+    porDia[data].clicks += cliques;
 
     // Por campanha
     if (!campanhas[campanhaId]) {
@@ -110,10 +113,11 @@ function processarResultadosGoogle(resultados) {
       };
     }
     if (!campanhas[campanhaId].months[mes]) {
-      campanhas[campanhaId].months[mes] = { month: mes, investment: 0, conversions: 0 };
+      campanhas[campanhaId].months[mes] = { month: mes, investment: 0, conversions: 0, clicks: 0 };
     }
     campanhas[campanhaId].months[mes].investment += custo;
     campanhas[campanhaId].months[mes].conversions += conversoes;
+    campanhas[campanhaId].months[mes].clicks += cliques;
   }
 
   const monthlyData = Object.entries(porMes)
@@ -122,6 +126,7 @@ function processarResultadosGoogle(resultados) {
       month,
       ...data,
       costPerConversion: data.conversions > 0 ? data.investment / data.conversions : 0,
+      cpc: data.clicks > 0 ? data.investment / data.clicks : 0,
     }));
 
   const dailyData = Object.entries(porDia)

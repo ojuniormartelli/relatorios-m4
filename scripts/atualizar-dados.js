@@ -52,14 +52,16 @@ async function buscarDeTodasAPIs(cliente) {
           existente.googleAds = { ...d };
           existente.total.investment += d.investment;
           existente.total.conversions += d.conversions;
+          existente.total.clicks += d.clicks || 0;
         } else {
           dadosCombinados.monthlyData.push({
             month: d.month,
             googleAds: { ...d },
-            metaAds: { investment: 0, conversions: 0, costPerConversion: 0 },
+            metaAds: { investment: 0, conversions: 0, clicks: 0, costPerConversion: 0, cpc: 0 },
             total: {
               investment: d.investment,
               conversions: d.conversions,
+              clicks: d.clicks || 0,
             },
           });
         }
@@ -69,15 +71,16 @@ async function buscarDeTodasAPIs(cliente) {
       for (const d of googleData.dailyData || []) {
         const existente = dadosCombinados.dailyData.find(dd => dd.date === d.date);
         if (existente) {
-          existente.googleAds = { investment: d.investment, conversions: d.conversions };
+          existente.googleAds = { investment: d.investment, conversions: d.conversions, clicks: d.clicks || 0 };
           existente.total.investment += d.investment;
           existente.total.conversions += d.conversions;
+          existente.total.clicks += d.clicks || 0;
         } else {
           dadosCombinados.dailyData.push({
             date: d.date,
-            googleAds: { investment: d.investment, conversions: d.conversions },
-            metaAds: { investment: 0, conversions: 0 },
-            total: { investment: d.investment, conversions: d.conversions },
+            googleAds: { investment: d.investment, conversions: d.conversions, clicks: d.clicks || 0 },
+            metaAds: { investment: 0, conversions: 0, clicks: 0 },
+            total: { investment: d.investment, conversions: d.conversions, clicks: d.clicks || 0 },
           });
         }
       }
@@ -107,14 +110,16 @@ async function buscarDeTodasAPIs(cliente) {
           existente.metaAds = { ...d };
           existente.total.investment += d.investment;
           existente.total.conversions += d.conversions;
+          existente.total.clicks += d.clicks || 0;
         } else {
           dadosCombinados.monthlyData.push({
             month: d.month,
-            googleAds: { investment: 0, conversions: 0, costPerConversion: 0 },
+            googleAds: { investment: 0, conversions: 0, clicks: 0, costPerConversion: 0, cpc: 0 },
             metaAds: { ...d },
             total: {
               investment: d.investment,
               conversions: d.conversions,
+              clicks: d.clicks || 0,
             },
           });
         }
@@ -124,15 +129,16 @@ async function buscarDeTodasAPIs(cliente) {
       for (const d of metaData.dailyData || []) {
         const existente = dadosCombinados.dailyData.find(dd => dd.date === d.date);
         if (existente) {
-          existente.metaAds = { investment: d.investment, conversions: d.conversions };
+          existente.metaAds = { investment: d.investment, conversions: d.conversions, clicks: d.clicks || 0 };
           existente.total.investment += d.investment;
           existente.total.conversions += d.conversions;
+          existente.total.clicks += d.clicks || 0;
         } else {
           dadosCombinados.dailyData.push({
             date: d.date,
-            googleAds: { investment: 0, conversions: 0 },
-            metaAds: { investment: d.investment, conversions: d.conversions },
-            total: { investment: d.investment, conversions: d.conversions },
+            googleAds: { investment: 0, conversions: 0, clicks: 0 },
+            metaAds: { investment: d.investment, conversions: d.conversions, clicks: d.clicks || 0 },
+            total: { investment: d.investment, conversions: d.conversions, clicks: d.clicks || 0 },
           });
         }
       }

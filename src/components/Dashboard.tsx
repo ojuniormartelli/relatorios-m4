@@ -12,7 +12,9 @@ import ResumoWhatsApp from './ResumoWhatsApp';
 interface PlatformData {
   investment: number;
   conversions: number;
+  clicks: number;
   costPerConversion: number;
+  cpc: number;
 }
 
 interface ClientData {
@@ -31,13 +33,14 @@ interface ClientData {
     total: {
       investment: number;
       conversions: number;
+      clicks: number;
     };
   }>;
   dailyData?: Array<{
     date: string;
-    googleAds: { investment: number; conversions: number };
-    metaAds: { investment: number; conversions: number };
-    total: { investment: number; conversions: number };
+    googleAds: { investment: number; conversions: number; clicks: number };
+    metaAds: { investment: number; conversions: number; clicks: number };
+    total: { investment: number; conversions: number; clicks: number };
   }>;
   campaigns: Array<{
     id: string;
@@ -48,6 +51,7 @@ interface ClientData {
       month: string;
       investment: number;
       conversions: number;
+      clicks?: number;
     }>;
   }>;
 }
@@ -135,13 +139,41 @@ function proporcaoMesNoIntervalo(mes: string, inicio: Date, fim: Date): number {
 
 // ============================================================
 // CALCULAR TOTAIS POR PLATAFORMA E INTERVALO
+// Usa dailyData quando disponível (mais preciso), senão monthlyData
 // ============================================================
 function calcTotals(
   monthlyData: ClientData['monthlyData'],
+  dailyData: ClientData['dailyData'] | undefined,
   platform: string,
   inicio: Date,
   fim: Date
 ) {
+  // Se temos dados diários reais, usa-os (mais preciso)
+  if (dailyData && dailyData.length > 0) {
+    const dias = eachDayOfInterval({ start: inicio, end: fim });
+    const totals = { investment: 0, conversions: 0, clicks: 0 };
+
+    for (const dia of dias) {
+      const dataKey = format(dia, 'yyyy-MM-dd');
+      const diaData = dailyData.find(d => d.date === dataKey);
+      if (!diaData) continue;
+
+      if (platform === 'all' || platform === 'google') {
+        totals.investment += diaData.googleAds.investment;
+        totals.conversions += diaData.googleAds.conversions;
+        totals.clicks += diaData.googleAds.clicks;
+      }
+      if (platform === 'all' || platform === 'meta') {
+        totals.investment += diaData.metaAds.investment;
+        totals.conversions += diaData.metaAds.conversions;
+        totals.clicks += diaData.metaAds.clicks;
+      }
+    }
+
+    return totals;
+  }
+
+  // Fallback: distribuir valores mensais proporcionalmente
   return monthlyData.reduce(
     (acc, month) => {
       const prop = proporcaoMesNoIntervalo(month.month, inicio, fim);
@@ -150,22 +182,26 @@ function calcTotals(
       if (platform === 'all' || platform === 'google') {
         acc.investment += month.googleAds.investment * prop;
         acc.conversions += month.googleAds.conversions * prop;
+        acc.clicks += (month.googleAds.clicks || 0) * prop;
       }
       if (platform === 'all' || platform === 'meta') {
         acc.investment += month.metaAds.investment * prop;
         acc.conversions += month.metaAds.conversions * prop;
+        acc.clicks += (month.metaAds.clicks || 0) * prop;
       }
       return acc;
     },
-    { investment: 0, conversions: 0 }
+    { investment: 0, conversions: 0, clicks: 0 }
   );
 }
 
-function calcDerived(totals: { investment: number; conversions: number }) {
+function calcDerived(totals: { investment: number; conversions: number; clicks: number }) {
   return {
     investment: totals.investment,
     conversions: Math.round(totals.conversions),
+    clicks: Math.round(totals.clicks),
     costPerConversion: totals.conversions > 0 ? totals.investment / totals.conversions : 0,
+    cpc: totals.clicks > 0 ? totals.investment / totals.clicks : 0,
   };
 }
 
@@ -212,21 +248,23 @@ export default function Dashboard({ data }: DashboardProps) {
 
   // Filtrar e calcular dados do período atual
   const dadosFiltrados = useMemo(() => {
-    const totals = calcTotals(data.monthlyData, plataformaSelecionada, intervalo.inicio, intervalo.fim);
+    const totals = calcTotals(data.monthlyData, data.dailyData, plataformaSelecionada, intervalo.inicio, intervalo.fim);
     return calcDerived(totals);
-  }, [data.monthlyData, plataformaSelecionada, intervalo]);
+  }, [data.monthlyData, data.dailyData, plataformaSelecionada, intervalo]);
 
   // Calcular comparativo com período anterior PROPORCIONAL
   const comparativo = useMemo(() => {
-    const totalsAnterior = calcTotals(data.monthlyData, plataformaSelecionada, intervaloAnterior.inicio, intervaloAnterior.fim);
+    const totalsAnterior = calcTotals(data.monthlyData, data.dailyData, plataformaSelecionada, intervaloAnterior.inicio, intervaloAnterior.fim);
     const anterior = calcDerived(totalsAnterior);
 
     return {
       investimento: calcVariacao(dadosFiltrados.investment, anterior.investment),
       conversoes: calcVariacao(dadosFiltrados.conversions, anterior.conversions),
       custoPorConversao: calcVariacao(dadosFiltrados.costPerConversion, anterior.costPerConversion),
+      clicks: calcVariacao(dadosFiltrados.clicks, anterior.clicks),
+      cpc: calcVariacao(dadosFiltrados.cpc, anterior.cpc),
     };
-  }, [data.monthlyData, plataformaSelecionada, intervaloAnterior, dadosFiltrados]);
+  }, [data.monthlyData, data.dailyData, plataformaSelecionada, intervaloAnterior, dadosFiltrados]);
 
   // Preparar dados para o gráfico
   // Se período ≤ 3 meses (≈90 dias): agrupar por DIA
@@ -423,6 +461,8 @@ export default function Dashboard({ data }: DashboardProps) {
           investimento={dadosFiltrados.investment}
           totalConversoes={dadosFiltrados.conversions}
           custoPorConversao={dadosFiltrados.costPerConversion}
+          totalCliques={dadosFiltrados.clicks}
+          cpc={dadosFiltrados.cpc}
           periodo={periodoLabel}
           comparativo={comparativo}
         />
@@ -433,6 +473,8 @@ export default function Dashboard({ data }: DashboardProps) {
           investimento={dadosFiltrados.investment}
           totalConversoes={dadosFiltrados.conversions}
           custoPorConversao={dadosFiltrados.costPerConversion}
+          totalCliques={dadosFiltrados.clicks}
+          cpc={dadosFiltrados.cpc}
           periodo={periodoLabel}
           plataforma={plataformaLabel}
         />
