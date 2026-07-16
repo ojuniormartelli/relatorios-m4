@@ -33,16 +33,16 @@ async function buscarDeTodasAPIs(cliente) {
   console.log(`\n📡 Buscando dados para: ${cliente.company}`);
 
   // Google Ads
-  if (process.env.GOOGLE_ADS_CLIENT_ID && process.env.GOOGLE_ADS_CUSTOMER_ID) {
+  if (process.env.GOOGLE_ADS_CLIENT_ID && cliente.googleCustomerId) {
     try {
-      console.log('\n📊 Google Ads:');
+      console.log(`\n📊 Google Ads (cliente ${cliente.googleCustomerId}):`);
       const { buscarDadosGoogleAds } = require('./google-ads.js');
       const googleData = await buscarDadosGoogleAds({
         clientId: process.env.GOOGLE_ADS_CLIENT_ID,
         clientSecret: process.env.GOOGLE_ADS_CLIENT_SECRET,
         refreshToken: process.env.GOOGLE_ADS_REFRESH_TOKEN,
         developerToken: process.env.GOOGLE_ADS_DEVELOPER_TOKEN,
-        customerId: process.env.GOOGLE_ADS_CUSTOMER_ID,
+        customerId: cliente.googleCustomerId,
         loginCustomerId: process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID,
       });
     
@@ -92,13 +92,13 @@ async function buscarDeTodasAPIs(cliente) {
   }
 
   // Meta Ads
-  if (process.env.META_ADS_TOKEN && process.env.META_ADS_ACCOUNT_ID) {
+  if (process.env.META_ADS_TOKEN && cliente.metaAccountId) {
     try {
-      console.log('\n📱 Meta Ads:');
+      console.log(`\n📱 Meta Ads (conta ${cliente.metaAccountId}):`);
       const { buscarDadosMetaAds } = require('./meta-ads.js');
       const metaData = await buscarDadosMetaAds({
         accessToken: process.env.META_ADS_TOKEN,
-        adAccountId: process.env.META_ADS_ACCOUNT_ID,
+        adAccountId: cliente.metaAccountId,
       });
       
       for (const d of metaData.monthlyData) {

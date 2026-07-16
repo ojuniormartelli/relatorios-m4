@@ -7,6 +7,8 @@
   },
   "clients": [
     {
+      "id": "599ec561",
+      "dataKey": "car13",
       "slug": "car13",
       "name": "Car 13",
       "company": "Car13 - Oficina Multimarca",
@@ -17,7 +19,52 @@
       "since": "2026-01",
       "platforms": ["google", "meta"],
       "monthlyInvestment": 2500,
-      "lastUpdate": "2026-07-14"
+      "lastUpdate": "2026-07-16"
+    },
+    {
+      "id": "c2c80ce1",
+      "dataKey": "gas-aurelio",
+      "slug": "gas-aurelio",
+      "name": "Gás Aurélio",
+      "company": "Gás Aurélio - Itapira",
+      "googleCustomerId": "1287085100",
+      "metaAccountId": null,
+      "dataFile": "gas-aurelio.json",
+      "active": true,
+      "since": "2026-07",
+      "platforms": ["google"],
+      "monthlyInvestment": 1000,
+      "lastUpdate": "2026-07-16"
+    },
+    {
+      "id": "934b25aa",
+      "dataKey": "up-comunicacao",
+      "slug": "up-comunicacao",
+      "name": "UP! Comunicação Visual",
+      "company": "UP! Comunicação Visual",
+      "googleCustomerId": "5696449319",
+      "metaAccountId": null,
+      "dataFile": "up-comunicacao.json",
+      "active": true,
+      "since": "2026-07",
+      "platforms": ["google"],
+      "monthlyInvestment": 1000,
+      "lastUpdate": "2026-07-16"
+    },
+    {
+      "id": "1c5f7786",
+      "dataKey": "junior-terraplanagem",
+      "slug": "junior-terraplanagem",
+      "name": "Junior Terraplenagem",
+      "company": "Junior Terraplenagem",
+      "googleCustomerId": "6052616080",
+      "metaAccountId": null,
+      "dataFile": "junior-terraplanagem.json",
+      "active": true,
+      "since": "2026-07",
+      "platforms": ["google"],
+      "monthlyInvestment": 1000,
+      "lastUpdate": "2026-07-16"
     }
   ]
 }

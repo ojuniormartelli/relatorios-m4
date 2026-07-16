@@ -1,10 +1,17 @@
 import { notFound } from 'next/navigation';
 import Dashboard from '@/components/Dashboard';
+import clientesData from '@/data/clientes.json';
 import car13Data from '@/data/car13.json';
+import gasAurelioData from '@/data/gas-aurelio.json';
+import upComunicacaoData from '@/data/up-comunicacao.json';
+import juniorTerraplanagemData from '@/data/junior-terraplanagem.json';
 
-// This would normally come from a database
-const clientsData: Record<string, typeof car13Data> = {
+// Registro: dataKey → dados importados
+const todosDados: Record<string, any> = {
   car13: car13Data,
+  'gas-aurelio': gasAurelioData,
+  'up-comunicacao': upComunicacaoData,
+  'junior-terraplanagem': juniorTerraplanagemData,
 };
 
 interface PageProps {
@@ -14,13 +21,23 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(clientsData).map((slug) => ({ slug }));
+  // Gera páginas para TODOS os IDs aleatórios dos clientes ativos
+  return clientesData.clients
+    .filter((c) => c.active)
+    .map((client) => ({ slug: client.id }));
 }
 
 export default async function ClientDashboard({ params }: PageProps) {
   const { slug } = await params;
-  const clientData = clientsData[slug];
 
+  // Busca o cliente pelo ID aleatório (URL)
+  const cliente = clientesData.clients.find((c) => c.id === slug);
+  if (!cliente) {
+    notFound();
+  }
+
+  // Carrega os dados correspondentes
+  const clientData = todosDados[cliente.dataKey];
   if (!clientData) {
     notFound();
   }
@@ -30,14 +47,14 @@ export default async function ClientDashboard({ params }: PageProps) {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
-  const clientData = clientsData[slug];
+  const cliente = clientesData.clients.find((c) => c.id === slug);
 
-  if (!clientData) {
+  if (!cliente) {
     return { title: 'Cliente não encontrado' };
   }
 
   return {
-    title: `${clientData.client.company} - Relatório de Performance`,
-    description: `Relatório de performance de marketing digital para ${clientData.client.company}`,
+    title: `${cliente.company} - Relatório de Performance`,
+    description: `Relatório de performance de marketing digital para ${cliente.company}`,
   };
 }

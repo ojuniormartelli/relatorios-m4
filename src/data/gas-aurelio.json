@@ -1,0 +1,1516 @@
+{
+  "monthlyData": [
+    {
+      "month": "2026-01",
+      "googleAds": {
+        "month": "2026-01",
+        "investment": 119.25771599999997,
+        "conversions": 49,
+        "costPerConversion": 2.4338309387755097
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 119.25771599999997,
+        "conversions": 49
+      }
+    },
+    {
+      "month": "2026-02",
+      "googleAds": {
+        "month": "2026-02",
+        "investment": 400.432104,
+        "conversions": 135,
+        "costPerConversion": 2.966163733333333
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 400.432104,
+        "conversions": 135
+      }
+    },
+    {
+      "month": "2026-03",
+      "googleAds": {
+        "month": "2026-03",
+        "investment": 450.499872,
+        "conversions": 118,
+        "costPerConversion": 3.817795525423729
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 450.499872,
+        "conversions": 118
+      }
+    },
+    {
+      "month": "2026-04",
+      "googleAds": {
+        "month": "2026-04",
+        "investment": 150.10685500000002,
+        "conversions": 38.007075,
+        "costPerConversion": 3.949445070424389
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 150.10685500000002,
+        "conversions": 38.007075
+      }
+    },
+    {
+      "month": "2026-05",
+      "googleAds": {
+        "month": "2026-05",
+        "investment": 300.403306,
+        "conversions": 62.992925,
+        "costPerConversion": 4.768841992969845
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 300.403306,
+        "conversions": 62.992925
+      }
+    }
+  ],
+  "dailyData": [
+    {
+      "date": "2026-01-01",
+      "googleAds": {
+        "investment": 18.984349,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 18.984349,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-01-02",
+      "googleAds": {
+        "investment": 0.041901,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.041901,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-01-03",
+      "googleAds": {
+        "investment": 0.057628,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.057628,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-01-05",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-01-23",
+      "googleAds": {
+        "investment": 7.38126,
+        "conversions": 3
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 7.38126,
+        "conversions": 3
+      }
+    },
+    {
+      "date": "2026-01-24",
+      "googleAds": {
+        "investment": 18.33063,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 18.33063,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-01-25",
+      "googleAds": {
+        "investment": 21.470033,
+        "conversions": 9
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 21.470033,
+        "conversions": 9
+      }
+    },
+    {
+      "date": "2026-01-26",
+      "googleAds": {
+        "investment": 7.352715999999999,
+        "conversions": 3
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 7.352715999999999,
+        "conversions": 3
+      }
+    },
+    {
+      "date": "2026-01-27",
+      "googleAds": {
+        "investment": 7.427869999999999,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 7.427869999999999,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-01-28",
+      "googleAds": {
+        "investment": 13.397171,
+        "conversions": 5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 13.397171,
+        "conversions": 5
+      }
+    },
+    {
+      "date": "2026-01-29",
+      "googleAds": {
+        "investment": 14.250548000000002,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 14.250548000000002,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-01-30",
+      "googleAds": {
+        "investment": 9.532986,
+        "conversions": 7
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 9.532986,
+        "conversions": 7
+      }
+    },
+    {
+      "date": "2026-01-31",
+      "googleAds": {
+        "investment": 1.020624,
+        "conversions": 2
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 1.020624,
+        "conversions": 2
+      }
+    },
+    {
+      "date": "2026-02-02",
+      "googleAds": {
+        "investment": 10.485707,
+        "conversions": 5.5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 10.485707,
+        "conversions": 5.5
+      }
+    },
+    {
+      "date": "2026-02-03",
+      "googleAds": {
+        "investment": 12.794938,
+        "conversions": 8.5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 12.794938,
+        "conversions": 8.5
+      }
+    },
+    {
+      "date": "2026-02-04",
+      "googleAds": {
+        "investment": 22.838086999999998,
+        "conversions": 7
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 22.838086999999998,
+        "conversions": 7
+      }
+    },
+    {
+      "date": "2026-02-05",
+      "googleAds": {
+        "investment": 13.53986,
+        "conversions": 5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 13.53986,
+        "conversions": 5
+      }
+    },
+    {
+      "date": "2026-02-06",
+      "googleAds": {
+        "investment": 27.404242999999997,
+        "conversions": 11
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 27.404242999999997,
+        "conversions": 11
+      }
+    },
+    {
+      "date": "2026-02-07",
+      "googleAds": {
+        "investment": 13.051287000000002,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 13.051287000000002,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-02-08",
+      "googleAds": {
+        "investment": 0.03,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.03,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-02-09",
+      "googleAds": {
+        "investment": 24.952778000000002,
+        "conversions": 11
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 24.952778000000002,
+        "conversions": 11
+      }
+    },
+    {
+      "date": "2026-02-10",
+      "googleAds": {
+        "investment": 17.672387999999998,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 17.672387999999998,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-02-11",
+      "googleAds": {
+        "investment": 23.148043,
+        "conversions": 4.5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 23.148043,
+        "conversions": 4.5
+      }
+    },
+    {
+      "date": "2026-02-12",
+      "googleAds": {
+        "investment": 15.240489999999998,
+        "conversions": 4.5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 15.240489999999998,
+        "conversions": 4.5
+      }
+    },
+    {
+      "date": "2026-02-13",
+      "googleAds": {
+        "investment": 11.895675,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 11.895675,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-02-14",
+      "googleAds": {
+        "investment": 15.384865,
+        "conversions": 8
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 15.384865,
+        "conversions": 8
+      }
+    },
+    {
+      "date": "2026-02-15",
+      "googleAds": {
+        "investment": 21.574015,
+        "conversions": 3
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 21.574015,
+        "conversions": 3
+      }
+    },
+    {
+      "date": "2026-02-16",
+      "googleAds": {
+        "investment": 19.975281000000003,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 19.975281000000003,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-02-17",
+      "googleAds": {
+        "investment": 0.340966,
+        "conversions": 1
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.340966,
+        "conversions": 1
+      }
+    },
+    {
+      "date": "2026-02-18",
+      "googleAds": {
+        "investment": 0.022579000000000002,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.022579000000000002,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-02-19",
+      "googleAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-02-20",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-02-23",
+      "googleAds": {
+        "investment": 16.115541999999998,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 16.115541999999998,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-02-24",
+      "googleAds": {
+        "investment": 19.560547,
+        "conversions": 8
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 19.560547,
+        "conversions": 8
+      }
+    },
+    {
+      "date": "2026-02-25",
+      "googleAds": {
+        "investment": 17.798175999999998,
+        "conversions": 9
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 17.798175999999998,
+        "conversions": 9
+      }
+    },
+    {
+      "date": "2026-02-26",
+      "googleAds": {
+        "investment": 14.024892999999999,
+        "conversions": 5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 14.024892999999999,
+        "conversions": 5
+      }
+    },
+    {
+      "date": "2026-02-27",
+      "googleAds": {
+        "investment": 49.213899999999995,
+        "conversions": 11
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 49.213899999999995,
+        "conversions": 11
+      }
+    },
+    {
+      "date": "2026-02-28",
+      "googleAds": {
+        "investment": 33.357844,
+        "conversions": 9
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 33.357844,
+        "conversions": 9
+      }
+    },
+    {
+      "date": "2026-03-01",
+      "googleAds": {
+        "investment": 0.057592000000000004,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.057592000000000004,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-02",
+      "googleAds": {
+        "investment": 0.03,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.03,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-03",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 1
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 1
+      }
+    },
+    {
+      "date": "2026-03-09",
+      "googleAds": {
+        "investment": 25.915956,
+        "conversions": 5
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 25.915956,
+        "conversions": 5
+      }
+    },
+    {
+      "date": "2026-03-10",
+      "googleAds": {
+        "investment": 55.624589,
+        "conversions": 15
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 55.624589,
+        "conversions": 15
+      }
+    },
+    {
+      "date": "2026-03-11",
+      "googleAds": {
+        "investment": 64.58391800000001,
+        "conversions": 19
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 64.58391800000001,
+        "conversions": 19
+      }
+    },
+    {
+      "date": "2026-03-12",
+      "googleAds": {
+        "investment": 3.9258469999999996,
+        "conversions": 1
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 3.9258469999999996,
+        "conversions": 1
+      }
+    },
+    {
+      "date": "2026-03-13",
+      "googleAds": {
+        "investment": 0.03,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.03,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-14",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-18",
+      "googleAds": {
+        "investment": 17.29028,
+        "conversions": 2
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 17.29028,
+        "conversions": 2
+      }
+    },
+    {
+      "date": "2026-03-19",
+      "googleAds": {
+        "investment": 48.433614000000006,
+        "conversions": 12
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 48.433614000000006,
+        "conversions": 12
+      }
+    },
+    {
+      "date": "2026-03-20",
+      "googleAds": {
+        "investment": 84.291675,
+        "conversions": 25
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 84.291675,
+        "conversions": 25
+      }
+    },
+    {
+      "date": "2026-03-21",
+      "googleAds": {
+        "investment": 0.026865,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.026865,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-22",
+      "googleAds": {
+        "investment": 0.03,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.03,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-23",
+      "googleAds": {
+        "investment": 0.02,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.02,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-03-25",
+      "googleAds": {
+        "investment": 20.949804,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 20.949804,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "googleAds": {
+        "investment": 47.887962,
+        "conversions": 14
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 47.887962,
+        "conversions": 14
+      }
+    },
+    {
+      "date": "2026-03-27",
+      "googleAds": {
+        "investment": 31.234368,
+        "conversions": 8
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 31.234368,
+        "conversions": 8
+      }
+    },
+    {
+      "date": "2026-03-28",
+      "googleAds": {
+        "investment": 29.802082,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 29.802082,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-03-29",
+      "googleAds": {
+        "investment": 20.34532,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 20.34532,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-04-09",
+      "googleAds": {
+        "investment": 24.613232000000004,
+        "conversions": 6
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 24.613232000000004,
+        "conversions": 6
+      }
+    },
+    {
+      "date": "2026-04-10",
+      "googleAds": {
+        "investment": 33.907654,
+        "conversions": 10
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 33.907654,
+        "conversions": 10
+      }
+    },
+    {
+      "date": "2026-04-11",
+      "googleAds": {
+        "investment": 39.948966,
+        "conversions": 8
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 39.948966,
+        "conversions": 8
+      }
+    },
+    {
+      "date": "2026-04-12",
+      "googleAds": {
+        "investment": 45.851783,
+        "conversions": 10.007075
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 45.851783,
+        "conversions": 10.007075
+      }
+    },
+    {
+      "date": "2026-04-13",
+      "googleAds": {
+        "investment": 5.747592,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 5.747592,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-04-14",
+      "googleAds": {
+        "investment": 0.017628,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.017628,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-04-15",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-04-16",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-05-08",
+      "googleAds": {
+        "investment": 18.012014,
+        "conversions": 3.992925
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 18.012014,
+        "conversions": 3.992925
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "googleAds": {
+        "investment": 22.873471,
+        "conversions": 4
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 22.873471,
+        "conversions": 4
+      }
+    },
+    {
+      "date": "2026-05-10",
+      "googleAds": {
+        "investment": 37.705443,
+        "conversions": 10
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 37.705443,
+        "conversions": 10
+      }
+    },
+    {
+      "date": "2026-05-11",
+      "googleAds": {
+        "investment": 48.193871,
+        "conversions": 12
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 48.193871,
+        "conversions": 12
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "googleAds": {
+        "investment": 23.277621000000003,
+        "conversions": 3
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 23.277621000000003,
+        "conversions": 3
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "googleAds": {
+        "investment": 0.03,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.03,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-05-14",
+      "googleAds": {
+        "investment": 19.314851,
+        "conversions": 3
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 19.314851,
+        "conversions": 3
+      }
+    },
+    {
+      "date": "2026-05-15",
+      "googleAds": {
+        "investment": 27.423156,
+        "conversions": 3
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 27.423156,
+        "conversions": 3
+      }
+    },
+    {
+      "date": "2026-05-16",
+      "googleAds": {
+        "investment": 44.82314,
+        "conversions": 11
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 44.82314,
+        "conversions": 11
+      }
+    },
+    {
+      "date": "2026-05-17",
+      "googleAds": {
+        "investment": 55.075007,
+        "conversions": 10
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 55.075007,
+        "conversions": 10
+      }
+    },
+    {
+      "date": "2026-05-18",
+      "googleAds": {
+        "investment": 2.124732,
+        "conversions": 2
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 2.124732,
+        "conversions": 2
+      }
+    },
+    {
+      "date": "2026-05-19",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 1
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 1
+      }
+    },
+    {
+      "date": "2026-05-20",
+      "googleAds": {
+        "investment": 0.01,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 0.01,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-05-23",
+      "googleAds": {
+        "investment": 1.53,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 1.53,
+        "conversions": 0
+      }
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "google-22419136923",
+      "name": "[PESQUISA] [P13]  - Itapira",
+      "platform": "google",
+      "status": "PAUSED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 15.898319,
+          "conversions": 6
+        },
+        {
+          "month": "2026-02",
+          "investment": 55.199065999999995,
+          "conversions": 25.5
+        },
+        {
+          "month": "2026-03",
+          "investment": 0.75,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-22419949827",
+      "name": "[PESQUISA] [P45] - São João da Boa Vista",
+      "platform": "google",
+      "status": "REMOVED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 0.29779900000000004,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-22425740801",
+      "name": "[PESQUISA] [P20] - Itapira",
+      "platform": "google",
+      "status": "REMOVED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 29.455903000000003,
+          "conversions": 8
+        },
+        {
+          "month": "2026-02",
+          "investment": 36.814851999999995,
+          "conversions": 3.5
+        }
+      ]
+    },
+    {
+      "id": "google-22429255816",
+      "name": "[PESQUISA] [P13] - São João da Boa Vista",
+      "platform": "google",
+      "status": "PAUSED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 19.897833,
+          "conversions": 15
+        },
+        {
+          "month": "2026-02",
+          "investment": 100.09362700000001,
+          "conversions": 39
+        },
+        {
+          "month": "2026-03",
+          "investment": 0,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-22429350913",
+      "name": "[PESQUISA] [P20] - Mogi Guaçu e Região",
+      "platform": "google",
+      "status": "REMOVED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 4.386643,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-22429960492",
+      "name": "[PESQUISA] [P45] - Mogi Guaçu e Região",
+      "platform": "google",
+      "status": "REMOVED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 32.427609000000004,
+          "conversions": 11
+        }
+      ]
+    },
+    {
+      "id": "google-22503847172",
+      "name": "[PESQUISA] [P13] - Mogi Guaçu",
+      "platform": "google",
+      "status": "PAUSED",
+      "months": [
+        {
+          "month": "2026-01",
+          "investment": 16.89361,
+          "conversions": 9
+        },
+        {
+          "month": "2026-02",
+          "investment": 137.007167,
+          "conversions": 54
+        },
+        {
+          "month": "2026-03",
+          "investment": 0,
+          "conversions": 0
+        }
+      ]
+    },
+    {
+      "id": "google-23603437406",
+      "name": "[PESQUISA] [ITAPIRA]  - Geral",
+      "platform": "google",
+      "status": "ENABLED",
+      "months": [
+        {
+          "month": "2026-02",
+          "investment": 0.315855,
+          "conversions": 0
+        },
+        {
+          "month": "2026-03",
+          "investment": 126.95030799999998,
+          "conversions": 26
+        },
+        {
+          "month": "2026-04",
+          "investment": 65.11402100000001,
+          "conversions": 19
+        },
+        {
+          "month": "2026-05",
+          "investment": 103.93723899999999,
+          "conversions": 19
+        }
+      ]
+    },
+    {
+      "id": "google-23603484692",
+      "name": "[PESQUISA] [SJBV] - Geral",
+      "platform": "google",
+      "status": "ENABLED",
+      "months": [
+        {
+          "month": "2026-02",
+          "investment": 22.397562999999998,
+          "conversions": 5
+        },
+        {
+          "month": "2026-03",
+          "investment": 176.933817,
+          "conversions": 49
+        },
+        {
+          "month": "2026-04",
+          "investment": 52.861214999999994,
+          "conversions": 11.007075
+        },
+        {
+          "month": "2026-05",
+          "investment": 128.637406,
+          "conversions": 24.992925
+        }
+      ]
+    },
+    {
+      "id": "google-23608139473",
+      "name": "[PESQUISA] [MOGI GUAÇU] - Geral",
+      "platform": "google",
+      "status": "ENABLED",
+      "months": [
+        {
+          "month": "2026-02",
+          "investment": 48.603974,
+          "conversions": 8
+        },
+        {
+          "month": "2026-03",
+          "investment": 145.865747,
+          "conversions": 43
+        },
+        {
+          "month": "2026-04",
+          "investment": 32.131619,
+          "conversions": 8
+        },
+        {
+          "month": "2026-05",
+          "investment": 67.82866100000001,
+          "conversions": 19
+        }
+      ]
+    }
+  ],
+  "client": {
+    "slug": "gas-aurelio",
+    "name": "Gás Aurélio",
+    "company": "Gás Aurélio - Itapira",
+    "logo": "/logos/gas-aurelio.png",
+    "primaryColor": "#1E40AF",
+    "secondaryColor": "#3B82F6"
+  }
+}

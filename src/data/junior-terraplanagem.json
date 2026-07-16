@@ -1,0 +1,137 @@
+{
+  "monthlyData": [
+    {
+      "month": "2026-07",
+      "googleAds": {
+        "month": "2026-07",
+        "investment": 111.94104300000001,
+        "conversions": 1,
+        "costPerConversion": 111.94104300000001
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "costPerConversion": 0
+      },
+      "total": {
+        "investment": 111.94104300000001,
+        "conversions": 1
+      }
+    }
+  ],
+  "dailyData": [
+    {
+      "date": "2026-07-11",
+      "googleAds": {
+        "investment": 3,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 3,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-07-12",
+      "googleAds": {
+        "investment": 2.98,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 2.98,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-07-13",
+      "googleAds": {
+        "investment": 35.664468,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 35.664468,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-07-14",
+      "googleAds": {
+        "investment": 35.128637,
+        "conversions": 1
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 35.128637,
+        "conversions": 1
+      }
+    },
+    {
+      "date": "2026-07-15",
+      "googleAds": {
+        "investment": 31.717938,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 31.717938,
+        "conversions": 0
+      }
+    },
+    {
+      "date": "2026-07-16",
+      "googleAds": {
+        "investment": 3.45,
+        "conversions": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0
+      },
+      "total": {
+        "investment": 3.45,
+        "conversions": 0
+      }
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "google-24022831628",
+      "name": "[PESQUISA] [CPC] - Jr. Terraplenagem - Itapira e Região",
+      "platform": "google",
+      "status": "ENABLED",
+      "months": [
+        {
+          "month": "2026-07",
+          "investment": 111.94104300000001,
+          "conversions": 1
+        }
+      ]
+    }
+  ],
+  "client": {
+    "slug": "junior-terraplanagem",
+    "name": "Junior Terraplenagem",
+    "company": "Junior Terraplenagem",
+    "logo": "/logos/junior-terraplanagem.png",
+    "primaryColor": "#1E40AF",
+    "secondaryColor": "#3B82F6"
+  }
+}

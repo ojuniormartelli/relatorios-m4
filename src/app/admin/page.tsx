@@ -2,183 +2,227 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Check, Copy, ExternalLink, Share2, Users, TrendingUp, DollarSign, BarChart3, Shield, RefreshCw } from 'lucide-react';
 import clientesData from '@/data/clientes.json';
-import car13Data from '@/data/car13.json';
-
-const dadosClientes: Record<string, any> = {
-  car13: car13Data,
-};
 
 export default function AdminDashboard() {
   const [origin, setOrigin] = useState('');
+  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   useEffect(() => {
     setOrigin(window.location.origin);
   }, []);
 
   const { agency, clients } = clientesData;
+  const activeClients = clients.filter(c => c.active);
+
+  const copyToClipboard = async (url: string, id: string) => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2500);
+    } catch {
+      // Fallback
+      const textarea = document.createElement('textarea');
+      textarea.value = url;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2500);
+    }
+  };
+
+  const shareWhatsApp = (company: string, url: string) => {
+    const texto = encodeURIComponent(
+      `📊 *Relatório ${company}*\n\nAcesse o dashboard completo com gráficos e dados de performance:\n${url}`
+    );
+    window.open(`https://wa.me/?text=${texto}`, '_blank');
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+      <header className="bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-2xl font-bold">{agency.name}</h1>
-              <p className="text-blue-200 text-sm mt-1">Painel de Controle - Relatórios</p>
+            <div className="flex items-center gap-4">
+              <div className="bg-white/10 p-3 rounded-xl">
+                <BarChart3 className="w-8 h-8 text-blue-200" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold tracking-tight">{agency.name}</h1>
+                <p className="text-blue-200 text-sm mt-0.5">Painel de Relatórios • Acesso restrito</p>
+              </div>
             </div>
             <a
               href={agency.site}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-blue-200 hover:text-white underline"
+              className="hidden sm:flex items-center gap-1.5 text-sm text-blue-200 hover:text-white transition-colors"
             >
-              {agency.site}
+              <ExternalLink className="w-3.5 h-3.5" />
+              {agency.site.replace('https://', '')}
             </a>
           </div>
         </div>
       </header>
 
-      {/* Stats Overview */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Agency Summary */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <p className="text-sm text-gray-500">Total de Clientes</p>
-            <p className="text-3xl font-bold text-gray-900 mt-1">{clients.length}</p>
+        {/* Stats Overview */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-3">
+              <div className="bg-blue-100 p-2.5 rounded-lg">
+                <Users className="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Clientes</p>
+                <p className="text-2xl font-bold text-gray-900 mt-0.5">{activeClients.length}</p>
+              </div>
+            </div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <p className="text-sm text-gray-500">Clientes Ativos</p>
-            <p className="text-3xl font-bold text-green-600 mt-1">
-              {clients.filter(c => c.active).length}
-            </p>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-3">
+              <div className="bg-green-100 p-2.5 rounded-lg">
+                <Shield className="w-5 h-5 text-green-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">URL Segura</p>
+                <p className="text-2xl font-bold text-gray-900 mt-0.5">ID único</p>
+              </div>
+            </div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <p className="text-sm text-gray-500">Investimento Total (mês)</p>
-            <p className="text-3xl font-bold text-gray-900 mt-1">
-              R$ {clients.reduce((acc, c) => acc + (c.monthlyInvestment || 0), 0).toLocaleString('pt-BR')}
-            </p>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-3">
+              <div className="bg-purple-100 p-2.5 rounded-lg">
+                <TrendingUp className="w-5 h-5 text-purple-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Plataformas</p>
+                <p className="text-2xl font-bold text-gray-900 mt-0.5">Google + Meta</p>
+              </div>
+            </div>
           </div>
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <p className="text-sm text-gray-500">Plataformas</p>
-            <p className="text-3xl font-bold text-gray-900 mt-1">Google + Meta</p>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-shadow">
+            <div className="flex items-center gap-3">
+              <div className="bg-amber-100 p-2.5 rounded-lg">
+                <RefreshCw className="w-5 h-5 text-amber-600" />
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Auto-Update</p>
+                <p className="text-2xl font-bold text-gray-900 mt-0.5">Diário</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Clients List */}
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Clientes</h2>
+        {/* Título da lista */}
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="text-xl font-semibold text-gray-800">Relatórios dos Clientes</h2>
+          <span className="text-sm text-gray-500 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+            {activeClients.length} {activeClients.length === 1 ? 'relatório' : 'relatórios'}
+          </span>
+        </div>
+
+        {/* Lista de Clientes */}
         <div className="grid gap-4">
-          {clients.map((client) => {
-            const data = dadosClientes[client.slug];
-            const lastMonth = data?.monthlyData?.[data.monthlyData.length - 1];
-            
+          {activeClients.map((client) => {
+            const reportUrl = `${origin}/${client.id}`;
+            const isCopied = copiedId === client.id;
+
             return (
-              <div key={client.slug} className="bg-white rounded-xl shadow-md p-6">
-                <div className="flex items-center justify-between flex-wrap gap-4">
-                  {/* Client Info */}
-                  <div className="flex-1 min-w-[200px]">
-                    <div className="flex items-center gap-3">
+              <div
+                key={client.id}
+                className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-all hover:border-blue-200"
+              >
+                <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+                  {/* Info do cliente */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 flex-wrap">
                       <h3 className="text-lg font-semibold text-gray-900">{client.company}</h3>
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        client.active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
+                        client.active ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-500'
                       }`}>
                         {client.active ? 'Ativo' : 'Inativo'}
                       </span>
                     </div>
                     <p className="text-sm text-gray-500 mt-1">
-                      Desde {client.since} • Última atualização: {client.lastUpdate}
+                      Desde {client.since} • {client.platforms.length} plataforma{client.platforms.length > 1 ? 's' : ''}
                     </p>
-                    <div className="flex gap-2 mt-2">
-                      {client.platforms.map((p) => (
-                        <span key={p} className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                          p === 'google' ? 'bg-blue-100 text-blue-700' : 'bg-indigo-100 text-indigo-700'
-                        }`}>
-                          {p === 'google' ? 'Google Ads' : 'Meta Ads'}
-                        </span>
-                      ))}
+                    
+                    {/* URL do relatório */}
+                    <div className="mt-3 flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 border border-gray-200 max-w-md">
+                      <code className="text-xs text-gray-600 font-mono truncate flex-1">
+                        {reportUrl}
+                      </code>
+                      <button
+                        onClick={() => copyToClipboard(reportUrl, client.id)}
+                        className={`flex-shrink-0 p-1.5 rounded-md transition-all ${
+                          isCopied
+                            ? 'bg-green-100 text-green-600'
+                            : 'bg-white text-gray-400 hover:text-gray-600 hover:bg-gray-100 border border-gray-200'
+                        }`}
+                        title="Copiar link"
+                      >
+                        {isCopied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                      </button>
                     </div>
                   </div>
 
-                  {/* Last Month Stats */}
-                  {lastMonth && (() => {
-                    const cpa = lastMonth.total.conversions > 0 
-                      ? lastMonth.total.investment / lastMonth.total.conversions 
-                      : 0;
-                    return (
-                      <div className="grid grid-cols-3 gap-4 text-sm">
-                        <div className="text-center">
-                          <p className="text-gray-500">Investimento</p>
-                          <p className="font-semibold text-gray-800">
-                            R$ {lastMonth.total.investment.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                          </p>
-                        </div>
-                        <div className="text-center">
-                          <p className="text-gray-500">Conversões</p>
-                          <p className="font-semibold text-purple-600">
-                            {lastMonth.total.conversions}
-                          </p>
-                        </div>
-                        <div className="text-center">
-                          <p className="text-gray-500">CPA</p>
-                          <p className={`font-semibold ${cpa > 0 ? 'text-orange-600' : 'text-gray-400'}`}>
-                            {cpa > 0 ? `R$ ${cpa.toFixed(2)}` : '—'}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })()}
-
-                  {/* Actions */}
-                  <div className="flex gap-2">
+                  {/* Ações */}
+                  <div className="flex items-center gap-2 flex-shrink-0">
                     <Link
-                      href={`/${client.slug}`}
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors"
+                      href={`/${client.id}`}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm"
                     >
-                      Ver relatório →
+                      <ExternalLink className="w-4 h-4" />
+                      Abrir
                     </Link>
                     <button
-                      className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors"
-                      onClick={() => {
-                        const url = origin + '/' + client.slug;
-                        const texto = encodeURIComponent(
-                          `📊 *Relatório ${client.company}*\n\nAcesse o dashboard completo:\n${url}`
-                        );
-                        window.open(`https://wa.me/?text=${texto}`, '_blank');
-                      }}
+                      onClick={() => shareWhatsApp(client.company, reportUrl)}
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors shadow-sm"
                     >
-                      📲 Compartilhar
+                      <Share2 className="w-4 h-4" />
+                      Compartilhar
                     </button>
                   </div>
+                </div>
+
+                {/* Plataformas */}
+                <div className="mt-3 flex items-center gap-2">
+                  {client.platforms.map((p) => (
+                    <span
+                      key={p}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-medium ${
+                        p === 'google'
+                          ? 'bg-blue-50 text-blue-700 ring-1 ring-blue-200'
+                          : 'bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200'
+                      }`}
+                    >
+                      <DollarSign className="w-3 h-3" />
+                      {p === 'google' ? 'Google Ads' : 'Meta Ads'}
+                    </span>
+                  ))}
+                  <span className="text-xs text-gray-400 ml-1">
+                    ID: <code className="font-mono text-gray-500">{client.id}</code>
+                  </span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Quick Actions */}
-        <div className="mt-8 bg-white rounded-xl shadow-md p-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Ações Rápidas</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <button className="p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors text-left">
-              <p className="font-medium text-gray-700">+ Adicionar Cliente</p>
-              <p className="text-sm text-gray-500 mt-1">Criar relatório para novo cliente</p>
-            </button>
-            <button className="p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors text-left">
-              <p className="font-medium text-gray-700">📥 Importar Dados</p>
-              <p className="text-sm text-gray-500 mt-1">Importar CSV do Google/Meta Ads</p>
-            </button>
-            <button className="p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-purple-500 hover:bg-purple-50 transition-colors text-left">
-              <p className="font-medium text-gray-700">📊 Exportar Relatório</p>
-              <p className="text-sm text-gray-500 mt-1">Gerar PDF para todos os clientes</p>
-            </button>
+        {/* Rodapé */}
+        <footer className="mt-10 text-center border-t border-gray-200 pt-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm text-gray-400">
+            <span>{agency.name}</span>
+            <span className="hidden sm:inline">•</span>
+            <span>Links com IDs únicos • Clientes não veem outros relatórios</span>
+            <span className="hidden sm:inline">•</span>
+            <span>Dados atualizados automaticamente</span>
           </div>
-        </div>
-
-        {/* Footer */}
-        <footer className="mt-8 text-center text-sm text-gray-500 border-t pt-6">
-          <p>M4 Marketing Digital • Dashboard interno</p>
-          <p className="mt-1">Acesso restrito à equipe M4</p>
         </footer>
       </div>
     </div>
