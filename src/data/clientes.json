@@ -65,6 +65,21 @@
       "platforms": ["google"],
       "monthlyInvestment": 1000,
       "lastUpdate": "2026-07-16"
+    },
+    {
+      "id": "8dec4e72",
+      "dataKey": "jana-martelli",
+      "slug": "jana-martelli",
+      "name": "Jana Martelli",
+      "company": "Lojinha da Jana",
+      "googleCustomerId": null,
+      "metaAccountId": "419455277466421",
+      "dataFile": "jana-martelli.json",
+      "active": true,
+      "since": "2026-07",
+      "platforms": ["meta"],
+      "monthlyInvestment": 500,
+      "lastUpdate": "2026-07-16"
     }
   ]
 }

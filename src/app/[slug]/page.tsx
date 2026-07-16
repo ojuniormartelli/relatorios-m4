@@ -5,6 +5,7 @@ import car13Data from '@/data/car13.json';
 import gasAurelioData from '@/data/gas-aurelio.json';
 import upComunicacaoData from '@/data/up-comunicacao.json';
 import juniorTerraplanagemData from '@/data/junior-terraplanagem.json';
+import janaMartelliData from '@/data/jana-martelli.json';
 
 // Registro: dataKey → dados importados
 const todosDados: Record<string, any> = {
@@ -12,6 +13,7 @@ const todosDados: Record<string, any> = {
   'gas-aurelio': gasAurelioData,
   'up-comunicacao': upComunicacaoData,
   'junior-terraplanagem': juniorTerraplanagemData,
+  'jana-martelli': janaMartelliData,
 };
 
 interface PageProps {
