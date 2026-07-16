@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { Check, Copy, ExternalLink, Share2, Users, TrendingUp, DollarSign, BarChart3, Shield, RefreshCw } from 'lucide-react';
+import { Check, Copy, ExternalLink, Share2, Users, TrendingUp, DollarSign, BarChart3, Shield, RefreshCw, LogOut } from 'lucide-react';
 import clientesData from '@/data/clientes.json';
 
 export default function AdminDashboard() {
@@ -56,15 +56,24 @@ export default function AdminDashboard() {
                 <p className="text-blue-200 text-sm mt-0.5">Painel de Relatórios • Acesso restrito</p>
               </div>
             </div>
-            <a
-              href={agency.site}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1.5 text-sm text-blue-200 hover:text-white transition-colors"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              {agency.site.replace('https://', '')}
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href={agency.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:flex items-center gap-1.5 text-sm text-blue-200 hover:text-white transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                {agency.site.replace('https://', '')}
+              </a>
+              <a
+                href="/admin/logout"
+                className="flex items-center gap-1.5 text-sm text-blue-200 hover:text-white transition-colors bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded-lg"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Sair
+              </a>
+            </div>
           </div>
         </div>
       </header>
