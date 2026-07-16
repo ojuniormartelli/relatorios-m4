@@ -4,10 +4,14 @@ import { redirect } from 'next/navigation';
 async function login(formData: FormData) {
   'use server';
 
+  const username = formData.get('username') as string;
   const password = formData.get('password') as string;
-  const redirectTo = formData.get('redirect') as string || '/admin';
+  const redirectTo = formData.get('redirect') as string || '/';
 
-  if (password === process.env.ADMIN_PASSWORD) {
+  const adminUser = process.env.ADMIN_USERNAME || 'admin';
+  const adminPass = process.env.ADMIN_PASSWORD;
+
+  if (username === adminUser && password === adminPass) {
     const cookieStore = await cookies();
     cookieStore.set('admin_session', 'authenticated', {
       httpOnly: true,
@@ -19,7 +23,7 @@ async function login(formData: FormData) {
     redirect(redirectTo);
   }
 
-  redirect('/admin/login?erro=1');
+  redirect('/login?erro=1');
 }
 
 interface LoginPageProps {
@@ -44,17 +48,31 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             </svg>
           </div>
           <h1 className="text-2xl font-bold text-gray-900">M4 Marketing Digital</h1>
-          <p className="text-gray-500 text-sm mt-1">Painel de Relatórios</p>
+          <p className="text-gray-500 text-sm mt-1">Relatórios de Performance</p>
         </div>
 
         {/* Card */}
         <div className="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-1">Acesso restrito</h2>
-          <p className="text-sm text-gray-500 mb-6">Digite a senha para acessar o painel</p>
+          <p className="text-sm text-gray-500 mb-6">Faça login para acessar o painel</p>
 
           <form action={login} className="space-y-4">
-            {/* Campo redirect oculto */}
-            <input type="hidden" name="redirect" value={params.redirect || '/admin'} />
+            <input type="hidden" name="redirect" value={params.redirect || '/'} />
+
+            <div>
+              <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1.5">
+                Usuário
+              </label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                autoFocus
+                placeholder="Digite seu usuário"
+                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow"
+              />
+            </div>
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -65,7 +83,6 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 id="password"
                 name="password"
                 required
-                autoFocus
                 placeholder="••••••••"
                 className="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-shadow"
               />
@@ -76,7 +93,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Senha incorreta. Tente novamente.
+                Usuário ou senha incorretos.
               </div>
             )}
 
@@ -90,7 +107,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          Apenas a equipe M4 Marketing Digital
+          Apenas equipe M4 Marketing Digital
         </p>
       </div>
     </div>
