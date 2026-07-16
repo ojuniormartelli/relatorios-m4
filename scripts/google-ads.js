@@ -69,6 +69,7 @@ async function buscarCampanhasGoogle({ accessToken, developerToken, customerId, 
 
 function processarResultadosGoogle(resultados) {
   const porMes = {};
+  const porDia = {};
   const campanhas = {};
 
   for (const row of resultados) {
@@ -77,7 +78,8 @@ function processarResultadosGoogle(resultados) {
     const s = row.segments;
     if (!c || !m || !s) continue;
 
-    const mes = s.date.substring(0, 7);
+    const data = s.date; // YYYY-MM-DD
+    const mes = data.substring(0, 7);
     const custo = Number(m.costMicros || 0) / 1000000;
     const conversoes = Number(m.conversions || 0);
     const campanhaId = String(c.id);
@@ -89,6 +91,13 @@ function processarResultadosGoogle(resultados) {
     }
     porMes[mes].investment += custo;
     porMes[mes].conversions += conversoes;
+
+    // Agregado por dia
+    if (!porDia[data]) {
+      porDia[data] = { investment: 0, conversions: 0 };
+    }
+    porDia[data].investment += custo;
+    porDia[data].conversions += conversoes;
 
     // Por campanha
     if (!campanhas[campanhaId]) {
@@ -115,12 +124,19 @@ function processarResultadosGoogle(resultados) {
       costPerConversion: data.conversions > 0 ? data.investment / data.conversions : 0,
     }));
 
+  const dailyData = Object.entries(porDia)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, data]) => ({
+      date,
+      ...data,
+    }));
+
   const campaigns = Object.values(campanhas).map((c) => ({
     ...c,
     months: Object.values(c.months).sort((a, b) => a.month.localeCompare(b.month)),
   }));
 
-  return { monthlyData, campaigns };
+  return { monthlyData, dailyData, campaigns };
 }
 
 async function buscarDadosGoogleAds(config) {

@@ -121,10 +121,12 @@ function extrairConversoesDeActions(actions) {
 
 function processarResultadosMeta(resultados, statusCampanhas = {}) {
   const porMes = {};
+  const porDia = {};
   const campanhas = {};
 
   for (const row of resultados) {
-    const mes = (row.date_start || '').substring(0, 7);
+    const data = row.date_start || ''; // YYYY-MM-DD
+    const mes = data.substring(0, 7);
     if (!mes) continue;
 
     const gasto = parseFloat(row.spend || 0);
@@ -136,6 +138,13 @@ function processarResultadosMeta(resultados, statusCampanhas = {}) {
     }
     porMes[mes].investment += gasto;
     porMes[mes].conversions += conversoes;
+
+    // Agregado por dia
+    if (!porDia[data]) {
+      porDia[data] = { investment: 0, conversions: 0 };
+    }
+    porDia[data].investment += gasto;
+    porDia[data].conversions += conversoes;
 
     const campanhaId = row.campaign_id || nomeCampanha.toLowerCase().replace(/\s+/g, '-');
     if (!campanhas[campanhaId]) {
@@ -162,12 +171,19 @@ function processarResultadosMeta(resultados, statusCampanhas = {}) {
       costPerConversion: data.conversions > 0 ? data.investment / data.conversions : 0,
     }));
 
+  const dailyData = Object.entries(porDia)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([date, data]) => ({
+      date,
+      ...data,
+    }));
+
   const campaigns = Object.values(campanhas).map((c) => ({
     ...c,
     months: Object.values(c.months).sort((a, b) => a.month.localeCompare(b.month)),
   }));
 
-  return { monthlyData, campaigns };
+  return { monthlyData, dailyData, campaigns };
 }
 
 async function buscarDadosMetaAds(config) {

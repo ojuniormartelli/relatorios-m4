@@ -26,6 +26,7 @@ const CLIENTES_PATH = path.join(DATA_DIR, 'clientes.json');
 async function buscarDeTodasAPIs(cliente) {
   const dadosCombinados = {
     monthlyData: [],
+    dailyData: [],
     campaigns: [],
   };
 
@@ -44,7 +45,7 @@ async function buscarDeTodasAPIs(cliente) {
         customerId: process.env.GOOGLE_ADS_CUSTOMER_ID,
         loginCustomerId: process.env.GOOGLE_ADS_LOGIN_CUSTOMER_ID,
       });
-      
+    
       for (const d of googleData.monthlyData) {
         const existente = dadosCombinados.monthlyData.find(m => m.month === d.month);
         if (existente) {
@@ -60,6 +61,23 @@ async function buscarDeTodasAPIs(cliente) {
               investment: d.investment,
               conversions: d.conversions,
             },
+          });
+        }
+      }
+
+      // Combinar dados diários do Google
+      for (const d of googleData.dailyData || []) {
+        const existente = dadosCombinados.dailyData.find(dd => dd.date === d.date);
+        if (existente) {
+          existente.googleAds = { investment: d.investment, conversions: d.conversions };
+          existente.total.investment += d.investment;
+          existente.total.conversions += d.conversions;
+        } else {
+          dadosCombinados.dailyData.push({
+            date: d.date,
+            googleAds: { investment: d.investment, conversions: d.conversions },
+            metaAds: { investment: 0, conversions: 0 },
+            total: { investment: d.investment, conversions: d.conversions },
           });
         }
       }
@@ -102,6 +120,23 @@ async function buscarDeTodasAPIs(cliente) {
         }
       }
 
+      // Combinar dados diários do Meta
+      for (const d of metaData.dailyData || []) {
+        const existente = dadosCombinados.dailyData.find(dd => dd.date === d.date);
+        if (existente) {
+          existente.metaAds = { investment: d.investment, conversions: d.conversions };
+          existente.total.investment += d.investment;
+          existente.total.conversions += d.conversions;
+        } else {
+          dadosCombinados.dailyData.push({
+            date: d.date,
+            googleAds: { investment: 0, conversions: 0 },
+            metaAds: { investment: d.investment, conversions: d.conversions },
+            total: { investment: d.investment, conversions: d.conversions },
+          });
+        }
+      }
+
       // Adicionar campanhas do Meta
       dadosCombinados.campaigns = dadosCombinados.campaigns.concat(metaData.campaigns);
     } catch (err) {
@@ -111,8 +146,9 @@ async function buscarDeTodasAPIs(cliente) {
     console.log('  ⏭️ Meta Ads não configurado (pule META_ADS_* envs)');
   }
 
-  // Ordenar por mês
+  // Ordenar por mês e por dia
   dadosCombinados.monthlyData.sort((a, b) => a.month.localeCompare(b.month));
+  dadosCombinados.dailyData.sort((a, b) => a.date.localeCompare(b.date));
 
   return dadosCombinados;
 }

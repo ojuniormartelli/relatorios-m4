@@ -33,6 +33,12 @@ interface ClientData {
       conversions: number;
     };
   }>;
+  dailyData?: Array<{
+    date: string;
+    googleAds: { investment: number; conversions: number };
+    metaAds: { investment: number; conversions: number };
+    total: { investment: number; conversions: number };
+  }>;
   campaigns: Array<{
     id: string;
     name: string;
@@ -229,7 +235,39 @@ export default function Dashboard({ data }: DashboardProps) {
 
   const chartData = useMemo(() => {
     if (usarGraficoDiario) {
-      // Gráfico diário: distribuir valores mensais proporcionalmente por dia
+      // Gráfico diário: usar dados diários REAIS se disponíveis
+      if (data.dailyData && data.dailyData.length > 0) {
+        const dias = eachDayOfInterval({ start: intervalo.inicio, end: intervalo.fim });
+        
+        return dias.map((dia) => {
+          const dataKey = format(dia, 'yyyy-MM-dd');
+          const diaData = data.dailyData!.find(d => d.date === dataKey);
+          
+          if (!diaData) {
+            return { month: format(dia, 'dd/MM'), investment: 0, conversions: 0 };
+          }
+
+          let investment = 0;
+          let conversions = 0;
+
+          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
+            investment += diaData.googleAds.investment;
+            conversions += diaData.googleAds.conversions;
+          }
+          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
+            investment += diaData.metaAds.investment;
+            conversions += diaData.metaAds.conversions;
+          }
+
+          return {
+            month: format(dia, 'dd/MM'),
+            investment: Math.round(investment * 100) / 100,
+            conversions: Math.round(conversions * 10) / 10,
+          };
+        });
+      }
+
+      // Fallback: distribuir valores mensais proporcionalmente (dados diários não disponíveis)
       const dias = eachDayOfInterval({ start: intervalo.inicio, end: intervalo.fim });
       
       return dias.map((dia) => {
@@ -237,7 +275,6 @@ export default function Dashboard({ data }: DashboardProps) {
         const mesData = data.monthlyData.find(m => m.month === mesKey);
         if (!mesData) return { month: format(dia, 'dd/MM'), investment: 0, conversions: 0 };
 
-        // Proporção do dia dentro do mês (1/número de dias no mês)
         const [year, month] = mesKey.split('-').map(Number);
         const diasNoMes = new Date(year, month, 0).getDate();
         const proporcaoDia = 1 / diasNoMes;
@@ -245,25 +282,13 @@ export default function Dashboard({ data }: DashboardProps) {
         let investment = 0;
         let conversions = 0;
 
-        // Verificar se o dia está totalmente dentro do intervalo
-        const diaInicio = new Date(dia);
-        diaInicio.setHours(0, 0, 0, 0);
-        const diaFim = new Date(dia);
-        diaFim.setHours(23, 59, 59, 0);
-        
-        const dentroInicio = diaInicio >= intervalo.inicio;
-        const dentroFim = diaFim <= intervalo.fim;
-        
-        if (dentroInicio && dentroFim) {
-          // Dia totalmente dentro do intervalo
-          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
-            investment += mesData.googleAds.investment * proporcaoDia;
-            conversions += mesData.googleAds.conversions * proporcaoDia;
-          }
-          if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
-            investment += mesData.metaAds.investment * proporcaoDia;
-            conversions += mesData.metaAds.conversions * proporcaoDia;
-          }
+        if (plataformaSelecionada === 'all' || plataformaSelecionada === 'google') {
+          investment += mesData.googleAds.investment * proporcaoDia;
+          conversions += mesData.googleAds.conversions * proporcaoDia;
+        }
+        if (plataformaSelecionada === 'all' || plataformaSelecionada === 'meta') {
+          investment += mesData.metaAds.investment * proporcaoDia;
+          conversions += mesData.metaAds.conversions * proporcaoDia;
         }
 
         return {
@@ -292,7 +317,7 @@ export default function Dashboard({ data }: DashboardProps) {
           return { month: month.month, investment, conversions };
         });
     }
-  }, [data.monthlyData, plataformaSelecionada, intervalo, usarGraficoDiario]);
+  }, [data.monthlyData, data.dailyData, plataformaSelecionada, intervalo, usarGraficoDiario]);
 
   // Filtrar campanhas por plataforma e investimento
   const campanhasFiltradas = useMemo(() => {
