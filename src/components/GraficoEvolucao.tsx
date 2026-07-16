@@ -34,7 +34,14 @@ function isFormatoMes(value: string): boolean {
 }
 
 export default function GraficoEvolucao({ data, title }: GraficoProps) {
-  // Formatter do eixo Y — mostra valores em R$ reais (sem dividir por 1000)
+  // Detectar se os dados são diários (formato dd/MM) ou mensais (YYYY-MM)
+  const isDiario = data.length > 0 && isFormatoDia(data[0].month);
+  
+  // Calcular valor máximo para definir o domain do eixo Y
+  const maxInvestment = data.length > 0 ? Math.max(...data.map(d => d.investment)) : 0;
+  const maxConversions = data.length > 0 ? Math.max(...data.map(d => d.conversions)) : 0;
+  
+  // Formatter do eixo Y — adapta para valores diários (R$) ou mensais (R$ k)
   const formatCurrency = (value: number) => {
     if (value >= 1000) return `R$ ${(value / 1000).toFixed(1)}k`;
     return `R$ ${Math.round(value)}`;
@@ -106,7 +113,13 @@ export default function GraficoEvolucao({ data, title }: GraficoProps) {
               tickFormatter={tickFormatter}
               interval={data.length > 20 ? Math.floor(data.length / 15) : 0}
             />
-            <YAxis tickFormatter={formatCurrency} tick={{ fontSize: 12 }} />
+            <YAxis 
+              tickFormatter={formatCurrency} 
+              tick={{ fontSize: 12 }} 
+              domain={[0, 'dataMax']}
+              tickCount={6}
+              allowDataOverflow={false}
+            />
             <Tooltip 
               formatter={(value) => `R$ ${Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
               labelFormatter={labelFormatter}
