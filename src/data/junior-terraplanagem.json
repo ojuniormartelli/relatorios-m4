@@ -4,11 +4,11 @@
       "month": "2026-07",
       "googleAds": {
         "month": "2026-07",
-        "investment": 133.281043,
+        "investment": 158.161043,
         "conversions": 1,
-        "clicks": 51,
-        "costPerConversion": 133.281043,
-        "cpc": 2.6133537843137256
+        "clicks": 60,
+        "costPerConversion": 158.161043,
+        "cpc": 2.6360173833333334
       },
       "metaAds": {
         "investment": 0,
@@ -18,9 +18,9 @@
         "cpc": 0
       },
       "total": {
-        "investment": 133.281043,
+        "investment": 158.161043,
         "conversions": 1,
-        "clicks": 51
+        "clicks": 60
       }
     }
   ],
@@ -132,6 +132,42 @@
         "conversions": 0,
         "clicks": 11
       }
+    },
+    {
+      "date": "2026-07-17",
+      "googleAds": {
+        "investment": 24.88,
+        "conversions": 0,
+        "clicks": 9
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "clicks": 0
+      },
+      "total": {
+        "investment": 24.88,
+        "conversions": 0,
+        "clicks": 9
+      }
+    },
+    {
+      "date": "2026-07-18",
+      "googleAds": {
+        "investment": 0,
+        "conversions": 0,
+        "clicks": 0
+      },
+      "metaAds": {
+        "investment": 0,
+        "conversions": 0,
+        "clicks": 0
+      },
+      "total": {
+        "investment": 0,
+        "conversions": 0,
+        "clicks": 0
+      }
     }
   ],
   "campaigns": [
@@ -143,9 +179,9 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 133.281043,
+          "investment": 158.161043,
           "conversions": 1,
-          "clicks": 51
+          "clicks": 60
         }
       ]
     }
