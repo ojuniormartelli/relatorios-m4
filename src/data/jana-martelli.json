@@ -11,16 +11,16 @@
       },
       "metaAds": {
         "month": "2026-01",
-        "investment": 33.85,
-        "conversions": 24,
-        "clicks": 162,
-        "costPerConversion": 1.4104166666666667,
-        "cpc": 0.20895061728395062
+        "investment": 27.61,
+        "conversions": 17,
+        "clicks": 132,
+        "costPerConversion": 1.6241176470588234,
+        "cpc": 0.20916666666666667
       },
       "total": {
-        "investment": 33.85,
-        "conversions": 24,
-        "clicks": 162
+        "investment": 27.61,
+        "conversions": 17,
+        "clicks": 132
       }
     },
     {
@@ -149,38 +149,20 @@
       },
       "metaAds": {
         "month": "2026-07",
-        "investment": 147.59,
-        "conversions": 16,
-        "clicks": 449,
-        "costPerConversion": 9.224375,
-        "cpc": 0.3287082405345212
+        "investment": 155.49999999999997,
+        "conversions": 17,
+        "clicks": 467,
+        "costPerConversion": 9.14705882352941,
+        "cpc": 0.33297644539614557
       },
       "total": {
-        "investment": 147.59,
-        "conversions": 16,
-        "clicks": 449
+        "investment": 155.49999999999997,
+        "conversions": 17,
+        "clicks": 467
       }
     }
   ],
   "dailyData": [
-    {
-      "date": "2026-01-26",
-      "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "clicks": 0
-      },
-      "metaAds": {
-        "investment": 6.24,
-        "conversions": 7,
-        "clicks": 30
-      },
-      "total": {
-        "investment": 6.24,
-        "conversions": 7,
-        "clicks": 30
-      }
-    },
     {
       "date": "2026-01-27",
       "googleAds": {
@@ -3393,14 +3375,32 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0.55,
+        "investment": 8.29,
+        "conversions": 0,
+        "clicks": 16
+      },
+      "total": {
+        "investment": 8.29,
+        "conversions": 0,
+        "clicks": 16
+      }
+    },
+    {
+      "date": "2026-07-27",
+      "googleAds": {
+        "investment": 0,
         "conversions": 0,
         "clicks": 0
       },
+      "metaAds": {
+        "investment": 0.17,
+        "conversions": 1,
+        "clicks": 2
+      },
       "total": {
-        "investment": 0.55,
-        "conversions": 0,
-        "clicks": 0
+        "investment": 0.17,
+        "conversions": 1,
+        "clicks": 2
       }
     }
   ],
@@ -3413,9 +3413,9 @@
       "months": [
         {
           "month": "2026-01",
-          "investment": 33.85,
-          "conversions": 24,
-          "clicks": 162
+          "investment": 27.61,
+          "conversions": 17,
+          "clicks": 132
         },
         {
           "month": "2026-02",
@@ -3525,9 +3525,9 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 55.42999999999999,
-          "conversions": 2,
-          "clicks": 151
+          "investment": 63.339999999999996,
+          "conversions": 3,
+          "clicks": 169
         }
       ]
     }
