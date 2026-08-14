@@ -11,16 +11,16 @@
       },
       "metaAds": {
         "month": "2026-02",
-        "investment": 92.9,
+        "investment": 88.14000000000001,
         "conversions": 0,
-        "clicks": 861,
+        "clicks": 810,
         "costPerConversion": 0,
-        "cpc": 0.10789779326364693
+        "cpc": 0.10881481481481484
       },
       "total": {
-        "investment": 92.9,
+        "investment": 88.14000000000001,
         "conversions": 0,
-        "clicks": 861
+        "clicks": 810
       }
     },
     {
@@ -149,38 +149,20 @@
       },
       "metaAds": {
         "month": "2026-08",
-        "investment": 74.03999999999999,
+        "investment": 79.41,
         "conversions": 9,
-        "clicks": 185,
-        "costPerConversion": 8.226666666666667,
-        "cpc": 0.40021621621621617
+        "clicks": 193,
+        "costPerConversion": 8.823333333333332,
+        "cpc": 0.4114507772020725
       },
       "total": {
-        "investment": 74.03999999999999,
+        "investment": 79.41,
         "conversions": 9,
-        "clicks": 185
+        "clicks": 193
       }
     }
   ],
   "dailyData": [
-    {
-      "date": "2026-02-13",
-      "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "clicks": 0
-      },
-      "metaAds": {
-        "investment": 4.76,
-        "conversions": 0,
-        "clicks": 51
-      },
-      "total": {
-        "investment": 4.76,
-        "conversions": 0,
-        "clicks": 51
-      }
-    },
     {
       "date": "2026-02-14",
       "googleAds": {
@@ -3375,12 +3357,12 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 5.83,
+        "investment": 5.88,
         "conversions": 1,
         "clicks": 23
       },
       "total": {
-        "investment": 5.83,
+        "investment": 5.88,
         "conversions": 1,
         "clicks": 23
       }
@@ -3393,14 +3375,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0.57,
+        "investment": 5.89,
         "conversions": 0,
-        "clicks": 1
+        "clicks": 9
       },
       "total": {
-        "investment": 0.57,
+        "investment": 5.89,
         "conversions": 0,
-        "clicks": 1
+        "clicks": 9
       }
     }
   ],
@@ -3413,9 +3395,9 @@
       "months": [
         {
           "month": "2026-02",
-          "investment": 33.519999999999996,
+          "investment": 28.759999999999998,
           "conversions": 0,
-          "clicks": 623
+          "clicks": 572
         }
       ]
     },
@@ -3519,9 +3501,9 @@
         },
         {
           "month": "2026-08",
-          "investment": 74.03999999999999,
+          "investment": 79.41,
           "conversions": 9,
-          "clicks": 185
+          "clicks": 193
         }
       ]
     }
