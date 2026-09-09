@@ -11,16 +11,16 @@
       },
       "metaAds": {
         "month": "2026-03",
-        "investment": 156.54000000000002,
+        "investment": 151.26,
         "conversions": 37,
-        "clicks": 686,
-        "costPerConversion": 4.230810810810811,
-        "cpc": 0.2281924198250729
+        "clicks": 678,
+        "costPerConversion": 4.088108108108107,
+        "cpc": 0.22309734513274335
       },
       "total": {
-        "investment": 156.54000000000002,
+        "investment": 151.26,
         "conversions": 37,
-        "clicks": 686
+        "clicks": 678
       }
     },
     {
@@ -149,38 +149,20 @@
       },
       "metaAds": {
         "month": "2026-09",
-        "investment": 49.56,
-        "conversions": 9,
-        "clicks": 77,
-        "costPerConversion": 5.506666666666667,
-        "cpc": 0.6436363636363637
+        "investment": 56.57,
+        "conversions": 11,
+        "clicks": 89,
+        "costPerConversion": 5.142727272727273,
+        "cpc": 0.6356179775280899
       },
       "total": {
-        "investment": 49.56,
-        "conversions": 9,
-        "clicks": 77
+        "investment": 56.57,
+        "conversions": 11,
+        "clicks": 89
       }
     }
   ],
   "dailyData": [
-    {
-      "date": "2026-03-08",
-      "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "clicks": 0
-      },
-      "metaAds": {
-        "investment": 5.28,
-        "conversions": 0,
-        "clicks": 8
-      },
-      "total": {
-        "investment": 5.28,
-        "conversions": 0,
-        "clicks": 8
-      }
-    },
     {
       "date": "2026-03-09",
       "googleAds": {
@@ -3447,32 +3429,36 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 3.13,
-        "conversions": 2,
-        "clicks": 4
+        "investment": 8.37,
+        "conversions": 4,
+        "clicks": 14
       },
       "total": {
-        "investment": 3.13,
-        "conversions": 2,
-        "clicks": 4
+        "investment": 8.37,
+        "conversions": 4,
+        "clicks": 14
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "googleAds": {
+        "investment": 0,
+        "conversions": 0,
+        "clicks": 0
+      },
+      "metaAds": {
+        "investment": 1.77,
+        "conversions": 0,
+        "clicks": 2
+      },
+      "total": {
+        "investment": 1.77,
+        "conversions": 0,
+        "clicks": 2
       }
     }
   ],
   "campaigns": [
-    {
-      "id": "120242630201850247",
-      "name": "[Vendas] [Site] [Compras] - Pijamas",
-      "platform": "meta",
-      "status": "UNKNOWN",
-      "months": [
-        {
-          "month": "2026-03",
-          "investment": 10.08,
-          "conversions": 0,
-          "clicks": 17
-        }
-      ]
-    },
     {
       "id": "120235689103210247",
       "name": "[MSG] [WHATS] - Pijamas",
@@ -3512,6 +3498,20 @@
       ]
     },
     {
+      "id": "120242630201850247",
+      "name": "[Vendas] [Site] [Compras] - Pijamas",
+      "platform": "meta",
+      "status": "UNKNOWN",
+      "months": [
+        {
+          "month": "2026-03",
+          "investment": 4.8,
+          "conversions": 0,
+          "clicks": 9
+        }
+      ]
+    },
+    {
       "id": "120251586363180247",
       "name": "[SITE] [VITRINE] - Pijamas",
       "platform": "meta",
@@ -3531,9 +3531,9 @@
         },
         {
           "month": "2026-09",
-          "investment": 49.56,
-          "conversions": 9,
-          "clicks": 77
+          "investment": 56.57,
+          "conversions": 11,
+          "clicks": 89
         }
       ]
     }
