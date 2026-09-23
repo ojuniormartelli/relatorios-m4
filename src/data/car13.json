@@ -11,16 +11,16 @@
       },
       "metaAds": {
         "month": "2026-03",
-        "investment": 674.78,
-        "conversions": 56,
-        "clicks": 1374,
-        "costPerConversion": 12.049642857142857,
-        "cpc": 0.4911062590975255
+        "investment": 623.57,
+        "conversions": 53,
+        "clicks": 1256,
+        "costPerConversion": 11.765471698113208,
+        "cpc": 0.49647292993630576
       },
       "total": {
-        "investment": 674.78,
-        "conversions": 56,
-        "clicks": 1374
+        "investment": 623.57,
+        "conversions": 53,
+        "clicks": 1256
       }
     },
     {
@@ -149,38 +149,20 @@
       },
       "metaAds": {
         "month": "2026-09",
-        "investment": 1932.2,
-        "conversions": 516,
-        "clicks": 3606,
-        "costPerConversion": 3.744573643410853,
-        "cpc": 0.5358291735995563
+        "investment": 2008.91,
+        "conversions": 527,
+        "clicks": 3733,
+        "costPerConversion": 3.8119734345351044,
+        "cpc": 0.5381489418698098
       },
       "total": {
-        "investment": 1932.2,
-        "conversions": 516,
-        "clicks": 3606
+        "investment": 2008.91,
+        "conversions": 527,
+        "clicks": 3733
       }
     }
   ],
   "dailyData": [
-    {
-      "date": "2026-03-22",
-      "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "clicks": 0
-      },
-      "metaAds": {
-        "investment": 51.209999999999994,
-        "conversions": 3,
-        "clicks": 118
-      },
-      "total": {
-        "investment": 51.209999999999994,
-        "conversions": 3,
-        "clicks": 118
-      }
-    },
     {
       "date": "2026-03-23",
       "googleAds": {
@@ -3429,14 +3411,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 110.73,
+        "investment": 110.75,
         "conversions": 18,
-        "clicks": 172
+        "clicks": 173
       },
       "total": {
-        "investment": 110.73,
+        "investment": 110.75,
         "conversions": 18,
-        "clicks": 172
+        "clicks": 173
       }
     },
     {
@@ -3447,14 +3429,32 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 3.88,
-        "conversions": 0,
-        "clicks": 7
+        "investment": 78.18,
+        "conversions": 11,
+        "clicks": 129
       },
       "total": {
-        "investment": 3.88,
+        "investment": 78.18,
+        "conversions": 11,
+        "clicks": 129
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "googleAds": {
+        "investment": 0,
         "conversions": 0,
-        "clicks": 7
+        "clicks": 0
+      },
+      "metaAds": {
+        "investment": 2.39,
+        "conversions": 0,
+        "clicks": 4
+      },
+      "total": {
+        "investment": 2.39,
+        "conversions": 0,
+        "clicks": 4
       }
     }
   ],
@@ -3467,9 +3467,9 @@
       "months": [
         {
           "month": "2026-03",
-          "investment": 156.78,
-          "conversions": 28,
-          "clicks": 355
+          "investment": 147.21999999999997,
+          "conversions": 27,
+          "clicks": 339
         },
         {
           "month": "2026-04",
@@ -3505,9 +3505,9 @@
       "months": [
         {
           "month": "2026-03",
-          "investment": 159.69,
-          "conversions": 13,
-          "clicks": 223
+          "investment": 151.52,
+          "conversions": 12,
+          "clicks": 208
         },
         {
           "month": "2026-04",
@@ -3543,9 +3543,9 @@
       "months": [
         {
           "month": "2026-03",
-          "investment": 159.06,
-          "conversions": 15,
-          "clicks": 210
+          "investment": 149.28,
+          "conversions": 14,
+          "clicks": 203
         },
         {
           "month": "2026-04",
@@ -3581,9 +3581,9 @@
       "months": [
         {
           "month": "2026-03",
-          "investment": 199.25,
+          "investment": 175.54999999999998,
           "conversions": 0,
-          "clicks": 586
+          "clicks": 506
         },
         {
           "month": "2026-04",
@@ -3615,7 +3615,7 @@
       "id": "120247647837070244",
       "name": "[LP] [LEADS] - Manutenção Câmbio Automático",
       "platform": "meta",
-      "status": "ACTIVE",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-07",
@@ -3631,9 +3631,9 @@
         },
         {
           "month": "2026-09",
-          "investment": 505.40999999999997,
-          "conversions": 189,
-          "clicks": 1252
+          "investment": 525.09,
+          "conversions": 192,
+          "clicks": 1298
         }
       ]
     },
@@ -3641,7 +3641,7 @@
       "id": "120247652345950244",
       "name": "[LP] [LEADS] - Pacote Revisão Preço Fixo.",
       "platform": "meta",
-      "status": "ACTIVE",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-07",
@@ -3657,9 +3657,9 @@
         },
         {
           "month": "2026-09",
-          "investment": 512.9999999999999,
-          "conversions": 144,
-          "clicks": 1032
+          "investment": 534.3,
+          "conversions": 149,
+          "clicks": 1073
         }
       ]
     },
@@ -3667,7 +3667,7 @@
       "id": "120247652345960244",
       "name": "[LP] [LEADS] - Troca de Oleo Cambio Automatico",
       "platform": "meta",
-      "status": "ACTIVE",
+      "status": "PAUSED",
       "months": [
         {
           "month": "2026-07",
@@ -3683,9 +3683,9 @@
         },
         {
           "month": "2026-09",
-          "investment": 504.85,
-          "conversions": 181,
-          "clicks": 1218
+          "investment": 525.97,
+          "conversions": 184,
+          "clicks": 1251
         }
       ]
     },
@@ -3737,9 +3737,51 @@
       "months": [
         {
           "month": "2026-09",
-          "investment": 205.82,
+          "investment": 220.14000000000001,
           "conversions": 2,
-          "clicks": 41
+          "clicks": 48
+        }
+      ]
+    },
+    {
+      "id": "120249448149480244",
+      "name": "[LP] [LEADS] - Pacote Revisão Preço Fixo. — Nova",
+      "platform": "meta",
+      "status": "ACTIVE",
+      "months": [
+        {
+          "month": "2026-09",
+          "investment": 0,
+          "conversions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    {
+      "id": "120249448149330244",
+      "name": "[LP] [LEADS] - Troca de Oleo Cambio Automatico — Nova",
+      "platform": "meta",
+      "status": "ACTIVE",
+      "months": [
+        {
+          "month": "2026-09",
+          "investment": 0,
+          "conversions": 0,
+          "clicks": 0
+        }
+      ]
+    },
+    {
+      "id": "120249448149520244",
+      "name": "[LP] [LEADS] - Manutenção Câmbio Automático — Nova",
+      "platform": "meta",
+      "status": "ACTIVE",
+      "months": [
+        {
+          "month": "2026-09",
+          "investment": 0.29,
+          "conversions": 0,
+          "clicks": 0
         }
       ]
     }
