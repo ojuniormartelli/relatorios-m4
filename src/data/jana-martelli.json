@@ -11,16 +11,16 @@
       },
       "metaAds": {
         "month": "2026-04",
-        "investment": 0,
-        "conversions": 6,
-        "clicks": 0,
-        "costPerConversion": 0,
-        "cpc": 0
+        "investment": 54.639999999999986,
+        "conversions": 4,
+        "clicks": 230,
+        "costPerConversion": 13.659999999999997,
+        "cpc": 0.2375652173913043
       },
       "total": {
-        "investment": 0,
-        "conversions": 6,
-        "clicks": 0
+        "investment": 54.639999999999986,
+        "conversions": 4,
+        "clicks": 230
       }
     },
     {
@@ -34,16 +34,16 @@
       },
       "metaAds": {
         "month": "2026-05",
-        "investment": 0.56,
+        "investment": 167.08000000000004,
         "conversions": 29,
-        "clicks": 4,
-        "costPerConversion": 0.019310344827586208,
-        "cpc": 0.14
+        "clicks": 537,
+        "costPerConversion": 5.761379310344829,
+        "cpc": 0.3111359404096835
       },
       "total": {
-        "investment": 0.56,
+        "investment": 167.08000000000004,
         "conversions": 29,
-        "clicks": 4
+        "clicks": 537
       }
     },
     {
@@ -57,16 +57,16 @@
       },
       "metaAds": {
         "month": "2026-06",
-        "investment": 0,
+        "investment": 191.35999999999993,
         "conversions": 46,
-        "clicks": 0,
-        "costPerConversion": 0,
-        "cpc": 0
+        "clicks": 681,
+        "costPerConversion": 4.159999999999998,
+        "cpc": 0.2809985315712187
       },
       "total": {
-        "investment": 0,
+        "investment": 191.35999999999993,
         "conversions": 46,
-        "clicks": 0
+        "clicks": 681
       }
     },
     {
@@ -80,16 +80,16 @@
       },
       "metaAds": {
         "month": "2026-07",
-        "investment": 0,
+        "investment": 187.54,
         "conversions": 20,
-        "clicks": 0,
-        "costPerConversion": 0,
-        "cpc": 0
+        "clicks": 572,
+        "costPerConversion": 9.376999999999999,
+        "cpc": 0.32786713286713287
       },
       "total": {
-        "investment": 0,
+        "investment": 187.54,
         "conversions": 20,
-        "clicks": 0
+        "clicks": 572
       }
     },
     {
@@ -103,16 +103,16 @@
       },
       "metaAds": {
         "month": "2026-08",
-        "investment": 0,
+        "investment": 184.14999999999998,
         "conversions": 14,
-        "clicks": 0,
-        "costPerConversion": 0,
-        "cpc": 0
+        "clicks": 462,
+        "costPerConversion": 13.153571428571427,
+        "cpc": 0.39859307359307355
       },
       "total": {
-        "investment": 0,
+        "investment": 184.14999999999998,
         "conversions": 14,
-        "clicks": 0
+        "clicks": 462
       }
     },
     {
@@ -126,38 +126,20 @@
       },
       "metaAds": {
         "month": "2026-09",
-        "investment": 0,
+        "investment": 66.36999999999999,
         "conversions": 11,
-        "clicks": 0,
-        "costPerConversion": 0,
-        "cpc": 0
+        "clicks": 106,
+        "costPerConversion": 6.033636363636362,
+        "cpc": 0.626132075471698
       },
       "total": {
-        "investment": 0,
+        "investment": 66.36999999999999,
         "conversions": 11,
-        "clicks": 0
+        "clicks": 106
       }
     }
   ],
   "dailyData": [
-    {
-      "date": "2026-04-21",
-      "googleAds": {
-        "investment": 0,
-        "conversions": 0,
-        "clicks": 0
-      },
-      "metaAds": {
-        "investment": 0,
-        "conversions": 2,
-        "clicks": 0
-      },
-      "total": {
-        "investment": 0,
-        "conversions": 2,
-        "clicks": 0
-      }
-    },
     {
       "date": "2026-04-22",
       "googleAds": {
@@ -166,14 +148,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.98,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 4.98,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -184,14 +166,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.28,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 32
       },
       "total": {
-        "investment": 0,
+        "investment": 8.28,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 32
       }
     },
     {
@@ -202,14 +184,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.82,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       },
       "total": {
-        "investment": 0,
+        "investment": 3.82,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       }
     },
     {
@@ -220,14 +202,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.71,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 32
       },
       "total": {
-        "investment": 0,
+        "investment": 3.71,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 32
       }
     },
     {
@@ -238,14 +220,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.65,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 24
       },
       "total": {
-        "investment": 0,
+        "investment": 6.65,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 24
       }
     },
     {
@@ -256,14 +238,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.65,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 5.65,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -274,14 +256,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.98,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 33
       },
       "total": {
-        "investment": 0,
+        "investment": 8.98,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 33
       }
     },
     {
@@ -292,14 +274,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.16,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 36
       },
       "total": {
-        "investment": 0,
+        "investment": 7.16,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 36
       }
     },
     {
@@ -310,14 +292,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.41,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 27
       },
       "total": {
-        "investment": 0,
+        "investment": 5.41,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 27
       }
     },
     {
@@ -328,14 +310,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.18,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 22
       },
       "total": {
-        "investment": 0,
+        "investment": 4.18,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 22
       }
     },
     {
@@ -346,14 +328,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.82,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 3.82,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -364,14 +346,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.23,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 20
       },
       "total": {
-        "investment": 0,
+        "investment": 7.23,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 20
       }
     },
     {
@@ -382,14 +364,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.23,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 28
       },
       "total": {
-        "investment": 0,
+        "investment": 7.23,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 28
       }
     },
     {
@@ -400,14 +382,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.85,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       },
       "total": {
-        "investment": 0,
+        "investment": 6.85,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       }
     },
     {
@@ -418,14 +400,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.5,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 21
       },
       "total": {
-        "investment": 0,
+        "investment": 8.5,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 21
       }
     },
     {
@@ -436,14 +418,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.84,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 11
       },
       "total": {
-        "investment": 0,
+        "investment": 4.84,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 11
       }
     },
     {
@@ -454,14 +436,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.62,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 4.62,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -472,14 +454,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.61,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 2.61,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -490,14 +472,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.16,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       },
       "total": {
-        "investment": 0,
+        "investment": 6.16,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       }
     },
     {
@@ -508,14 +490,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.69,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 10
       },
       "total": {
-        "investment": 0,
+        "investment": 5.69,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 10
       }
     },
     {
@@ -526,14 +508,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.48,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 8.48,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -544,14 +526,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.38,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 30
       },
       "total": {
-        "investment": 0,
+        "investment": 9.38,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 30
       }
     },
     {
@@ -562,14 +544,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.74,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 4.74,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -580,14 +562,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.22,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 5.22,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -598,14 +580,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 4
       },
       "total": {
-        "investment": 0,
+        "investment": 2.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 4
       }
     },
     {
@@ -616,14 +598,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.35,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 28
       },
       "total": {
-        "investment": 0,
+        "investment": 7.35,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 28
       }
     },
     {
@@ -634,14 +616,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.63,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 36
       },
       "total": {
-        "investment": 0,
+        "investment": 9.63,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 36
       }
     },
     {
@@ -652,14 +634,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.95,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 20
       },
       "total": {
-        "investment": 0,
+        "investment": 8.95,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 20
       }
     },
     {
@@ -670,14 +652,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.77,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 6.77,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -688,14 +670,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.09,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 24
       },
       "total": {
-        "investment": 0,
+        "investment": 6.09,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 24
       }
     },
     {
@@ -706,14 +688,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.53,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 2.53,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -742,14 +724,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.58,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 29
       },
       "total": {
-        "investment": 0,
+        "investment": 5.58,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 29
       }
     },
     {
@@ -760,14 +742,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.33,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 9
       },
       "total": {
-        "investment": 0,
+        "investment": 2.33,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 9
       }
     },
     {
@@ -778,14 +760,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.49,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 44
       },
       "total": {
-        "investment": 0,
+        "investment": 10.49,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 44
       }
     },
     {
@@ -796,14 +778,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.99,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 17
       },
       "total": {
-        "investment": 0,
+        "investment": 5.99,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 17
       }
     },
     {
@@ -814,14 +796,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.18,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 7.18,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -832,14 +814,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.8,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 9
       },
       "total": {
-        "investment": 0,
+        "investment": 1.8,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 9
       }
     },
     {
@@ -850,14 +832,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.23,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 14
       },
       "total": {
-        "investment": 0,
+        "investment": 5.23,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 14
       }
     },
     {
@@ -868,14 +850,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.36,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 50
       },
       "total": {
-        "investment": 0,
+        "investment": 10.36,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 50
       }
     },
     {
@@ -886,14 +868,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.5,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 41
       },
       "total": {
-        "investment": 0,
+        "investment": 10.5,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 41
       }
     },
     {
@@ -904,14 +886,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.92,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 25
       },
       "total": {
-        "investment": 0,
+        "investment": 6.92,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 25
       }
     },
     {
@@ -922,14 +904,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.3,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 11
       },
       "total": {
-        "investment": 0,
+        "investment": 4.3,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 11
       }
     },
     {
@@ -940,14 +922,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.68,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 20
       },
       "total": {
-        "investment": 0,
+        "investment": 4.68,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 20
       }
     },
     {
@@ -958,14 +940,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.3,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 44
       },
       "total": {
-        "investment": 0,
+        "investment": 9.3,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 44
       }
     },
     {
@@ -976,14 +958,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.1,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 39
       },
       "total": {
-        "investment": 0,
+        "investment": 10.1,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 39
       }
     },
     {
@@ -994,14 +976,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       },
       "total": {
-        "investment": 0,
+        "investment": 5.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       }
     },
     {
@@ -1012,14 +994,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.16,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 6.16,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -1030,14 +1012,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.65,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 8
       },
       "total": {
-        "investment": 0,
+        "investment": 3.65,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 8
       }
     },
     {
@@ -1048,14 +1030,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.91,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 3.91,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -1066,14 +1048,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.6,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 6
       },
       "total": {
-        "investment": 0,
+        "investment": 3.6,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 6
       }
     },
     {
@@ -1084,14 +1066,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 6.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -1102,14 +1084,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.33,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 27
       },
       "total": {
-        "investment": 0,
+        "investment": 7.33,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 27
       }
     },
     {
@@ -1120,14 +1102,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.11,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 30
       },
       "total": {
-        "investment": 0,
+        "investment": 6.11,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 30
       }
     },
     {
@@ -1138,14 +1120,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.14,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 35
       },
       "total": {
-        "investment": 0,
+        "investment": 10.14,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 35
       }
     },
     {
@@ -1156,14 +1138,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.89,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 28
       },
       "total": {
-        "investment": 0,
+        "investment": 7.89,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 28
       }
     },
     {
@@ -1174,14 +1156,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.97,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       },
       "total": {
-        "investment": 0,
+        "investment": 2.97,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       }
     },
     {
@@ -1192,12 +1174,12 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.24,
         "conversions": 0,
         "clicks": 0
       },
       "total": {
-        "investment": 0,
+        "investment": 1.24,
         "conversions": 0,
         "clicks": 0
       }
@@ -1210,14 +1192,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.06,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 11
       },
       "total": {
-        "investment": 0,
+        "investment": 6.06,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 11
       }
     },
     {
@@ -1228,14 +1210,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.35,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 25
       },
       "total": {
-        "investment": 0,
+        "investment": 8.35,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 25
       }
     },
     {
@@ -1246,14 +1228,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.26,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       },
       "total": {
-        "investment": 0,
+        "investment": 6.26,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       }
     },
     {
@@ -1264,14 +1246,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.11,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 34
       },
       "total": {
-        "investment": 0,
+        "investment": 9.11,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 34
       }
     },
     {
@@ -1282,14 +1264,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.74,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 38
       },
       "total": {
-        "investment": 0,
+        "investment": 7.74,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 38
       }
     },
     {
@@ -1300,14 +1282,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.2,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 3.2,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -1318,14 +1300,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 3
       },
       "total": {
-        "investment": 0,
+        "investment": 1.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 3
       }
     },
     {
@@ -1336,14 +1318,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.54,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 5.54,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -1354,14 +1336,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.39,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 35
       },
       "total": {
-        "investment": 0,
+        "investment": 10.39,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 35
       }
     },
     {
@@ -1372,14 +1354,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.48,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 20
       },
       "total": {
-        "investment": 0,
+        "investment": 7.48,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 20
       }
     },
     {
@@ -1390,14 +1372,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.93,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 5.93,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -1408,14 +1390,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.17,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 30
       },
       "total": {
-        "investment": 0,
+        "investment": 8.17,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 30
       }
     },
     {
@@ -1426,14 +1408,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.42,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 17
       },
       "total": {
-        "investment": 0,
+        "investment": 3.42,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 17
       }
     },
     {
@@ -1444,14 +1426,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.06,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 4
       },
       "total": {
-        "investment": 0,
+        "investment": 1.06,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 4
       }
     },
     {
@@ -1462,14 +1444,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 25
       },
       "total": {
-        "investment": 0,
+        "investment": 7,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 25
       }
     },
     {
@@ -1480,14 +1462,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.01,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 5.01,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -1498,14 +1480,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.43,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 7.43,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -1516,14 +1498,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.44,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 8
       },
       "total": {
-        "investment": 0,
+        "investment": 6.44,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 8
       }
     },
     {
@@ -1534,14 +1516,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.66,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 17
       },
       "total": {
-        "investment": 0,
+        "investment": 7.66,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 17
       }
     },
     {
@@ -1552,14 +1534,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.55,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 21
       },
       "total": {
-        "investment": 0,
+        "investment": 6.55,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 21
       }
     },
     {
@@ -1570,14 +1552,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.86,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 12
       },
       "total": {
-        "investment": 0,
+        "investment": 1.86,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 12
       }
     },
     {
@@ -1588,14 +1570,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.46,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 26
       },
       "total": {
-        "investment": 0,
+        "investment": 9.46,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 26
       }
     },
     {
@@ -1606,14 +1588,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.75,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 26
       },
       "total": {
-        "investment": 0,
+        "investment": 5.75,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 26
       }
     },
     {
@@ -1624,14 +1606,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.52,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 6.52,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -1642,14 +1624,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 32
       },
       "total": {
-        "investment": 0,
+        "investment": 7.28,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 32
       }
     },
     {
@@ -1660,14 +1642,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.140000000000001,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       },
       "total": {
-        "investment": 0,
+        "investment": 5.140000000000001,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       }
     },
     {
@@ -1678,14 +1660,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.49,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 33
       },
       "total": {
-        "investment": 0,
+        "investment": 7.49,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 33
       }
     },
     {
@@ -1696,14 +1678,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.01,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 3.01,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -1714,14 +1696,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.4,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 4
       },
       "total": {
-        "investment": 0,
+        "investment": 3.4,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 4
       }
     },
     {
@@ -1732,14 +1714,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.11,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 11
       },
       "total": {
-        "investment": 0,
+        "investment": 8.11,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 11
       }
     },
     {
@@ -1750,14 +1732,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.64,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       },
       "total": {
-        "investment": 0,
+        "investment": 8.64,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 18
       }
     },
     {
@@ -1768,14 +1750,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.37,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 20
       },
       "total": {
-        "investment": 0,
+        "investment": 7.37,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 20
       }
     },
     {
@@ -1786,14 +1768,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.97,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 8
       },
       "total": {
-        "investment": 0,
+        "investment": 4.97,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 8
       }
     },
     {
@@ -1804,14 +1786,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.57,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 17
       },
       "total": {
-        "investment": 0,
+        "investment": 5.57,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 17
       }
     },
     {
@@ -1822,14 +1804,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.8,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 3.8,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -1840,14 +1822,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.31,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 17
       },
       "total": {
-        "investment": 0,
+        "investment": 8.31,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 17
       }
     },
     {
@@ -1858,14 +1840,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.49,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 32
       },
       "total": {
-        "investment": 0,
+        "investment": 9.49,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 32
       }
     },
     {
@@ -1876,14 +1858,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.06,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 29
       },
       "total": {
-        "investment": 0,
+        "investment": 8.06,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 29
       }
     },
     {
@@ -1894,14 +1876,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.13,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 26
       },
       "total": {
-        "investment": 0,
+        "investment": 5.13,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 26
       }
     },
     {
@@ -1912,14 +1894,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.88,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 11
       },
       "total": {
-        "investment": 0,
+        "investment": 4.88,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 11
       }
     },
     {
@@ -1930,14 +1912,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.63,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 8
       },
       "total": {
-        "investment": 0,
+        "investment": 4.63,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 8
       }
     },
     {
@@ -1948,14 +1930,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.44,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 5
       },
       "total": {
-        "investment": 0,
+        "investment": 1.44,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 5
       }
     },
     {
@@ -1966,14 +1948,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.89,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       },
       "total": {
-        "investment": 0,
+        "investment": 7.89,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       }
     },
     {
@@ -1984,14 +1966,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.7,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 12
       },
       "total": {
-        "investment": 0,
+        "investment": 2.7,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 12
       }
     },
     {
@@ -2002,14 +1984,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.98,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 24
       },
       "total": {
-        "investment": 0,
+        "investment": 6.98,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 24
       }
     },
     {
@@ -2020,14 +2002,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.34,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 7.34,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -2038,14 +2020,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.07,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 7.07,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -2056,14 +2038,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.5,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 12
       },
       "total": {
-        "investment": 0,
+        "investment": 7.5,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 12
       }
     },
     {
@@ -2074,14 +2056,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.4,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 8
       },
       "total": {
-        "investment": 0,
+        "investment": 2.4,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 8
       }
     },
     {
@@ -2092,14 +2074,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.97,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 18
       },
       "total": {
-        "investment": 0,
+        "investment": 8.97,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 18
       }
     },
     {
@@ -2110,14 +2092,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.14,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 7.14,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -2128,14 +2110,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.21,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 8.21,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -2146,14 +2128,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.08,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       },
       "total": {
-        "investment": 0,
+        "investment": 6.08,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 23
       }
     },
     {
@@ -2164,14 +2146,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.89,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 9
       },
       "total": {
-        "investment": 0,
+        "investment": 5.89,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 9
       }
     },
     {
@@ -2182,14 +2164,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.1,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 4.1,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -2200,14 +2182,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 1.55,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 1.55,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -2218,14 +2200,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.81,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 24
       },
       "total": {
-        "investment": 0,
+        "investment": 7.81,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 24
       }
     },
     {
@@ -2236,14 +2218,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.34,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 7.34,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -2254,14 +2236,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.57,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 6.57,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -2272,14 +2254,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.16,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 27
       },
       "total": {
-        "investment": 0,
+        "investment": 6.16,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 27
       }
     },
     {
@@ -2290,14 +2272,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.56,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       },
       "total": {
-        "investment": 0,
+        "investment": 4.56,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 7
       }
     },
     {
@@ -2308,14 +2290,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.4,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 11
       },
       "total": {
-        "investment": 0,
+        "investment": 5.4,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 11
       }
     },
     {
@@ -2326,14 +2308,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.12,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 10
       },
       "total": {
-        "investment": 0,
+        "investment": 4.12,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 10
       }
     },
     {
@@ -2344,14 +2326,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 19
       },
       "total": {
-        "investment": 0,
+        "investment": 9,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 19
       }
     },
     {
@@ -2362,14 +2344,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.25,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 20
       },
       "total": {
-        "investment": 0,
+        "investment": 8.25,
         "conversions": 1,
-        "clicks": 0
+        "clicks": 20
       }
     },
     {
@@ -2380,14 +2362,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.29,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       },
       "total": {
-        "investment": 0,
+        "investment": 7.29,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       }
     },
     {
@@ -2398,14 +2380,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.41,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 5.41,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -2416,14 +2398,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 5.97,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 27
       },
       "total": {
-        "investment": 0,
+        "investment": 5.97,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 27
       }
     },
     {
@@ -2434,14 +2416,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 3.88,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       },
       "total": {
-        "investment": 0,
+        "investment": 3.88,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       }
     },
     {
@@ -2452,14 +2434,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.12,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 6
       },
       "total": {
-        "investment": 0,
+        "investment": 2.12,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 6
       }
     },
     {
@@ -2470,14 +2452,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 6.91,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 17
       },
       "total": {
-        "investment": 0,
+        "investment": 6.91,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 17
       }
     },
     {
@@ -2488,14 +2470,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.1,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       },
       "total": {
-        "investment": 0,
+        "investment": 8.1,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 14
       }
     },
     {
@@ -2506,14 +2488,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.81,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       },
       "total": {
-        "investment": 0,
+        "investment": 9.81,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 16
       }
     },
     {
@@ -2524,14 +2506,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.94,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 16
       },
       "total": {
-        "investment": 0,
+        "investment": 8.94,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 16
       }
     },
     {
@@ -2542,14 +2524,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.78,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 10
       },
       "total": {
-        "investment": 0,
+        "investment": 4.78,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 10
       }
     },
     {
@@ -2560,14 +2542,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 2.83,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 3
       },
       "total": {
-        "investment": 0,
+        "investment": 2.83,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 3
       }
     },
     {
@@ -2578,14 +2560,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 0.61,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 1
       },
       "total": {
-        "investment": 0,
+        "investment": 0.61,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 1
       }
     },
     {
@@ -2596,14 +2578,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 9.34,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 15
       },
       "total": {
-        "investment": 0,
+        "investment": 9.34,
         "conversions": 2,
-        "clicks": 0
+        "clicks": 15
       }
     },
     {
@@ -2614,14 +2596,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 10.12,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 12
       },
       "total": {
-        "investment": 0,
+        "investment": 10.12,
         "conversions": 3,
-        "clicks": 0
+        "clicks": 12
       }
     },
     {
@@ -2632,14 +2614,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 8.37,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 14
       },
       "total": {
-        "investment": 0,
+        "investment": 8.37,
         "conversions": 4,
-        "clicks": 0
+        "clicks": 14
       }
     },
     {
@@ -2650,14 +2632,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 7.47,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       },
       "total": {
-        "investment": 0,
+        "investment": 7.47,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 13
       }
     },
     {
@@ -2668,14 +2650,14 @@
         "clicks": 0
       },
       "metaAds": {
-        "investment": 0,
+        "investment": 4.1,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 6
       },
       "total": {
-        "investment": 0,
+        "investment": 4.1,
         "conversions": 0,
-        "clicks": 0
+        "clicks": 6
       }
     }
   ],
@@ -2688,27 +2670,27 @@
       "months": [
         {
           "month": "2026-04",
-          "investment": 0,
-          "conversions": 6,
-          "clicks": 0
+          "investment": 54.639999999999986,
+          "conversions": 4,
+          "clicks": 230
         },
         {
           "month": "2026-05",
-          "investment": 0.56,
+          "investment": 167.08000000000004,
           "conversions": 29,
-          "clicks": 4
+          "clicks": 537
         },
         {
           "month": "2026-06",
-          "investment": 0,
+          "investment": 191.35999999999993,
           "conversions": 46,
-          "clicks": 0
+          "clicks": 681
         },
         {
           "month": "2026-07",
-          "investment": 0,
+          "investment": 92.15999999999998,
           "conversions": 14,
-          "clicks": 0
+          "clicks": 298
         }
       ]
     },
@@ -2720,21 +2702,21 @@
       "months": [
         {
           "month": "2026-07",
-          "investment": 0,
+          "investment": 95.37999999999998,
           "conversions": 6,
-          "clicks": 0
+          "clicks": 274
         },
         {
           "month": "2026-08",
-          "investment": 0,
+          "investment": 184.14999999999998,
           "conversions": 14,
-          "clicks": 0
+          "clicks": 462
         },
         {
           "month": "2026-09",
-          "investment": 0,
+          "investment": 66.36999999999999,
           "conversions": 11,
-          "clicks": 0
+          "clicks": 106
         }
       ]
     }
